@@ -1,0 +1,6 @@
+[submodule "Libraries/CocoaLumberjack"]
+	path = Libraries/CocoaLumberjack
+	url = https://github.com/robbiehanson/CocoaLumberjack.git
+[submodule "Libraries/DCIntrospect"]
+	path = Libraries/DCIntrospect
+	url = https://github.com/shilgapira/DCIntrospect.git

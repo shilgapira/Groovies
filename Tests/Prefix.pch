@@ -1,0 +1,15 @@
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+
+#define TGAssert(x)                 STAssertTrue(x, nil)
+#define TGAssertNot(x)              STAssertFalse(x, nil)
+
+#define TGAssertNil(x)              STAssertNil(x, nil)
+#define TGAssertNotNil(x)           STAssertNotNil(x, nil)
+
+#define TGAssertEquals(x, y)        STAssertEquals(x, y, nil)
+#define TGAssertEqualObjects(x, y)  STAssertEqualObjects(x, y, nil)
+
+#define TGAssertThrows(x)           STAssertThrows(x, nil)
