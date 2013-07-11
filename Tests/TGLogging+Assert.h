@@ -1,7 +1,7 @@
 //
-// UIColor+Create.m
+// TGLogging+Assert.h
 //
-// Copyright (c) 2012 Gil Shapira
+// Copyright (c) 2013 Gil Shapira
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,16 +22,9 @@
 // THE SOFTWARE.
 //
 
-#import "UIColor+Create.h"
+#import <SenTestingKit/SenTestingKit.h>
 
 
-@implementation UIColor (Create)
-
-+ (UIColor *)colorWithHex:(unsigned long)hex alpha:(float)alpha {
-    float red = ((float) ((hex & 0xFF0000) >> 16)) / 255.0f;
-    float green = ((float) ((hex & 0xFF00) >> 8)) / 255.0f;
-    float blue = ((float) (hex & 0xFF)) / 255.0f;
-    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
-}
+@interface TGLogging_Assert : SenTestCase
 
 @end

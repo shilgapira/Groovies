@@ -26,42 +26,59 @@
 #import "GSMacros+Varargs.h"
 
 
-/**
- * Creates a UIColor instance with a hex color number (0xRRGGBB long) and with
- * an optional alpha value (0..1 float). For example,
- *
- *     UIColor *blue = COLORHEX(0x4444ff);
- *     UIColor *white = COLORHEX(0xffffff);
- *     UIColor *shadow = COLORHEX(0x000000, 0.3f);
- */
-#define COLORHEX(hex, ...)          _COLORHEX(hex, ##__VA_ARGS__)
-
 
 /**
- * Creates a UIColor instance with RGB color values (0..255 ints) and
- * with an optional alpha value (0..1 float). For example,
+ * Creates a UIColor instance using various color representations.
  *
- *     UIColor *blue = COLORRGB(68, 68, 255);
- *     UIColor *white = COLORRGB(255, 255, 255);
- *     UIColor *shadow = COLORRGB(0, 0, 0, 0.3f);
- */
-#define COLORRGB(r, g, b, ...)      _COLORRGB(r, g, b, ##__VA_ARGS__)
-
-
-/*
- * Creates a UIColor instance with HSV color values (hue 0..360 int,
- * sat/value 0..100 ints) and with an optional alpha value (0..1 float).
- * For example,
+ * Colors can be created with hex codes using one of the following formats:
  *
- *     UIColor *blue = COLORHSV(240, 73, 100);
- *     UIColor *white = COLORHSV(0, 0, 100);
- *     UIColor *shadow = COLORHSV(0, 0, 0, 0.3f);
+ *     // 8 char length hex code for full RGB colors
+ *     UIColor *orange = GSColor(0xFF8000);
+ *
+ *     // 4 char length hex code for grayscale colors
+ *     UIColor *white = GSColor(0xFF);
+ *
+ *     // Optional alpha argument (always 0..1 float)
+ *     UIColor *shadow = GSColor(0x00, 0.5f);
+ *
+ * The following formats are supported for integers:
+ *
+ *     // RGB components as integers in the 0..255 range
+ *     UIColor *orange = GSColor(255, 128, 0);
+ *     
+ *     // Optional alpha argument (always 0..1 float)
+ *     UIColor *glow = GSColor(255, 192, 0, 0.5f);
+ *
+ * The following formats are supported for floats:
+ *
+ *     // RGB components as floats in the 0..1 range
+ *     UIColor *orange = GSColor(1.0f, 0.5f, 0);
+ *
+ *     // Grayscale color as float in the 0..1 range
+ *     UIColor *white = GSColor(1.0f);
+ *
+ *     // Optional alpha argument
+ *     UIColor *glow = GSColor(1.0f, 0.5f, 0, 0.5f);
+ *
+ * For convenience, the macro returns [UIColor clearColor] when called
+ * without any arguments:
+ *
+ *     // Equivalent to [UIColor clearColor]
+ *     UIColor *transparent = GSColor();
+ *
+ * Note: The macro relies on compile time type checking to handle each
+ * combination of arguments as expected. Integers are expected to be in
+ * the 0..255 range and floats are expected to be in the 0..1 range. In
+ * some cases this might be confusing. For example, to create the white 
+ * color one should use GSColor(1.0f) rather than GSColor(1), since the 
+ * latter returns the grayscale color 0x010101.
  */
-#define COLORHSV(h, s, v, ...)      _COLORHSV(h, s, v, ##__VA_ARGS__)
+#define GSColor(...)                GS_VA_OVERLOAD(_GSColor, ##__VA_ARGS__)
+
 
 
 /**
- * UIColor extensions that allow easier creation of color objects.
+ * UIColor extension that adds the colorWithHex class method.
  */
 @interface UIColor (Create)
 
@@ -71,7 +88,7 @@
  * @param alpha The alpha value specified as a value in the 0..1 range.
  * @return The color object.
  */
-+ (UIColor *)colorWithHex:(long)hex alpha:(float)alpha;
++ (UIColor *)colorWithHex:(unsigned long)hex alpha:(float)alpha;
 
 @end
 
@@ -81,14 +98,24 @@
 // Implementation details, do not use directly
 //
 
-#define _COLORHEX(hex, ...)     GS_VA_OVERLOAD(_COLORHEX, hex, ##__VA_ARGS__)
-#define _COLORHEX1(hex)         _COLORHEX2(hex, 1.0f)
-#define _COLORHEX2(hex, a)      [UIColor colorWithHex:(hex) alpha:(a)]
+#define _GSColor0()                 [UIColor clearColor]
 
-#define _COLORRGB(r, g, b, ...) GS_VA_OVERLOAD(_COLORRGB, r, g, b, ##__VA_ARGS__)
-#define _COLORRGB3(r, g, b)     _COLORRGB4(r, g, b, 1.0f)
-#define _COLORRGB4(r, g, b, a)  [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+#define _GSColor1(c)                _GSColor2(c, 1.0f)
 
-#define _COLORHSV(h, s, v, ...) GS_VA_OVERLOAD(_COLORHSV, h, s, v, ##__VA_ARGS__)
-#define _COLORHSV3(h, s, v)     _COLORHSV4(h, s, v, 1.0f)
-#define _COLORHSV4(h, s, v, a)  [UIColor colorWithHue:(h)/360.0f saturation:(s)/100.0f brightness:(v)/100.0f alpha:(a)]
+#define _GSColor2(c, a)                                                                     \
+({                                                                                          \
+    __builtin_choose_expr(__builtin_types_compatible_p(typeof(c), typeof(0xFFFFFF)),        \
+        __builtin_choose_expr(sizeof(#c) == sizeof("0xFFFFFF"),                             \
+            [UIColor colorWithHex:((unsigned long) c) alpha:(a)],                           \
+            [UIColor colorWithWhite:((float) c)/255.0f alpha:(a)]),                         \
+        [UIColor colorWithWhite:(c) alpha:(a)]);                                            \
+})
+
+#define _GSColor3(r, g, b)          _GSColor4(r, g, b, 1.0f)
+
+#define _GSColor4(r, g, b, a)                                                               \
+({                                                                                          \
+    __builtin_choose_expr(__builtin_types_compatible_p(typeof((r)+(g)+(b)), typeof(255)),   \
+        [UIColor colorWithRed:((float) r)/255.0f green:((float) g)/255.0f blue:((float) b)/255.0f alpha:(a)],   \
+        [UIColor colorWithRed:(r) green:(g) blue:(b) alpha:(a)]);                           \
+})

@@ -126,17 +126,35 @@
  *                                            selector:SELECTOR(self, didReceiveMemoryWarning:)
  *                                                 ...
  */
-#define SELECTOR(object, sel)           \
-({                                      \
-    SEL __s = @selector(sel);           \
-    GSAssert([(object) respondsToSelector:__s],                     \
-        @"'%s' doesn't respond to selector '%s'", #object, #sel);   \
-    __s;                                \
+#define SELECTOR(object, sel)                               \
+({                                                          \
+    SEL __s = @selector(sel);                               \
+    GSAssert([(object) respondsToSelector:__s],             \
+        @"'%s' doesn't respond to '%s'", #object, #sel);    \
+    __s;                                                    \
 })
 
 
 /**
- * A pair of convenience macros that simplify the weak/strong pattern commonly used 
+ * Returns the current function's name as a C string.
+ * 
+ * When called in an Objective-C method the macro returns the name of the method's
+ * selector, i.e., the result of sel_getName(_cmd). When called in a regular C function 
+ * the macro is equivalent to __FUNCTION__.
+ *
+ * Note: The compiler requires both expressions in __builtin_choose_expr to be valid.
+ * The _cmd variable isn't available in C functions so to prevent a syntax error during
+ * compilation we declare a placeholder _cmd symbol of type void* below.
+ */
+#define FUNCTIONNAME()                                      \
+    __builtin_choose_expr(                                  \
+        __builtin_types_compatible_p(typeof(_cmd), SEL),    \
+        sel_getName(_cmd),                                  \
+        __FUNCTION__)
+
+
+/**
+ * A pair of convenience macros that simplify the weak/strong pattern commonly used
  * to prevent retain cycles when creating blocks.
  *
  * For example, the following code creates a retain cycle between self and the block
@@ -207,6 +225,9 @@ do {                                    \
     });                                 \
     return instance;                    \
 }
+
+// Placeholder _cmd symbol so FUNCTIONNAME() won't cause a syntax error during compilation.
+extern void *_cmd;
 
 // Calls _WEAKIFY_VAR on each variable
 #define _WEAKIFY(...)                                   \

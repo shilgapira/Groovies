@@ -1,7 +1,7 @@
 //
-// UIColor+Create.m
+// GSLogging+Lumberjack.h
 //
-// Copyright (c) 2012 Gil Shapira
+// Copyright (c) 2013 Gil Shapira
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,16 +22,36 @@
 // THE SOFTWARE.
 //
 
-#import "UIColor+Create.h"
+#import "DDLog.h"
 
 
-@implementation UIColor (Create)
+//
+// We want to customize the logging scheme that comes with CocoaLumberjack,
+// so we undefine all the builtin macros to replace them with our own.
+//
 
-+ (UIColor *)colorWithHex:(unsigned long)hex alpha:(float)alpha {
-    float red = ((float) ((hex & 0xFF0000) >> 16)) / 255.0f;
-    float green = ((float) ((hex & 0xFF00) >> 8)) / 255.0f;
-    float blue = ((float) (hex & 0xFF)) / 255.0f;
-    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
-}
+#undef LOG_FLAG_ERROR
+#undef LOG_FLAG_WARN
+#undef LOG_FLAG_INFO
+#undef LOG_FLAG_VERBOSE
 
-@end
+#undef LOG_LEVEL_OFF
+#undef LOG_LEVEL_ERROR
+#undef LOG_LEVEL_WARN
+#undef LOG_LEVEL_INFO
+#undef LOG_LEVEL_VERBOSE
+
+#undef LOG_ERROR
+#undef LOG_WARN
+#undef LOG_INFO
+#undef LOG_VERBOSE
+
+#undef DDLogError
+#undef DDLogWarn
+#undef DDLogInfo
+#undef DDLogVerbose
+
+#undef DDLogCError
+#undef DDLogCWarn
+#undef DDLogCInfo
+#undef DDLogCVerbose

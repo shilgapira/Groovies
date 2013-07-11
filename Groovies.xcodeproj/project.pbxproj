@@ -19,6 +19,9 @@
 		2B02B9241634D2B200C9565B /* NSString+Encoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B02B9221634D2AF00C9565B /* NSString+Encoding.m */; };
 		2B0868A71656A212005992D6 /* NSDate+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B0868A51656A210005992D6 /* NSDate+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B0868A81656A212005992D6 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0868A61656A211005992D6 /* NSDate+Additions.m */; };
+		2B08CB62178DAF5500BA7506 /* TGLogging+Assert.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B08CB61178DAF5500BA7506 /* TGLogging+Assert.m */; };
+		2B08CB66178F0DED00BA7506 /* GSLogging+Lumberjack.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B08CB65178F0C4400BA7506 /* GSLogging+Lumberjack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B08CB6A178F43D600BA7506 /* TGColor+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B08CB69178F43D600BA7506 /* TGColor+Create.m */; };
 		2B0B0A021610C8BB003C8586 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B10F14715E453AD00327C2E /* UIKit.framework */; };
 		2B0B0A051610C947003C8586 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0B0A041610C947003C8586 /* CoreGraphics.framework */; };
 		2B15F5D416600CF5004FE5F3 /* UILabel+Fit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B15F5D216600CF5004FE5F3 /* UILabel+Fit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -140,6 +143,11 @@
 		2B02B9221634D2AF00C9565B /* NSString+Encoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Encoding.m"; sourceTree = "<group>"; };
 		2B0868A51656A210005992D6 /* NSDate+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
 		2B0868A61656A211005992D6 /* NSDate+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
+		2B08CB60178DAF5500BA7506 /* TGLogging+Assert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGLogging+Assert.h"; sourceTree = "<group>"; };
+		2B08CB61178DAF5500BA7506 /* TGLogging+Assert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGLogging+Assert.m"; sourceTree = "<group>"; };
+		2B08CB65178F0C4400BA7506 /* GSLogging+Lumberjack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSLogging+Lumberjack.h"; sourceTree = "<group>"; };
+		2B08CB68178F43D600BA7506 /* TGColor+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGColor+Create.h"; sourceTree = "<group>"; };
+		2B08CB69178F43D600BA7506 /* TGColor+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGColor+Create.m"; sourceTree = "<group>"; };
 		2B0B0A041610C947003C8586 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2B10F14715E453AD00327C2E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2B15F5D216600CF5004FE5F3 /* UILabel+Fit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Fit.h"; sourceTree = "<group>"; };
@@ -272,6 +280,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B08CB5F178DAF1A00BA7506 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				2B08CB60178DAF5500BA7506 /* TGLogging+Assert.h */,
+				2B08CB61178DAF5500BA7506 /* TGLogging+Assert.m */,
+			);
+			name = Logging;
+			sourceTree = "<group>";
+		};
+		2B08CB67178F43B200BA7506 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				2B08CB68178F43D600BA7506 /* TGColor+Create.h */,
+				2B08CB69178F43D600BA7506 /* TGColor+Create.m */,
+			);
+			name = Additions;
+			sourceTree = "<group>";
+		};
 		2B47BB10166A53A70081AE81 /* Prefix */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +348,7 @@
 				2B6FD0B7173D935A0042A168 /* GSLogging+Assert.h */,
 				2B6FD0B5173D92D00042A168 /* GSLogging+Expression.h */,
 				2BBFF779176D0BB600986ACC /* GSLogging+Benchmark.h */,
+				2B08CB65178F0C4400BA7506 /* GSLogging+Lumberjack.h */,
 				2B5B9A40172462BB005754B3 /* GSLogging+Internal.h */,
 				2B5B9A42172462BB005754B3 /* GSLogging.m */,
 				2B5B9A46172468E4005754B3 /* GSLogFormatter.h */,
@@ -402,6 +429,8 @@
 			isa = PBXGroup;
 			children = (
 				2BA364AF172416C8007C67DF /* Macros */,
+				2B08CB5F178DAF1A00BA7506 /* Logging */,
+				2B08CB67178F43B200BA7506 /* Additions */,
 				2B819BAC15DB2599001AAB87 /* GrooviesTests.h */,
 				2B819BAD15DB2599001AAB87 /* GrooviesTests.m */,
 				2B819B7A15DB13A8001AAB87 /* Info.plist */,
@@ -611,6 +640,7 @@
 				2B76FD62175B2DDC00F56E09 /* GSAnalyticsProvider.h in Headers */,
 				2B76FD64175B2FFE00F56E09 /* Groovies+Analytics.h in Headers */,
 				2B76FD6B175B336300F56E09 /* GSTestFlightAnalytics.h in Headers */,
+				2B08CB66178F0DED00BA7506 /* GSLogging+Lumberjack.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,6 +791,8 @@
 				2BA364B317241B74007C67DF /* TGMacros+Language.m in Sources */,
 				2B8BF13C172563FA00E181CA /* TGMacros+Stringify.m in Sources */,
 				2B86F8FE1726AAEE00DFCF97 /* TGMacros+Math.m in Sources */,
+				2B08CB62178DAF5500BA7506 /* TGLogging+Assert.m in Sources */,
+				2B08CB6A178F43D600BA7506 /* TGColor+Create.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

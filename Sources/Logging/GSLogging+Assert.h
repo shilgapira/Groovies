@@ -48,9 +48,15 @@
 
 #define GSAssertFailed(...)             GSAssert(0, ##__VA_ARGS__)
 
-#define GSAssertEqual(obj1, obj2)       GSAssert(GSEqualObjects((obj1), (obj2)), @"'%s' and '%s' are not equal", #obj1, #obj2)
-
 #define GSAssertMainThread()            GSAssert([NSThread isMainThread], @"Not on main thread")
+
+#define GSAssertEqual(obj1, obj2)                                   \
+({                                                                  \
+    id __a = (obj1);                                                \
+    id __b = (obj2);                                                \
+    BOOL __eq = (BOOL) (__a == __b || [__a isEqual:__b]);           \
+    GSAssert(__eq, @"'%s' and '%s' are not equal", #obj1, #obj2);   \
+})
 
 
 //
@@ -59,26 +65,32 @@
 
 #ifdef DEBUG
 
-#define GSAssertCast(cls, obj)                              \
-({                                                          \
-    id __o = (obj);                                         \
-    if (__o != nil) {                                       \
-        Class __c = [cls class];                            \
-        GSAssert([__o isKindOfClass:__c],                   \
-            @"'%s' isn't kind of %s", #obj, #cls);          \
-    }                                                       \
-    (cls *)__o;                                             \
+#define GSAssertKind(obj, cls)                                      \
+({                                                                  \
+    typeof(obj) __o = (obj);                                        \
+    Class __c = [cls class];                                        \
+    if (![__o isKindOfClass:__c]) {                                 \
+        NSString *__actual = NSStringFromClass([__o class]) ?: @"nil";          \
+        NSString *__expected = NSStringFromClass(__c);                          \
+        _GSAssertFail(@"'%s' is %@, expected %@", #obj, __actual, __expected);  \
+    }                                                               \
+    _Pragma("clang diagnostic push")                                \
+    _Pragma("clang diagnostic ignored \"-Wunused-value\"")          \
+    __o;                                                            \
+    _Pragma("clang diagnostic pop")                                 \
 })
-
-#define GSAssertKind(obj, cls)          ((void)GSAssertCast(cls, obj))
 
 #else
 
-#define GSAssertCast(cls, obj)          ((cls *)(obj))
-
-#define GSAssertKind(obj, cls)          ((void)0)
+#define GSAssertKind(obj, cls)          (obj)
 
 #endif
+
+#define GSAssertCast(cls, obj)                                      \
+    _Pragma("clang diagnostic push")                                \
+    _Pragma("clang diagnostic ignored \"-Wunused-value\"")          \
+    ((cls *) GSAssertKind(obj, cls))                                \
+    _Pragma("clang diagnostic pop")                                 \
 
 
 //
@@ -89,16 +101,16 @@
 
 #define _GSAssertFail(frmt, ...)        \
 ({                                      \
-    GSCLogE(frmt, ##__VA_ARGS__);       \
+    GSLogE(frmt, ##__VA_ARGS__);        \
     [DDLog flushLog];                   \
-    [NSAssertionHandler.currentHandler handleFailureInFunction:[NSString stringWithUTF8String:__PRETTY_FUNCTION__] file:[NSString stringWithUTF8String:__FILE__] lineNumber:__LINE__ description:frmt,##__VA_ARGS__]; \
+    [NSAssertionHandler.currentHandler handleFailureInFunction:[NSString stringWithUTF8String:FUNCTIONNAME()] file:[NSString stringWithUTF8String:__FILE__] lineNumber:__LINE__ description:frmt,##__VA_ARGS__]; \
 })
 
 #else
 
 #define _GSAssertFail(frmt, ...)        \
 ({                                      \
-    GSCLogE(frmt, ##__VA_ARGS__);       \
+    GSLogE(frmt, ##__VA_ARGS__);        \
     [DDLog flushLog];                   \
 })
 

@@ -107,7 +107,7 @@
 /**
  * A helper macro that returns the number of arguments passed to it (up to 8).
  *
- * Based on: http: *efesx.com/2010/07/17/variadic-macro-to-count-number-of-arguments/
+ * Based on: http://efesx.com/2010/07/17/variadic-macro-to-count-number-of-arguments/
  */
 #define GS_VA_COUNT(...)                _GS_VA_COUNT(__VA_ARGS__)
 

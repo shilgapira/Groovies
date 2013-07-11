@@ -1,6 +1,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <SenTestingKit/SenTestingKit.h>
 
 
 #define TGAssert(x)                 STAssertTrue(x, nil)
@@ -13,3 +14,4 @@
 #define TGAssertEqualObjects(x, y)  STAssertEqualObjects(x, y, nil)
 
 #define TGAssertThrows(x)           STAssertThrows(x, nil)
+#define TGAssertNoThrow(x)          STAssertNoThrow(x, nil)
