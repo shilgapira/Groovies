@@ -28,14 +28,14 @@
 
 @implementation UIViewController (Analytics)
 
-static char GSAnalyticsNameKey;
+static char __analyticsNameKey;
 
 - (NSString *)analyticsName {
-    return [self associatedObjectForKey:&GSAnalyticsNameKey];
+    return [self associatedObjectForKey:&__analyticsNameKey];
 }
 
 - (void)setAnalyticsName:(NSString *)analyticsName {
-    [self associateObject:[analyticsName copy] forKey:&GSAnalyticsNameKey];
+    [self associateObject:[analyticsName copy] forKey:&__analyticsNameKey];
 }
 
 @end

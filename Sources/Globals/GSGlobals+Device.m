@@ -26,11 +26,13 @@
 #import "GSMacros+Language.h"
 
 
+static NSString * const kSimulatorModel = @"Simulator";
+
+
 #pragma mark - Device
 
 BOOL GSDeviceIsSimulator(void) {
-	static NSString *simulatorModel = @"Simulator";
-    return [UIDevice.currentDevice.model hasSuffix:simulatorModel];
+    return [UIDevice.currentDevice.model hasSuffix:kSimulatorModel];
 }
 
 BOOL GSDeviceIsPhone(void) {

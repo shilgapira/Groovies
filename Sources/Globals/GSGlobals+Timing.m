@@ -27,16 +27,16 @@
 
 
 /** Timebase info used to convert between mach absolute times and real world time */
-static mach_timebase_info_data_t GSTimebaseInfo;
+static mach_timebase_info_data_t __timebaseInfo;
 
 
 /**
  * Retrieves timebase info values on application launch
  */
 static __attribute__((constructor)) void GSTimebaseSetup(void) {
-    kern_return_t result = mach_timebase_info(&GSTimebaseInfo);
+    kern_return_t result = mach_timebase_info(&__timebaseInfo);
     if (result != KERN_SUCCESS) {
-        GSTimebaseInfo = (mach_timebase_info_data_t) { 0, 0 };
+        __timebaseInfo = (mach_timebase_info_data_t) { 0, 0 };
     }
 }
 
@@ -44,13 +44,13 @@ static __attribute__((constructor)) void GSTimebaseSetup(void) {
  * Converts a mach absolute time measurement to an NSTimeInterval
  */
 static NSTimeInterval GSConvertElapsedTime(uint64_t time) {
-    uint64_t nanos = time * GSTimebaseInfo.numer / GSTimebaseInfo.denom;
+    uint64_t nanos = time * __timebaseInfo.numer / __timebaseInfo.denom;
     return (double) nanos / NSEC_PER_SEC;
 }
 
 
 NSTimeInterval GSExecuteTimed(void(^block)(void)) {
-    if (!GSTimebaseInfo.denom) {
+    if (!__timebaseInfo.denom) {
         block();
         return -1.0;
     }

@@ -38,17 +38,17 @@ static const NSTimeInterval kDCIntrospectDelay = 0.5;
 
 @implementation Groovies
 
-static BOOL initialized = NO;
+static BOOL __initialized = NO;
 
 + (void)groove {
     [self groove:nil];
 }
 
 + (void)groove:(NSDictionary *)options {
-    if (initialized) {
+    if (__initialized) {
         return;
     }
-    initialized = YES;
+    __initialized = YES;
 
     if (!options) {
         options = [NSDictionary dictionary];

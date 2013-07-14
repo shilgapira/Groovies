@@ -50,14 +50,14 @@
 
 @implementation GSTheme
 
-static id GSCurrentTheme;
+static GSTheme *__currentTheme;
 
 + (id)currentTheme {
-    return GSCurrentTheme;
+    return __currentTheme;
 }
 
-+ (void)setCurrentTheme:(id)theme {
-    GSCurrentTheme = theme;
++ (void)setCurrentTheme:(GSTheme *)theme {
+    __currentTheme = theme;
 }
 
 - (id)init {
