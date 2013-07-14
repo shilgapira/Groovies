@@ -37,11 +37,11 @@ extern int GSLogLevel;
 // Logging macros for each log level.
 //
 
-#define GSLogE(frmt, ...)   _GSLog(0, LOG_FLAG_ERROR,   frmt, ##__VA_ARGS__)
-#define GSLogW(frmt, ...)   _GSLog(0, LOG_FLAG_WARN,    frmt, ##__VA_ARGS__)
-#define GSLogI(frmt, ...)   _GSLog(0, LOG_FLAG_INFO,    frmt, ##__VA_ARGS__)
-#define GSLogV(frmt, ...)   _GSLog(0, LOG_FLAG_VERBOSE, frmt, ##__VA_ARGS__)
-#define GSLogD(frmt, ...)   _GSLog(0, LOG_FLAG_DEBUG,   frmt, ##__VA_ARGS__)
+#define GSLogE(frmt, ...)   _GSLogSync(LOG_FLAG_ERROR, frmt, ##__VA_ARGS__)
+#define GSLogW(frmt, ...)   _GSLogAsync(LOG_FLAG_WARN, frmt, ##__VA_ARGS__)
+#define GSLogI(frmt, ...)   _GSLogAsync(LOG_FLAG_INFO, frmt, ##__VA_ARGS__)
+#define GSLogV(frmt, ...)   _GSLogAsync(LOG_FLAG_VERBOSE, frmt, ##__VA_ARGS__)
+#define GSLogD(frmt, ...)   _GSLogAsync(LOG_FLAG_DEBUG, frmt, ##__VA_ARGS__)
 
 
 //
@@ -72,9 +72,13 @@ extern int GSLogLevel;
 // Implementation details, do not use directly
 //
 
+#define _GSLogSync(flag, frmt, ...)             _GSLog(0, flag, frmt, ##__VA_ARGS__)
+
+#define _GSLogAsync(flag, frmt, ...)            _GSLog(1, flag, frmt, ##__VA_ARGS__)
+
 #define _GSLog(async, flag, frmt, ...)                              \
 do {                                                                \
-    if ((GSLogLevel) & (flag)) {                                    \
-        LOG_MACRO((async), (GSLogLevel), (flag), 0, nil, FUNCTIONNAME(), @"" frmt, ##__VA_ARGS__);    \
+    if (GSLogLevel & (flag)) {                                      \
+        LOG_MACRO((async), GSLogLevel, (flag), 0, nil, FUNCTIONNAME(), @"" frmt, ##__VA_ARGS__);    \
     }                                                               \
 } while(0)
