@@ -24,7 +24,6 @@
 
 #import "GSLogging+Base.h"
 
-
 //
 // Measures the execution time of a code fragment and logs the result. For example,
 //
@@ -34,11 +33,11 @@
 //
 //     [self processData]: 0.139ms
 //
-#define GSBLog(code)                                \
-do {                                                \
-    NSTimeInterval __time = GSExecuteTimed(^{       \
-        code;                                       \
-    });                                             \
-    NSString *__label = __builtin_choose_expr(sizeof(#code) > 32, @"Benchmark", @"" #code);     \
-    GSLogV(@"%@: %0.3fms", __label, __time * 1000); \
+#define GSBLog(code)                                                \
+do {                                                                \
+    NSTimeInterval __start = CACurrentMediaTime();                  \
+    { code; }                                                       \
+    NSTimeInterval __elapsed = CACurrentMediaTime() - __start;      \
+    NSString *__label = __builtin_choose_expr(sizeof(#code) > 32, @"Benchmark", @"" #code); \
+    GSLogV(@"%@: %0.3fms", __label, __elapsed * 1000);              \
 } while(0)
