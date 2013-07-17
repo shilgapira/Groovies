@@ -1,5 +1,5 @@
 //
-// TGMacros+Stringify.m
+// TGGlobals+Strings.m
 //
 // Copyright (c) 2013 Gil Shapira
 //
@@ -22,11 +22,21 @@
 // THE SOFTWARE.
 //
 
-#import "TGMacros+Stringify.h"
-#import "GSMacros+Stringify.h"
+#import "TGGlobals+Strings.h"
 
 
-@implementation TGMacros_Stringify
+// So we can test GSStringify(CLLocationCoordinate2D value) without the framework
+#ifndef __CORELOCATION__
+#define __CORELOCATION__
+typedef double CLLocationDegrees;
+typedef struct { CLLocationDegrees latitude; CLLocationDegrees longitude; } CLLocationCoordinate2D;
+#endif
+
+
+#import "GSGlobals+Strings.h"
+
+
+@implementation TGGlobals_Strings
 
 - (void)testObjects {
     TGAssertEqualObjects(GSStringify(self), [self description]);
@@ -71,10 +81,17 @@
     TGAssertEqualObjects(GSStringify(-127), [@(-127) stringValue]);
     TGAssertEqualObjects(GSStringify(NSIntegerMax), [@(NSIntegerMax) stringValue]);
     TGAssertEqualObjects(GSStringify(NSIntegerMin), [@(NSIntegerMin) stringValue]);
-    TGAssertEqualObjects(GSStringify(LONG_LONG_MIN), [@(LONG_LONG_MIN) stringValue]);
-    TGAssertEqualObjects(GSStringify(LONG_LONG_MAX), [@(LONG_LONG_MAX) stringValue]);
+    TGAssertEqualObjects(GSStringify(LLONG_MIN), [@(LLONG_MIN) stringValue]);
+    TGAssertEqualObjects(GSStringify(LLONG_MAX), [@(LLONG_MAX) stringValue]);
     TGAssertEqualObjects(GSStringify(LONG_MIN), [@(LONG_MIN) stringValue]);
     TGAssertEqualObjects(GSStringify(LONG_MAX), [@(LONG_MAX) stringValue]);
+    TGAssertEqualObjects(GSStringify(ULONG_MAX), [@(ULONG_MAX) stringValue]);
+    TGAssertEqualObjects(GSStringify(FLT_MIN), ([NSString stringWithFormat:@"%g",FLT_MIN]));
+    TGAssertEqualObjects(GSStringify(FLT_MAX), ([NSString stringWithFormat:@"%g",FLT_MAX]));
+    TGAssertEqualObjects(GSStringify(DBL_MIN), ([NSString stringWithFormat:@"%g",DBL_MIN]));
+    TGAssertEqualObjects(GSStringify(DBL_MAX), ([NSString stringWithFormat:@"%g",DBL_MAX]));
+    TGAssertEqualObjects(GSStringify(LDBL_MIN), ([NSString stringWithFormat:@"%Lf",LDBL_MIN]));
+    TGAssertEqualObjects(GSStringify(LDBL_MAX), ([NSString stringWithFormat:@"%Lf",LDBL_MAX]));
 }
 
 - (void)testBool {
@@ -90,7 +107,7 @@
     c = 0;
     TGAssertEqualObjects(GSStringify(c), @"NO");
     TGAssertEqualObjects(GSStringify((BOOL) c), @"NO");
-
+    
     c = 1;
     TGAssertEqualObjects(GSStringify(c), @"YES");
     TGAssertEqualObjects(GSStringify((BOOL) c), @"YES");
@@ -128,17 +145,22 @@
     TGAssertEqualObjects(GSStringify(transform), NSStringFromCGAffineTransform(transform));
 }
 
-typedef struct {
-    int x;
-    float f;
-} FallbackStruct;
-
-- (void)testFallback {
-    FallbackStruct fs = { 91, 0.83f };
-    
-    NSValue *value = [NSValue valueWithBytes:&fs objCType:@encode(typeof(fs))];
-    
-    TGAssertEqualObjects(GSStringify(fs), [value description]);
+- (void)testLocation {
+    CLLocationCoordinate2D coords = (CLLocationCoordinate2D) { 30, 10.1234 };
+    TGAssertEqualObjects(GSStringify(coords), @"{30, 10.1234}");
 }
+
+// Should fail compilation
+#if 0
+typedef struct {
+    double x;
+    double f;
+} UnknownStruct;
+
+- (void)testFail {
+    UnknownStruct unknown = { 91, 0.83f };
+    GSStringify(unknown);
+}
+#endif
 
 @end

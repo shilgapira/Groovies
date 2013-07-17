@@ -39,16 +39,3 @@ void GSSwizzle(Class cls, SEL selector1, SEL selector2) {
         }
     }
 }
-
-
-BOOL GSNonEmptyString(NSString *string) {
-    NSCharacterSet *whitespace = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-    NSUInteger len = string.length;
-    for (NSUInteger i = 0; i < len; i++) {
-        unichar c = [string characterAtIndex:i];
-        if (![whitespace characterIsMember:c]) {
-            return YES;
-        }
-    }
-    return NO;
-}

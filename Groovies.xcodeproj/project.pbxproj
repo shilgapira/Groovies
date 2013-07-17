@@ -33,7 +33,6 @@
 		2B47B9511667E6BF0081AE81 /* NSDictionary+Values.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B47B94F1667E6BF0081AE81 /* NSDictionary+Values.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B47B9521667E6BF0081AE81 /* NSDictionary+Values.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B47B9501667E6BF0081AE81 /* NSDictionary+Values.m */; };
 		2B47BB0F166A53A00081AE81 /* Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2B47BB0E166A53A00081AE81 /* Prefix.pch */; };
-		2B5B9A3E172453B0005754B3 /* GSMacros+Stringify.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B5B9A3D172453AF005754B3 /* GSMacros+Stringify.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B5B9A43172462BB005754B3 /* GSLogging+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B5B9A40172462BB005754B3 /* GSLogging+Internal.h */; };
 		2B5B9A44172462BB005754B3 /* GSLogging+Base.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B5B9A41172462BB005754B3 /* GSLogging+Base.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B5B9A45172462BB005754B3 /* GSLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5B9A42172462BB005754B3 /* GSLogging.m */; };
@@ -70,7 +69,6 @@
 		2B86F8F81726978500DFCF97 /* GSMacros+Varargs.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BA364A91723D6B2007C67DF /* GSMacros+Varargs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B86F8F91726978900DFCF97 /* GSMacros+Language.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BA364AA17240462007C67DF /* GSMacros+Language.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B86F8FE1726AAEE00DFCF97 /* TGMacros+Math.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B86F8FB1726AA2C00DFCF97 /* TGMacros+Math.m */; };
-		2B8BF13C172563FA00E181CA /* TGMacros+Stringify.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BF13B172563FA00E181CA /* TGMacros+Stringify.m */; };
 		2BA364AD17241088007C67DF /* TGMacros+Varargs.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA364AC17241088007C67DF /* TGMacros+Varargs.m */; };
 		2BA364B317241B74007C67DF /* TGMacros+Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA364B217241B74007C67DF /* TGMacros+Language.m */; };
 		2BA364BD17252116007C67DF /* GSTestFlightLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BA364BB17252116007C67DF /* GSTestFlightLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -116,6 +114,9 @@
 		2BE31B1B17967AFE00E6C6CF /* TGGlobals+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE31B181796795E00E6C6CF /* TGGlobals+Blocks.m */; };
 		2BE31B1E179697D000E6C6CF /* TGGlobals+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE31B1D179697D000E6C6CF /* TGGlobals+Geometry.m */; };
 		2BE31B201796A6FE00E6C6CF /* GSMacros+Defines.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BE31B1F1796A6FE00E6C6CF /* GSMacros+Defines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BE31B2C17970FD700E6C6CF /* GSGlobals+Strings.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BE31B2A17970FD400E6C6CF /* GSGlobals+Strings.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BE31B2D17970FD700E6C6CF /* GSGlobals+Strings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE31B2B17970FD500E6C6CF /* GSGlobals+Strings.m */; };
+		2BE31B301797163600E6C6CF /* TGGlobals+Strings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE31B2F1797163500E6C6CF /* TGGlobals+Strings.m */; };
 		2BE6883B16ECD19900ABCDB6 /* DDASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BE6883916ECD19900ABCDB6 /* DDASLLogger.h */; };
 		2BE6883C16ECD19900ABCDB6 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE6883A16ECD19900ABCDB6 /* DDASLLogger.m */; };
 		2BEF03171741599700AAEE7E /* GSHistoryLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BEF03151741599700AAEE7E /* GSHistoryLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -163,7 +164,6 @@
 		2B47B94F1667E6BF0081AE81 /* NSDictionary+Values.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Values.h"; sourceTree = "<group>"; };
 		2B47B9501667E6BF0081AE81 /* NSDictionary+Values.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Values.m"; sourceTree = "<group>"; };
 		2B47BB0E166A53A00081AE81 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
-		2B5B9A3D172453AF005754B3 /* GSMacros+Stringify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GSMacros+Stringify.h"; sourceTree = "<group>"; };
 		2B5B9A40172462BB005754B3 /* GSLogging+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GSLogging+Internal.h"; sourceTree = "<group>"; };
 		2B5B9A41172462BB005754B3 /* GSLogging+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GSLogging+Base.h"; sourceTree = "<group>"; };
 		2B5B9A42172462BB005754B3 /* GSLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSLogging.m; sourceTree = "<group>"; };
@@ -202,8 +202,6 @@
 		2B86F8E3172682FC00DFCF97 /* GSMacros+Math.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSMacros+Math.h"; sourceTree = "<group>"; };
 		2B86F8FA1726AA2C00DFCF97 /* TGMacros+Math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGMacros+Math.h"; sourceTree = "<group>"; };
 		2B86F8FB1726AA2C00DFCF97 /* TGMacros+Math.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGMacros+Math.m"; sourceTree = "<group>"; };
-		2B8BF13A172563FA00E181CA /* TGMacros+Stringify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGMacros+Stringify.h"; sourceTree = "<group>"; };
-		2B8BF13B172563FA00E181CA /* TGMacros+Stringify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGMacros+Stringify.m"; sourceTree = "<group>"; };
 		2BA364A91723D6B2007C67DF /* GSMacros+Varargs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSMacros+Varargs.h"; sourceTree = "<group>"; };
 		2BA364AA17240462007C67DF /* GSMacros+Language.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSMacros+Language.h"; sourceTree = "<group>"; };
 		2BA364AB17241088007C67DF /* TGMacros+Varargs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGMacros+Varargs.h"; sourceTree = "<group>"; };
@@ -257,6 +255,10 @@
 		2BE31B1C179697D000E6C6CF /* TGGlobals+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGGlobals+Geometry.h"; sourceTree = "<group>"; };
 		2BE31B1D179697D000E6C6CF /* TGGlobals+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGGlobals+Geometry.m"; sourceTree = "<group>"; };
 		2BE31B1F1796A6FE00E6C6CF /* GSMacros+Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GSMacros+Defines.h"; sourceTree = "<group>"; };
+		2BE31B2A17970FD400E6C6CF /* GSGlobals+Strings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GSGlobals+Strings.h"; sourceTree = "<group>"; };
+		2BE31B2B17970FD500E6C6CF /* GSGlobals+Strings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GSGlobals+Strings.m"; sourceTree = "<group>"; };
+		2BE31B2E1797163500E6C6CF /* TGGlobals+Strings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGGlobals+Strings.h"; sourceTree = "<group>"; };
+		2BE31B2F1797163500E6C6CF /* TGGlobals+Strings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGGlobals+Strings.m"; sourceTree = "<group>"; };
 		2BE6883916ECD19900ABCDB6 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDASLLogger.h; path = Lumberjack/DDASLLogger.h; sourceTree = "<group>"; };
 		2BE6883A16ECD19900ABCDB6 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDASLLogger.m; path = Lumberjack/DDASLLogger.m; sourceTree = "<group>"; };
 		2BEF03151741599700AAEE7E /* GSHistoryLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHistoryLogger.h; sourceTree = "<group>"; };
@@ -377,16 +379,18 @@
 		2B5B9A5617246A1B005754B3 /* Globals */ = {
 			isa = PBXGroup;
 			children = (
-				2BAC61E317252E520097F8DA /* GSGlobals+Objects.h */,
-				2BAC61E417252E520097F8DA /* GSGlobals+Objects.m */,
 				2B5B9A4A17246A09005754B3 /* GSGlobals+Application.h */,
 				2B5B9A4B17246A0A005754B3 /* GSGlobals+Application.m */,
 				2BBFF775176CF87500986ACC /* GSGlobals+Blocks.h */,
 				2BBFF776176CF87500986ACC /* GSGlobals+Blocks.m */,
-				2B5B9A4C17246A0A005754B3 /* GSGlobals+Geometry.h */,
-				2B5B9A4D17246A0B005754B3 /* GSGlobals+Geometry.m */,
 				2B5B9A4E17246A0C005754B3 /* GSGlobals+Device.h */,
 				2B5B9A4F17246A0E005754B3 /* GSGlobals+Device.m */,
+				2B5B9A4C17246A0A005754B3 /* GSGlobals+Geometry.h */,
+				2B5B9A4D17246A0B005754B3 /* GSGlobals+Geometry.m */,
+				2BAC61E317252E520097F8DA /* GSGlobals+Objects.h */,
+				2BAC61E417252E520097F8DA /* GSGlobals+Objects.m */,
+				2BE31B2A17970FD400E6C6CF /* GSGlobals+Strings.h */,
+				2BE31B2B17970FD500E6C6CF /* GSGlobals+Strings.m */,
 			);
 			path = Globals;
 			sourceTree = "<group>";
@@ -475,7 +479,6 @@
 				2BE31B1F1796A6FE00E6C6CF /* GSMacros+Defines.h */,
 				2BA364A91723D6B2007C67DF /* GSMacros+Varargs.h */,
 				2BA364AA17240462007C67DF /* GSMacros+Language.h */,
-				2B5B9A3D172453AF005754B3 /* GSMacros+Stringify.h */,
 				2B86F8E3172682FC00DFCF97 /* GSMacros+Math.h */,
 			);
 			path = Macros;
@@ -488,8 +491,6 @@
 				2BA364AC17241088007C67DF /* TGMacros+Varargs.m */,
 				2BA364B117241B74007C67DF /* TGMacros+Language.h */,
 				2BA364B217241B74007C67DF /* TGMacros+Language.m */,
-				2B8BF13A172563FA00E181CA /* TGMacros+Stringify.h */,
-				2B8BF13B172563FA00E181CA /* TGMacros+Stringify.m */,
 				2B86F8FA1726AA2C00DFCF97 /* TGMacros+Math.h */,
 				2B86F8FB1726AA2C00DFCF97 /* TGMacros+Math.m */,
 			);
@@ -588,6 +589,8 @@
 				2BE31B181796795E00E6C6CF /* TGGlobals+Blocks.m */,
 				2BE31B1C179697D000E6C6CF /* TGGlobals+Geometry.h */,
 				2BE31B1D179697D000E6C6CF /* TGGlobals+Geometry.m */,
+				2BE31B2E1797163500E6C6CF /* TGGlobals+Strings.h */,
+				2BE31B2F1797163500E6C6CF /* TGGlobals+Strings.m */,
 			);
 			name = Globals;
 			sourceTree = "<group>";
@@ -628,7 +631,6 @@
 				2BD417CB166A8CCB0099F9AD /* DCIntrospect.h in Headers */,
 				2BD417CD166A8CCB0099F9AD /* DCIntrospectSettings.h in Headers */,
 				2BAC61F11725582C0097F8DA /* Groovies.h in Headers */,
-				2B5B9A3E172453B0005754B3 /* GSMacros+Stringify.h in Headers */,
 				2BAC61E517252E520097F8DA /* GSGlobals+Objects.h in Headers */,
 				2BAC61FC1725590D0097F8DA /* Groovies+Theme.h in Headers */,
 				2BAC6201172559760097F8DA /* Groovies+Logging.h in Headers */,
@@ -668,6 +670,7 @@
 				2B08CB66178F0DED00BA7506 /* GSLogging+Lumberjack.h in Headers */,
 				2BDA91B41793254C00C39436 /* TGLogging+Base.h in Headers */,
 				2BE31B201796A6FE00E6C6CF /* GSMacros+Defines.h in Headers */,
+				2BE31B2C17970FD700E6C6CF /* GSGlobals+Strings.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,6 +808,7 @@
 				2B76FD5317578C9000F56E09 /* GSAnalytics.m in Sources */,
 				2B76FD61175B2CA800F56E09 /* GSAnalyticsHelpers.m in Sources */,
 				2B76FD6C175B336300F56E09 /* GSTestFlightAnalytics.m in Sources */,
+				2BE31B2D17970FD700E6C6CF /* GSGlobals+Strings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,7 +819,6 @@
 				2B819BAE15DB2599001AAB87 /* GrooviesTests.m in Sources */,
 				2BA364AD17241088007C67DF /* TGMacros+Varargs.m in Sources */,
 				2BA364B317241B74007C67DF /* TGMacros+Language.m in Sources */,
-				2B8BF13C172563FA00E181CA /* TGMacros+Stringify.m in Sources */,
 				2B86F8FE1726AAEE00DFCF97 /* TGMacros+Math.m in Sources */,
 				2B08CB62178DAF5500BA7506 /* TGLogging+Assert.m in Sources */,
 				2B08CB6A178F43D600BA7506 /* TGColor+Create.m in Sources */,
@@ -823,6 +826,7 @@
 				2BDA91B917932F5D00C39436 /* TGLogging+Benchmark.m in Sources */,
 				2BE31B1B17967AFE00E6C6CF /* TGGlobals+Blocks.m in Sources */,
 				2BE31B1E179697D000E6C6CF /* TGGlobals+Geometry.m in Sources */,
+				2BE31B301797163600E6C6CF /* TGGlobals+Strings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

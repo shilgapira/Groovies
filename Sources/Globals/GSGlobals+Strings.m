@@ -1,5 +1,5 @@
 //
-// GSMacros+Defines.h
+// GSGlobals+Strings.m
 //
 // Copyright (c) 2013 Gil Shapira
 //
@@ -22,19 +22,17 @@
 // THE SOFTWARE.
 //
 
-
-#define GS_OVERLOAD             __attribute__((overloadable))
-
-#define GS_EXTERN               extern
-#define GS_EXTERN_OVERLOAD      extern GS_OVERLOAD
-
-#define GS_INLINE               static inline
-#define GS_INLINE_OVERLOAD      static inline GS_OVERLOAD
+#import "GSGlobals+Strings.h"
 
 
-#define GS_IGNORE_UNUSED_VALUE_PUSH     \
-    _Pragma("clang diagnostic push")    \
-    _Pragma("clang diagnostic ignored \"-Wunused-value\"")
-
-#define GS_IGNORE_UNUSED_VALUE_POP      \
-    _Pragma("clang diagnostic pop")
+BOOL GSNonEmptyString(NSString *string) {
+    NSCharacterSet *whitespace = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    NSUInteger len = string.length;
+    for (NSUInteger i = 0; i < len; i++) {
+        unichar c = [string characterAtIndex:i];
+        if (![whitespace characterIsMember:c]) {
+            return YES;
+        }
+    }
+    return NO;
+}

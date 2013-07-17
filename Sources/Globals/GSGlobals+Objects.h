@@ -44,32 +44,3 @@ GS_EXTERN void GSSwizzle(Class cls, SEL selector1, SEL selector2);
 GS_INLINE BOOL GSEqualObjects(id obj1, id obj2) {
     return (obj1 == obj2) || [obj1 isEqual:obj2];
 }
-
-
-/**
- * Equality check that handles the case of either string being nil.
- * @param str1 The first string to compare.
- * @param str2 The second string to compare.
- * @return Whether both strings are equal or nil.
- */
-GS_INLINE BOOL GSEqualStrings(NSString *str1, NSString *str2) {
-    return (str1 == str2) || [str1 isEqualToString:str2];
-}
-
-/**
- * Case-insensitive equality check that handles the case of either string being nil.
- * @param str1 The first string to compare.
- * @param str2 The second string to compare.
- * @return Whether both strings are equal or nil.
- */
-GS_INLINE BOOL GSEqualStringsIgnoreCase(NSString *str1, NSString *str2) {
-    return (str1 == str2) || (str2 && [str1 compare:str2 options:NSCaseInsensitiveSearch] == NSOrderedSame);
-}
-
-/**
- * Checks that the argument is a non-empty string, i.e., it is not nil and contains 
- * at least one non-whitespace character.
- * @param string The string to check.
- * @return Whether the string isn't empty.
- */
-GS_EXTERN BOOL GSNonEmptyString(NSString *string);

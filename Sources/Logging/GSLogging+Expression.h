@@ -24,7 +24,6 @@
 
 #import "GSLogging+Base.h"
 #import "GSMacros+Varargs.h"
-#import "GSMacros+Stringify.h"
 
 
 //

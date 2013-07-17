@@ -1,5 +1,5 @@
 //
-// TGMacros+Stringify.h
+// TGGlobals+Strings.h
 //
 // Copyright (c) 2013 Gil Shapira
 //
@@ -25,6 +25,6 @@
 #import <SenTestingKit/SenTestingKit.h>
 
 
-@interface TGMacros_Stringify : SenTestCase
+@interface TGGlobals_Strings : SenTestCase
 
 @end

@@ -25,5 +25,4 @@
 #import "GSMacros+Defines.h"
 #import "GSMacros+Varargs.h"
 #import "GSMacros+Language.h"
-#import "GSMacros+Stringify.h"
 #import "GSMacros+Math.h"
