@@ -27,4 +27,3 @@
 #import "GSGlobals+Blocks.h"
 #import "GSGlobals+Geometry.h"
 #import "GSGlobals+Device.h"
-#import "GSGlobals+Timing.h"

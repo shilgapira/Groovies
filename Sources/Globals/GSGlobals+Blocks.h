@@ -76,3 +76,11 @@ extern __attribute__((overloadable)) void GSExecuteBackground(void(^block)(void)
  * @param completed The completion block. This parameter may be @c nil.
  */
 extern __attribute__((overloadable)) void GSExecuteBackground(id context, void(^block)(id context), void(^completed)(id context));
+
+
+/**
+ * Executes a block and measures how much time the execution took. This function
+ * uses mach absolute times for maximum precision.
+ * @return The execution duration.
+ */
+extern NSTimeInterval GSExecuteTimed(void(^block)(void));

@@ -108,8 +108,6 @@
 		2BD417D6166A97780099F9AD /* MSVCLeakHunter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD417D4166A97780099F9AD /* MSVCLeakHunter.m */; };
 		2BD417E0166AE5FF0099F9AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD417D0166A8E770099F9AD /* QuartzCore.framework */; };
 		2BD417E2166AE6270099F9AD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD417B9166A85A60099F9AD /* libz.dylib */; };
-		2BD8785E176CB1D5002231E1 /* GSGlobals+Timing.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD8785C176CB1D5002231E1 /* GSGlobals+Timing.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2BD8785F176CB1D5002231E1 /* GSGlobals+Timing.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8785D176CB1D5002231E1 /* GSGlobals+Timing.m */; };
 		2BD8786A176CEB64002231E1 /* UIViewController+Analytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD87868176CEB64002231E1 /* UIViewController+Analytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BD8786B176CEB64002231E1 /* UIViewController+Analytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD87869176CEB64002231E1 /* UIViewController+Analytics.m */; };
 		2BDA91B41793254C00C39436 /* TGLogging+Base.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BDA91B21793254C00C39436 /* TGLogging+Base.h */; };
@@ -245,8 +243,6 @@
 		2BD417D0166A8E770099F9AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2BD417D3166A97780099F9AD /* MSVCLeakHunter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSVCLeakHunter.h; sourceTree = "<group>"; };
 		2BD417D4166A97780099F9AD /* MSVCLeakHunter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSVCLeakHunter.m; sourceTree = "<group>"; };
-		2BD8785C176CB1D5002231E1 /* GSGlobals+Timing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GSGlobals+Timing.h"; sourceTree = "<group>"; };
-		2BD8785D176CB1D5002231E1 /* GSGlobals+Timing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GSGlobals+Timing.m"; sourceTree = "<group>"; };
 		2BD87868176CEB64002231E1 /* UIViewController+Analytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Analytics.h"; sourceTree = "<group>"; };
 		2BD87869176CEB64002231E1 /* UIViewController+Analytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Analytics.m"; sourceTree = "<group>"; };
 		2BDA91B21793254C00C39436 /* TGLogging+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGLogging+Base.h"; sourceTree = "<group>"; };
@@ -383,8 +379,6 @@
 				2B5B9A4D17246A0B005754B3 /* GSGlobals+Geometry.m */,
 				2B5B9A4E17246A0C005754B3 /* GSGlobals+Device.h */,
 				2B5B9A4F17246A0E005754B3 /* GSGlobals+Device.m */,
-				2BD8785C176CB1D5002231E1 /* GSGlobals+Timing.h */,
-				2BD8785D176CB1D5002231E1 /* GSGlobals+Timing.m */,
 			);
 			path = Globals;
 			sourceTree = "<group>";
@@ -631,7 +625,6 @@
 				2B6FD0B1173D8DCB0042A168 /* NSDictionary+Blocks.h in Headers */,
 				2B6FD0AF173D8DCB0042A168 /* NSArray+Blocks.h in Headers */,
 				2B30A5321695BCF0000EAB78 /* UIView+Create.h in Headers */,
-				2BD8785E176CB1D5002231E1 /* GSGlobals+Timing.h in Headers */,
 				2BF4489216B1E6C9008CB969 /* GSTheme.h in Headers */,
 				2BE6883B16ECD19900ABCDB6 /* DDASLLogger.h in Headers */,
 				2B5B9A43172462BB005754B3 /* GSLogging+Internal.h in Headers */,
@@ -759,7 +752,6 @@
 				2B02B9141634C8E800C9565B /* UIImage+Tint.m in Sources */,
 				2BBFF778176CF87500986ACC /* GSGlobals+Blocks.m in Sources */,
 				2B02B9241634D2B200C9565B /* NSString+Encoding.m in Sources */,
-				2BD8785F176CB1D5002231E1 /* GSGlobals+Timing.m in Sources */,
 				2BC025D61634E2AB00EA3D02 /* UIColor+Create.m in Sources */,
 				2B0868A81656A212005992D6 /* NSDate+Additions.m in Sources */,
 				2B15F5D516600CF5004FE5F3 /* UILabel+Fit.m in Sources */,

@@ -79,3 +79,10 @@ __attribute__((overloadable)) void GSExecuteBackground(id context, void(^block)(
         }
     });
 }
+
+NSTimeInterval GSExecuteTimed(void(^block)(void)) {
+    NSTimeInterval start = CACurrentMediaTime();
+    if (block) block();
+    NSTimeInterval elapsed = CACurrentMediaTime() - start;
+    return elapsed;
+}

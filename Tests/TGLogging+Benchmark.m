@@ -24,7 +24,7 @@
 
 #import "TGLogging+Benchmark.h"
 #import "GSLogging+Benchmark.h"
-#import "GSGlobals+Timing.h"
+#import "GSGlobals+Blocks.h"
 
 
 @implementation TGLogging_Benchmark
