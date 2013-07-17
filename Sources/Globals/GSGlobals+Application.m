@@ -46,35 +46,12 @@ NSString *GSAppBuild(void) {
 
 #pragma mark - Directories
 
-NSString *GSDocumentsPath(void) {
+NSString *GSAppDocuments(void) {
     NSURL *url = [[NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 	return [url path];
 }
 
-NSString *GSCachesPath(void) {
+NSString *GSAppCaches(void) {
 	NSURL *url = [[NSFileManager.defaultManager URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask] lastObject];
     return [url path];
-}
-
-
-#pragma mark - Keyboard
-
-void GSPreloadKeyboard(BOOL delayed) {
-    void(^preloadBlock)(void) = ^{
-        UITextField *field = [UITextField new];
-        [UIApplication.sharedApplication.windows.lastObject addSubview:field];
-        [field becomeFirstResponder];
-        [field resignFirstResponder];
-        [field removeFromSuperview];
-    };
-    
-    static dispatch_once_t predicate;
-    dispatch_once(&predicate, ^{
-        if (delayed) {
-            dispatch_time_t when = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * 50);
-            dispatch_after(when, dispatch_get_main_queue(), preloadBlock);
-        } else {
-            preloadBlock();
-        }
-    });
 }

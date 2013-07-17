@@ -26,33 +26,28 @@
 #import "GSMacros+Language.h"
 
 
-static NSString * const kSimulatorModel = @"Simulator";
+static NSString * const kSimulatorSuffix = @"Simulator";
 
-
-#pragma mark - Device
-
-BOOL GSDeviceIsSimulator(void) {
-    return [UIDevice.currentDevice.model hasSuffix:kSimulatorModel];
-}
 
 BOOL GSDeviceIsPhone(void) {
     return UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone;
 }
 
-BOOL GSDeviceIsPad(void) {
+BOOL GSDeviceIsTablet(void) {
     return UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad;
+}
+
+BOOL GSDeviceIsSimulator(void) {
+    return [UIDevice.currentDevice.model hasSuffix:kSimulatorSuffix];
 }
 
 float GSSystemVersion(void) {
     return [UIDevice.currentDevice.systemVersion floatValue];
 }
 
-BOOL GSSystemVersionIsAtLeast(float version) {
+BOOL GSSystemVersionAtLeast(float version) {
     return (GSSystemVersion() - version > -1.0e-6);
 }
-
-
-#pragma mark - Screen
 
 BOOL GSScreenIsRetina(void) {
 	return UIScreen.mainScreen.scale == 2.0f;
@@ -60,20 +55,4 @@ BOOL GSScreenIsRetina(void) {
 
 BOOL GSScreenIsWide(void) {
     return GSDeviceIsPhone() && (UIScreen.mainScreen.bounds.size.height == 568.0f);
-}
-
-
-__attribute__((overloadable)) CGRect GSScreenBounds(void) {
-    UIInterfaceOrientation currentOrientation = UIApplication.sharedApplication.statusBarOrientation;
-    return GSScreenBounds(currentOrientation);
-}
-
-__attribute__((overloadable)) CGRect GSScreenBounds(UIInterfaceOrientation orientation) {
-	CGRect bounds = UIScreen.mainScreen.bounds;
-    
-	if (UIInterfaceOrientationIsLandscape(orientation)) {
-        SWAP(bounds.size.width, bounds.size.height);
-	}
-    
-	return bounds;
 }

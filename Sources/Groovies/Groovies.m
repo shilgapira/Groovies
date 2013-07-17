@@ -65,7 +65,7 @@ static BOOL __initialized = NO;
     #endif
 
     #if TARGET_IPHONE_SIMULATOR
-    GSLogV(@"Simulator Path: %@", [GSDocumentsPath() stringByDeletingLastPathComponent]);
+    GSLogV(@"Simulator Path: %@", [GSAppDocuments() stringByDeletingLastPathComponent]);
     #endif
     
     #if defined(DEBUG) && TARGET_IPHONE_SIMULATOR

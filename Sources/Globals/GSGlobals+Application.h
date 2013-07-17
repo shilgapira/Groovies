@@ -23,31 +23,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GSMacros+Defines.h"
 
 
 /**
  * The application version from the main bundle's Info dictionary.
  */
-extern NSString *GSAppVersion(void);
+GS_EXTERN NSString *GSAppVersion(void);
 
 /** 
  * The application build (i.e., short version) from the main bundle's Info dictionary.
  */
-extern NSString *GSAppBuild(void);
+GS_EXTERN NSString *GSAppBuild(void);
 
 
 /**
  * A directory for persistent files that are backed up to iCloud/iTunes by default.
  */
-extern NSString *GSDocumentsPath(void);
+GS_EXTERN NSString *GSAppDocuments(void);
 
 /**
  * A directory for files that are not backed up and may be removed by the system.
  */
-extern NSString *GSCachesPath(void);
-
-
-/**
- * Preloads the keyboard to prevent jankiness when the keyboard appears for the first time.
- */
-extern void GSPreloadKeyboard(BOOL delayed);
+GS_EXTERN NSString *GSAppCaches(void);

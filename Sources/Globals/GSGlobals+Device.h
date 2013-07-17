@@ -23,52 +23,42 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GSMacros+Defines.h"
 
 
 /**
  * Returns true if running on an iPhone or iPod (device or simulator).
  */
-extern BOOL GSDeviceIsPhone(void);
+GS_EXTERN BOOL GSDeviceIsPhone(void);
 
 /**
  * Returns true if running on an iPad (device or simulator).
  */
-extern BOOL GSDeviceIsPad(void);
+GS_EXTERN BOOL GSDeviceIsTablet(void);
 
 /**
  * Returns true if running on a simulator.
  */
-extern BOOL GSDeviceIsSimulator(void);
+GS_EXTERN BOOL GSDeviceIsSimulator(void);
 
 
 /**
  * Returns the device's iOS version.
  */
-extern float GSSystemVersion(void);
+GS_EXTERN float GSSystemVersion(void);
 
 /**
  * Returns true if the device's iOS is at least the specfied version.
  */
-extern BOOL GSSystemVersionIsAtLeast(float version);
+GS_EXTERN BOOL GSSystemVersionAtLeast(float version);
 
 
 /**
- * Returns whether the device has a retina screen.
+ * Returns true if the device has a retina screen.
  */
-extern BOOL GSScreenIsRetina(void);
+GS_EXTERN BOOL GSScreenIsRetina(void);
 
 /**
- * Returns whether the device has a 16:9 retina screen.
+ * Returns true if the device has a 16:9 retina screen.
  */
-extern BOOL GSScreenIsWide(void);
-
-
-/**
- * The bounds of the screen in the application's current orientation.
- */
-extern __attribute__((overloadable)) CGRect GSScreenBounds(void);
-
-/**
- * The bounds of the screen in the specified orientation.
- */
-extern __attribute__((overloadable)) CGRect GSScreenBounds(UIInterfaceOrientation orientation);
+GS_EXTERN BOOL GSScreenIsWide(void);

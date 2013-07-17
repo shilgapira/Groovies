@@ -31,29 +31,29 @@ void GSExecuteMain(void(^block)(void)) {
     }
 }
 
-__attribute__((overloadable)) void GSExecuteDelayed(NSTimeInterval delay, void(^block)(void)) {
+GS_OVERLOAD void GSExecuteDelayed(NSTimeInterval delay, void(^block)(void)) {
     if (block) {
         dispatch_time_t when = dispatch_time(DISPATCH_TIME_NOW, (int64_t) (delay * NSEC_PER_SEC));
         dispatch_after(when, dispatch_get_main_queue(), block);
     }
 }
 
-__attribute__((overloadable)) void GSExecuteDelayed(NSTimeInterval delay, id context, void(^block)(id context)) {
+GS_OVERLOAD void GSExecuteDelayed(NSTimeInterval delay, id context, void(^block)(id context)) {
     __weak id contextWeak = context;
     dispatch_time_t when = dispatch_time(DISPATCH_TIME_NOW, (int64_t) (delay * NSEC_PER_SEC));
     dispatch_after(when, dispatch_get_main_queue(), ^{
-        __strong id contextStrong = contextWeak;
         if (block) {
+            id contextStrong = contextWeak;
             block(contextStrong);
         }
     });
 }
 
-__attribute__((overloadable)) void GSExecuteBackground(void(^block)(void)) {
+GS_OVERLOAD void GSExecuteBackground(void(^block)(void)) {
     GSExecuteBackground(block, nil);
 }
 
-__attribute__((overloadable)) void GSExecuteBackground(void(^block)(void), void(^completed)(void)) {
+GS_OVERLOAD void GSExecuteBackground(void(^block)(void), void(^completed)(void)) {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         if (block) {
             block();
@@ -64,17 +64,16 @@ __attribute__((overloadable)) void GSExecuteBackground(void(^block)(void), void(
     });
 }
 
-__attribute__((overloadable)) void GSExecuteBackground(id context, void(^block)(id context), void(^completed)(id context)) {
+GS_OVERLOAD void GSExecuteBackground(id context, void(^block)(void), void(^completed)(id context)) {
     __weak id contextWeak = context;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        __strong id contextStrongBg = contextWeak;
         if (block) {
-            block(contextStrongBg);
+            block();
         }
         if (completed) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                __strong id contextStrongMain = contextWeak;
-                completed(contextStrongMain);
+                id contextStrong = contextWeak;
+                completed(contextStrong);
             });
         }
     });
