@@ -15,3 +15,10 @@
 
 #define TGAssertThrows(x)           STAssertThrows(x, nil)
 #define TGAssertNoThrow(x)          STAssertNoThrow(x, nil)
+
+
+#ifdef DEBUG
+#define TGAssertDebugThrows         TGAssertThrows
+#else
+#define TGAssertDebugThrows         TGAssertNoThrow
+#endif

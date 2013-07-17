@@ -76,9 +76,9 @@ SINGLETON(testSingleton);
     s2 = SELECTOR([NSMutableDictionary new], setObject:forKey:);
     TGAssertEquals(s1, s2);
     
-    TGAssertThrows(s1 = SELECTOR(self, length));
-    TGAssertThrows(s1 = SELECTOR(self, objectAtIndex:));
-    TGAssertThrows(s1 = SELECTOR(self, setObject:forKey:));
+    TGAssertDebugThrows(s1 = SELECTOR(self, length));
+    TGAssertDebugThrows(s1 = SELECTOR(self, objectAtIndex:));
+    TGAssertDebugThrows(s1 = SELECTOR(self, setObject:forKey:));
 }
 
 - (void)testSwap {

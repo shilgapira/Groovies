@@ -1,5 +1,5 @@
 //
-// TGLogging+Benchmark.m
+// TGGlobals+Blocks.h
 //
 // Copyright (c) 2013 Gil Shapira
 //
@@ -22,27 +22,9 @@
 // THE SOFTWARE.
 //
 
-#import "TGLogging+Benchmark.h"
-#import "GSLogging+Benchmark.h"
-#import "GSGlobals+Blocks.h"
+#import <SenTestingKit/SenTestingKit.h>
 
 
-@implementation TGLogging_Benchmark
-
-- (void)testBenchmark {
-    int counter = 0;
-
-    int runs = 10;
-    while (runs --> 0) {
-        GSBLog([self waitAndIncrease:&counter]);
-    }
-    
-    TGAssertEquals(counter, 10);
-}
-
-- (void)waitAndIncrease:(int *)counter {
-    usleep(20);
-    *counter = *counter + 1;
-}
+@interface TGGlobals_Blocks : SenTestCase
 
 @end

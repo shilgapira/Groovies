@@ -29,9 +29,9 @@
 @implementation TGLogging_Assert
 
 - (void)testAssert {
-    TGAssertThrows(GSAssert(0));
+    TGAssertDebugThrows(GSAssert(0));
 
-    TGAssertThrows(GSAssert(NO));
+    TGAssertDebugThrows(GSAssert(NO));
     TGAssertNoThrow(GSAssert(YES));
     
     TGAssertNoThrow(GSAssert(1));
@@ -40,8 +40,8 @@
     TGAssertEquals(GSAssert(self), self);
     
     TGAssertNoThrow(GSAssert(self.description.length));
-    TGAssertThrows(GSAssert(self.description.length > 1000));
-    TGAssertThrows(GSAssert(self.description.length > 1000, @"Asserted length was equal to %d", self.description.length));
+    TGAssertDebugThrows(GSAssert(self.description.length > 1000));
+    TGAssertDebugThrows(GSAssert(self.description.length > 1000, @"Asserted length was equal to %d", self.description.length));
     
     NSUInteger length = 0;
     TGAssertNoThrow(length = GSAssert(self.description.length));
@@ -52,9 +52,9 @@
     TGAssertNoThrow(GSAssertEqual(self.class, TGLogging_Assert.class));
     TGAssertNoThrow(GSAssertEqual(nil, nil));
     
-    TGAssertThrows(GSAssertEqual(self, nil));
-    TGAssertThrows(GSAssertEqual(nil, self));
-    TGAssertThrows(GSAssertEqual(self, self.description));
+    TGAssertDebugThrows(GSAssertEqual(self, nil));
+    TGAssertDebugThrows(GSAssertEqual(nil, self));
+    TGAssertDebugThrows(GSAssertEqual(self, self.description));
 
     BOOL returnValue = NO;
     TGAssert(returnValue = GSAssertEqual(@8, @8));
@@ -62,11 +62,11 @@
 }
 
 - (void)testFailed {
-    TGAssertThrows(GSAssertFailed());
-    TGAssertThrows(GSAssertFailed(@"Failed!"));
+    TGAssertDebugThrows(GSAssertFailed());
+    TGAssertDebugThrows(GSAssertFailed(@"Failed!"));
     
     int returnValue = 1;
-    TGAssertThrows(returnValue = GSAssertFailed(@"Failed!"));
+    TGAssertDebugThrows(returnValue = GSAssertFailed(@"Failed!"));
 }
 
 - (void)testMainThread {
@@ -88,7 +88,9 @@
     
     [NSThread sleepForTimeInterval:0.1];
 
+#ifdef DEBUG
     TGAssert(thrown);
+#endif
 }
 
 - (void)testKind {
@@ -96,12 +98,12 @@
     TGAssertNoThrow(GSAssertKind(self, SenTestCase));
     TGAssertNoThrow(GSAssertKind(self, NSObject));
     
-    TGAssertThrows(GSAssertKind(self, NSString));
-    TGAssertThrows(GSAssertKind(self, NSNumber));
+    TGAssertDebugThrows(GSAssertKind(self, NSString));
+    TGAssertDebugThrows(GSAssertKind(self, NSNumber));
 
     TGLogging_Assert *me;
     TGAssertNoThrow(me = GSAssertKind(self, TGLogging_Assert));
-    TGAssertThrows(GSAssertKind(me, NSDictionary));
+    TGAssertDebugThrows(GSAssertKind(me, NSDictionary));
 
     // This should cause a compilation error if the #if 0 directive is
     // removed. GSAssertKind's return value has the statis type of the 
@@ -109,13 +111,13 @@
     // with a pointer of type NSDictionary so the compiler barks.
 #if 0
     NSDictionary *dict1;
-    TGAssertThrows(dict1 = GSAssertKind(@[], NSDictionary));
+    TGAssertDebugThrows(dict1 = GSAssertKind(@[], NSDictionary));
 #endif
     
     // id is compatible with every pointer type, so the same assert
     // compiles successfully here
     id dict2;
-    TGAssertThrows(dict2 = GSAssertKind(@[], NSDictionary));
+    TGAssertDebugThrows(dict2 = GSAssertKind(@[], NSDictionary));
 }
 
 - (void)testCast {
@@ -123,15 +125,15 @@
     TGAssertNoThrow(GSAssertCast(SenTestCase, self));
     TGAssertNoThrow(GSAssertCast(NSObject, self));
     
-    TGAssertThrows(GSAssertCast(NSString, self));
-    TGAssertThrows(GSAssertCast(NSNumber, self));
+    TGAssertDebugThrows(GSAssertCast(NSString, self));
+    TGAssertDebugThrows(GSAssertCast(NSNumber, self));
 
     TGLogging_Assert *me;
     TGAssertNoThrow(me = GSAssertCast(TGLogging_Assert, self));
-    TGAssertThrows(GSAssertCast(NSDictionary, me));
+    TGAssertDebugThrows(GSAssertCast(NSDictionary, me));
 
     NSDictionary *dict;
-    TGAssertThrows(dict = GSAssertCast(NSDictionary, @[]));
+    TGAssertDebugThrows(dict = GSAssertCast(NSDictionary, @[]));
 }
 
 @end

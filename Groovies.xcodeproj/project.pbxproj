@@ -113,6 +113,8 @@
 		2BDA91B41793254C00C39436 /* TGLogging+Base.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BDA91B21793254C00C39436 /* TGLogging+Base.h */; };
 		2BDA91B61793270D00C39436 /* TGLogging+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA91B31793254C00C39436 /* TGLogging+Base.m */; };
 		2BDA91B917932F5D00C39436 /* TGLogging+Benchmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA91B817932F5D00C39436 /* TGLogging+Benchmark.m */; };
+		2BE31B1B17967AFE00E6C6CF /* TGGlobals+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE31B181796795E00E6C6CF /* TGGlobals+Blocks.m */; };
+		2BE31B1E179697D000E6C6CF /* TGGlobals+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE31B1D179697D000E6C6CF /* TGGlobals+Geometry.m */; };
 		2BE31B201796A6FE00E6C6CF /* GSMacros+Defines.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BE31B1F1796A6FE00E6C6CF /* GSMacros+Defines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BE6883B16ECD19900ABCDB6 /* DDASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BE6883916ECD19900ABCDB6 /* DDASLLogger.h */; };
 		2BE6883C16ECD19900ABCDB6 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE6883A16ECD19900ABCDB6 /* DDASLLogger.m */; };
@@ -250,6 +252,10 @@
 		2BDA91B31793254C00C39436 /* TGLogging+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGLogging+Base.m"; sourceTree = "<group>"; };
 		2BDA91B717932F5D00C39436 /* TGLogging+Benchmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGLogging+Benchmark.h"; sourceTree = "<group>"; };
 		2BDA91B817932F5D00C39436 /* TGLogging+Benchmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGLogging+Benchmark.m"; sourceTree = "<group>"; };
+		2BE31B171796795E00E6C6CF /* TGGlobals+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGGlobals+Blocks.h"; sourceTree = "<group>"; };
+		2BE31B181796795E00E6C6CF /* TGGlobals+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGGlobals+Blocks.m"; sourceTree = "<group>"; };
+		2BE31B1C179697D000E6C6CF /* TGGlobals+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGGlobals+Geometry.h"; sourceTree = "<group>"; };
+		2BE31B1D179697D000E6C6CF /* TGGlobals+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGGlobals+Geometry.m"; sourceTree = "<group>"; };
 		2BE31B1F1796A6FE00E6C6CF /* GSMacros+Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GSMacros+Defines.h"; sourceTree = "<group>"; };
 		2BE6883916ECD19900ABCDB6 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDASLLogger.h; path = Lumberjack/DDASLLogger.h; sourceTree = "<group>"; };
 		2BE6883A16ECD19900ABCDB6 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDASLLogger.m; path = Lumberjack/DDASLLogger.m; sourceTree = "<group>"; };
@@ -437,6 +443,7 @@
 			children = (
 				2BA364AF172416C8007C67DF /* Macros */,
 				2B08CB5F178DAF1A00BA7506 /* Logging */,
+				2BE31B161796776100E6C6CF /* Globals */,
 				2B08CB67178F43B200BA7506 /* Additions */,
 				2B819BAC15DB2599001AAB87 /* GrooviesTests.h */,
 				2B819BAD15DB2599001AAB87 /* GrooviesTests.m */,
@@ -572,6 +579,17 @@
 				2BD417D4166A97780099F9AD /* MSVCLeakHunter.m */,
 			);
 			path = MSVCLeakHunter;
+			sourceTree = "<group>";
+		};
+		2BE31B161796776100E6C6CF /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				2BE31B171796795E00E6C6CF /* TGGlobals+Blocks.h */,
+				2BE31B181796795E00E6C6CF /* TGGlobals+Blocks.m */,
+				2BE31B1C179697D000E6C6CF /* TGGlobals+Geometry.h */,
+				2BE31B1D179697D000E6C6CF /* TGGlobals+Geometry.m */,
+			);
+			name = Globals;
 			sourceTree = "<group>";
 		};
 		2BF4488916B1E65E008CB969 /* Theme */ = {
@@ -803,6 +821,8 @@
 				2B08CB6A178F43D600BA7506 /* TGColor+Create.m in Sources */,
 				2BDA91B61793270D00C39436 /* TGLogging+Base.m in Sources */,
 				2BDA91B917932F5D00C39436 /* TGLogging+Benchmark.m in Sources */,
+				2BE31B1B17967AFE00E6C6CF /* TGGlobals+Blocks.m in Sources */,
+				2BE31B1E179697D000E6C6CF /* TGGlobals+Geometry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
