@@ -23,6 +23,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GSMacros+Defines.h"
 
 
 /** The default category for events and timings, initially set to "Misc" */
@@ -34,21 +35,21 @@ extern NSString *GSAnalyticsDefaultCategory;
  * can use automatic tracking by setting the @c analyticsName property.
  * @param screen The name of the screen.
  */
-extern void GSTrackScreen(NSString *screen);
+GS_EXTERN void GSTrackScreen(NSString *screen);
 
 
 /**
  * Tracks an event with the default category.
  * @param event The name of the event.
  */
-extern __attribute__((overloadable)) void GSTrackEvent(NSString *event);
+GS_EXTERN_OVERLOAD void GSTrackEvent(NSString *event);
 
 /**
  * Tracks an event.
  * @param category The event category.
  * @param event The name of the event.
  */
-extern __attribute__((overloadable)) void GSTrackEvent(NSString *category, NSString *event);
+GS_EXTERN_OVERLOAD void GSTrackEvent(NSString *category, NSString *event);
 
 /**
  * Tracks an event.
@@ -56,7 +57,7 @@ extern __attribute__((overloadable)) void GSTrackEvent(NSString *category, NSStr
  * @param event The name of the event.
  * @param label The event label.
  */
-extern __attribute__((overloadable)) void GSTrackEvent(NSString *category, NSString *event, NSString *label);
+GS_EXTERN_OVERLOAD void GSTrackEvent(NSString *category, NSString *event, NSString *label);
 
 
 /**
@@ -64,7 +65,7 @@ extern __attribute__((overloadable)) void GSTrackEvent(NSString *category, NSStr
  * @param timing The name of the timing.
  * @param value The timing value.
  */
-extern __attribute__((overloadable)) void GSTrackTiming(NSString *timing, NSTimeInterval value);
+GS_EXTERN_OVERLOAD void GSTrackTiming(NSString *timing, NSTimeInterval value);
 
 /**
  * Tracks a timing.
@@ -72,4 +73,4 @@ extern __attribute__((overloadable)) void GSTrackTiming(NSString *timing, NSTime
  * @param timing The name of the timing.
  * @param value The timing value.
  */
-extern __attribute__((overloadable)) void GSTrackTiming(NSString *category, NSString *timing, NSTimeInterval value);
+GS_EXTERN_OVERLOAD void GSTrackTiming(NSString *category, NSString *timing, NSTimeInterval value);

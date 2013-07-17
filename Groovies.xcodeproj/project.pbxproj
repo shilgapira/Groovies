@@ -113,6 +113,7 @@
 		2BDA91B41793254C00C39436 /* TGLogging+Base.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BDA91B21793254C00C39436 /* TGLogging+Base.h */; };
 		2BDA91B61793270D00C39436 /* TGLogging+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA91B31793254C00C39436 /* TGLogging+Base.m */; };
 		2BDA91B917932F5D00C39436 /* TGLogging+Benchmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA91B817932F5D00C39436 /* TGLogging+Benchmark.m */; };
+		2BE31B201796A6FE00E6C6CF /* GSMacros+Defines.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BE31B1F1796A6FE00E6C6CF /* GSMacros+Defines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BE6883B16ECD19900ABCDB6 /* DDASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BE6883916ECD19900ABCDB6 /* DDASLLogger.h */; };
 		2BE6883C16ECD19900ABCDB6 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE6883A16ECD19900ABCDB6 /* DDASLLogger.m */; };
 		2BEF03171741599700AAEE7E /* GSHistoryLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BEF03151741599700AAEE7E /* GSHistoryLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -249,6 +250,7 @@
 		2BDA91B31793254C00C39436 /* TGLogging+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGLogging+Base.m"; sourceTree = "<group>"; };
 		2BDA91B717932F5D00C39436 /* TGLogging+Benchmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGLogging+Benchmark.h"; sourceTree = "<group>"; };
 		2BDA91B817932F5D00C39436 /* TGLogging+Benchmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGLogging+Benchmark.m"; sourceTree = "<group>"; };
+		2BE31B1F1796A6FE00E6C6CF /* GSMacros+Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GSMacros+Defines.h"; sourceTree = "<group>"; };
 		2BE6883916ECD19900ABCDB6 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDASLLogger.h; path = Lumberjack/DDASLLogger.h; sourceTree = "<group>"; };
 		2BE6883A16ECD19900ABCDB6 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDASLLogger.m; path = Lumberjack/DDASLLogger.m; sourceTree = "<group>"; };
 		2BEF03151741599700AAEE7E /* GSHistoryLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHistoryLogger.h; sourceTree = "<group>"; };
@@ -463,6 +465,7 @@
 		2BA364A61723D629007C67DF /* Macros */ = {
 			isa = PBXGroup;
 			children = (
+				2BE31B1F1796A6FE00E6C6CF /* GSMacros+Defines.h */,
 				2BA364A91723D6B2007C67DF /* GSMacros+Varargs.h */,
 				2BA364AA17240462007C67DF /* GSMacros+Language.h */,
 				2B5B9A3D172453AF005754B3 /* GSMacros+Stringify.h */,
@@ -646,6 +649,7 @@
 				2B76FD6B175B336300F56E09 /* GSTestFlightAnalytics.h in Headers */,
 				2B08CB66178F0DED00BA7506 /* GSLogging+Lumberjack.h in Headers */,
 				2BDA91B41793254C00C39436 /* TGLogging+Base.h in Headers */,
+				2BE31B201796A6FE00E6C6CF /* GSMacros+Defines.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

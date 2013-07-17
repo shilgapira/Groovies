@@ -23,6 +23,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GSMacros+Defines.h"
 
 
 /**
@@ -31,7 +32,7 @@
  * @param selector1 The selector for the first method.
  * @param selector2 The selector for the second method.
  */
-extern void GSSwizzle(Class cls, SEL selector1, SEL selector2);
+GS_EXTERN void GSSwizzle(Class cls, SEL selector1, SEL selector2);
 
 
 /**
@@ -40,7 +41,7 @@ extern void GSSwizzle(Class cls, SEL selector1, SEL selector2);
  * @param obj2 The second object to compare.
  * @return Whether both objects are equal or nil.
  */
-NS_INLINE BOOL GSEqualObjects(id obj1, id obj2) {
+GS_INLINE BOOL GSEqualObjects(id obj1, id obj2) {
     return (obj1 == obj2) || [obj1 isEqual:obj2];
 }
 
@@ -51,7 +52,7 @@ NS_INLINE BOOL GSEqualObjects(id obj1, id obj2) {
  * @param str2 The second string to compare.
  * @return Whether both strings are equal or nil.
  */
-NS_INLINE BOOL GSEqualStrings(NSString *str1, NSString *str2) {
+GS_INLINE BOOL GSEqualStrings(NSString *str1, NSString *str2) {
     return (str1 == str2) || [str1 isEqualToString:str2];
 }
 
@@ -61,7 +62,7 @@ NS_INLINE BOOL GSEqualStrings(NSString *str1, NSString *str2) {
  * @param str2 The second string to compare.
  * @return Whether both strings are equal or nil.
  */
-NS_INLINE BOOL GSEqualStringsIgnoreCase(NSString *str1, NSString *str2) {
+GS_INLINE BOOL GSEqualStringsIgnoreCase(NSString *str1, NSString *str2) {
     return (str1 == str2) || (str2 && [str1 compare:str2 options:NSCaseInsensitiveSearch] == NSOrderedSame);
 }
 
@@ -71,4 +72,4 @@ NS_INLINE BOOL GSEqualStringsIgnoreCase(NSString *str1, NSString *str2) {
  * @param string The string to check.
  * @return Whether the string isn't empty.
  */
-extern BOOL GSNonEmptyString(NSString *string);
+GS_EXTERN BOOL GSNonEmptyString(NSString *string);

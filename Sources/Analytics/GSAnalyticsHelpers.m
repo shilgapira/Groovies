@@ -33,24 +33,22 @@ void GSTrackScreen(NSString *screen) {
     [GSAnalytics.sharedAnalytics trackScreen:screen];
 }
 
-
-__attribute__((overloadable)) void GSTrackEvent(NSString *event) {
+GS_OVERLOAD void GSTrackEvent(NSString *event) {
     [GSAnalytics.sharedAnalytics trackEvent:event label:nil category:GSAnalyticsDefaultCategory];
 }
 
-__attribute__((overloadable)) void GSTrackEvent(NSString *category, NSString *event) {
+GS_OVERLOAD void GSTrackEvent(NSString *category, NSString *event) {
     [GSAnalytics.sharedAnalytics trackEvent:event label:nil category:category];
 }
 
-__attribute__((overloadable)) void GSTrackEvent(NSString *category, NSString *event, NSString *label) {
+GS_OVERLOAD void GSTrackEvent(NSString *category, NSString *event, NSString *label) {
     [GSAnalytics.sharedAnalytics trackEvent:event label:label category:category];
 }
 
-
-__attribute__((overloadable)) void GSTrackTiming(NSString *timing, NSTimeInterval value) {
+GS_OVERLOAD void GSTrackTiming(NSString *timing, NSTimeInterval value) {
     [GSAnalytics.sharedAnalytics trackTiming:timing value:value category:GSAnalyticsDefaultCategory];
 }
 
-__attribute__((overloadable)) void GSTrackTiming(NSString *category, NSString *timing, NSTimeInterval value) {
+GS_OVERLOAD void GSTrackTiming(NSString *category, NSString *timing, NSTimeInterval value) {
     [GSAnalytics.sharedAnalytics trackTiming:timing value:value category:category];
 }

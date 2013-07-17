@@ -23,6 +23,7 @@
 //
 
 #import "GSLogging+Base.h"
+#import "GSMacros+Defines.h"
 #import "GSMacros+Varargs.h"
 
 
@@ -36,14 +37,13 @@
     if (!__e) {                                                     \
         __builtin_choose_expr(                                      \
             sizeof(#__VA_ARGS__) == sizeof(""),                     \
-            _GSAssertFail(@"Assert failed: %s", #expr),             \
-            _GSAssertFail(@"" __VA_ARGS__)                          \
+            _GSAssertNotify(@"Assert failed: %s", #expr),           \
+            _GSAssertNotify(@"" __VA_ARGS__)                        \
         );                                                          \
     }                                                               \
-    _Pragma("clang diagnostic push")                                \
-    _Pragma("clang diagnostic ignored \"-Wunused-value\"")          \
+    GS_IGNORE_UNUSED_VALUE_PUSH                                     \
     __e;                                                            \
-    _Pragma("clang diagnostic pop")                                 \
+    GS_IGNORE_UNUSED_VALUE_POP                                      \
 })
 
 #define GSAssertFailed(...)             GSAssert(0, ##__VA_ARGS__)
@@ -70,48 +70,49 @@
     typeof(obj) __o = (obj);                                        \
     Class __c = [cls class];                                        \
     if (![__o isKindOfClass:__c]) {                                 \
-        NSString *__actual = NSStringFromClass([__o class]) ?: @"nil";          \
-        NSString *__expected = NSStringFromClass(__c);                          \
-        _GSAssertFail(@"'%s' is %@, expected %@", #obj, __actual, __expected);  \
+        NSString *__actual = NSStringFromClass([__o class]) ?: @"nil";              \
+        NSString *__expected = NSStringFromClass(__c);                              \
+        _GSAssertNotify(@"'%s' is %@, expected %@", #obj, __actual, __expected);    \
     }                                                               \
-    _Pragma("clang diagnostic push")                                \
-    _Pragma("clang diagnostic ignored \"-Wunused-value\"")          \
+    GS_IGNORE_UNUSED_VALUE_PUSH                                     \
     __o;                                                            \
-    _Pragma("clang diagnostic pop")                                 \
+    GS_IGNORE_UNUSED_VALUE_POP                                      \
 })
 
 #else
 
-#define GSAssertKind(obj, cls)          (obj)
+#define GSAssertKind(obj, cls)                                      \
+    GS_IGNORE_UNUSED_VALUE_PUSH                                     \
+    (obj)                                                           \
+    GS_IGNORE_UNUSED_VALUE_POP
 
 #endif
 
 #define GSAssertCast(cls, obj)                                      \
-    _Pragma("clang diagnostic push")                                \
-    _Pragma("clang diagnostic ignored \"-Wunused-value\"")          \
+    GS_IGNORE_UNUSED_VALUE_PUSH                                     \
     ((cls *) GSAssertKind(obj, cls))                                \
-    _Pragma("clang diagnostic pop")                                 \
+    GS_IGNORE_UNUSED_VALUE_POP
 
 
 //
 // Low-level assertion macros that raise an exception in debug and print an error log in release.
 //
 
+#define _GSAssertNotify(frmt, ...)          \
+({                                          \
+    GSLogE(frmt, ##__VA_ARGS__);            \
+    [DDLog flushLog];                       \
+    _GSAssertThrow(frmt, ##__VA_ARGS__);    \
+})
+
+
 #ifdef DEBUG
 
-#define _GSAssertFail(frmt, ...)        \
-({                                      \
-    GSLogE(frmt, ##__VA_ARGS__);        \
-    [DDLog flushLog];                   \
-    [NSAssertionHandler.currentHandler handleFailureInFunction:[NSString stringWithUTF8String:FUNCTIONNAME()] file:[NSString stringWithUTF8String:__FILE__] lineNumber:__LINE__ description:frmt,##__VA_ARGS__]; \
-})
+#define _GSAssertThrow(frmt, ...)           \
+    [NSAssertionHandler.currentHandler handleFailureInFunction:@(FUNCTIONNAME()) file:@(__FILE__) lineNumber:__LINE__ description:frmt,##__VA_ARGS__]
 
 #else
 
-#define _GSAssertFail(frmt, ...)        \
-({                                      \
-    GSLogE(frmt, ##__VA_ARGS__);        \
-    [DDLog flushLog];                   \
-})
+#define _GSAssertThrow(frmt, ...)           ((void)0)
 
 #endif

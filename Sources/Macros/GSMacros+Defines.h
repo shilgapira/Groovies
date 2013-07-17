@@ -1,7 +1,7 @@
 //
-// GSMacros.h
+// GSMacros+Defines.h
 //
-// Copyright (c) 2012 Gil Shapira
+// Copyright (c) 2013 Gil Shapira
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,8 +22,19 @@
 // THE SOFTWARE.
 //
 
-#import "GSMacros+Defines.h"
-#import "GSMacros+Varargs.h"
-#import "GSMacros+Language.h"
-#import "GSMacros+Stringify.h"
-#import "GSMacros+Math.h"
+
+#define GS_INLINE               static inline
+#define GS_EXTERN               extern
+
+#define GS_OVERLOAD             __attribute__((overloadable))
+
+#define GS_INLINE_OVERLOAD      static inline GS_OVERLOAD
+#define GS_EXTERN_OVERLOAD      extern GS_OVERLOAD
+
+
+#define GS_IGNORE_UNUSED_VALUE_PUSH     \
+    _Pragma("clang diagnostic push")    \
+    _Pragma("clang diagnostic ignored \"-Wunused-value\"")
+
+#define GS_IGNORE_UNUSED_VALUE_POP      \
+    _Pragma("clang diagnostic pop")
