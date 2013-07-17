@@ -23,6 +23,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import "GSMacros+Defines.h"
 
 
 typedef NS_OPTIONS(NSUInteger, CGRectAnchor) {
@@ -32,26 +33,61 @@ typedef NS_OPTIONS(NSUInteger, CGRectAnchor) {
     CGRectAnchorLeft = 1 << 3,
     CGRectAnchorCenterX = 1 << 4,
     CGRectAnchorRight = 1 << 5,
-    CGRectAnchorOutside = 1 << 6,
+    
+    CGRectAnchorOutsideX = 1 << 6,
+    CGRectAnchorOutsideY = 1 << 7,
+    CGRectAnchorOutside = CGRectAnchorOutsideX | CGRectAnchorOutsideY,
+    
     CGRectAnchorTopLeft = CGRectAnchorTop | CGRectAnchorLeft,
     CGRectAnchorTopCenter = CGRectAnchorTop | CGRectAnchorCenterX,
     CGRectAnchorTopRight = CGRectAnchorTop | CGRectAnchorRight,
-    CGRectAnchorCenterLeft = CGRectAnchorCenterY | CGRectAnchorLeft,
-    CGRectAnchorCenter = CGRectAnchorCenterY | CGRectAnchorCenterX,
-    CGRectAnchorCenterRight = CGRectAnchorCenterY | CGRectAnchorRight,
+    CGRectAnchorLeftCenter = CGRectAnchorLeft | CGRectAnchorCenterY,
+    CGRectAnchorCenter = CGRectAnchorCenterX | CGRectAnchorCenterY,
+    CGRectAnchorRightCenter = CGRectAnchorRight | CGRectAnchorCenterY,
     CGRectAnchorBottomLeft = CGRectAnchorBottom | CGRectAnchorLeft,
     CGRectAnchorBottomCenter = CGRectAnchorBottom | CGRectAnchorCenterX,
     CGRectAnchorBottomRight = CGRectAnchorBottom | CGRectAnchorRight,
+    
+    CGRectAnchorTopOutside = CGRectAnchorTop | CGRectAnchorOutsideY,
+    CGRectAnchorBottomOutside = CGRectAnchorBottom | CGRectAnchorOutsideY,
+    CGRectAnchorLeftOutside = CGRectAnchorLeft | CGRectAnchorOutsideX,
+    CGRectAnchorRightOutside = CGRectAnchorRight | CGRectAnchorOutsideX,
 };
 
-extern __attribute__((overloadable)) CGRect CGRectAlign(CGRect rect, CGRect other, CGRectAnchor anchor);
 
-extern __attribute__((overloadable)) CGRect CGRectAlign(CGRect rect, CGRect other, CGRectAnchor anchor, CGFloat padding);
+GS_INLINE_OVERLOAD CGRect CGRectAlign(CGRect rect, CGRect other, CGRectAnchor anchor, CGFloat paddingX, CGFloat paddingY) {
+    NSUInteger outsideX = anchor & CGRectAnchorOutsideX;
+    NSUInteger outsideY = anchor & CGRectAnchorOutsideY;
+    
+    if (anchor & CGRectAnchorTop) {
+        rect.origin.y = other.origin.y + (outsideY ? -(rect.size.height + paddingY) : paddingY);
+    } else if (anchor & CGRectAnchorBottom) {
+        rect.origin.y = other.origin.y + other.size.height + (outsideY ? paddingY : -(rect.size.height + paddingY));
+    } else if (anchor & CGRectAnchorCenterY) {
+        rect.origin.y = other.origin.y + (other.size.height - rect.size.height) / 2.0f;
+    }
+    
+    if (anchor & CGRectAnchorLeft) {
+        rect.origin.x = other.origin.x + (outsideX ? -(rect.size.width + paddingX) : paddingX);
+    } else if (anchor & CGRectAnchorRight) {
+        rect.origin.x = other.origin.x + other.size.width + (outsideX ? paddingX : -(rect.size.width + paddingX));
+    } else if (anchor & CGRectAnchorCenterX) {
+        rect.origin.x = other.origin.x + (other.size.width - rect.size.width) / 2.0f;
+    }
+    
+    return rect;
+}
 
-extern __attribute__((overloadable)) CGRect CGRectAlign(CGRect rect, CGRect other, CGRectAnchor anchor, CGFloat paddingX, CGFloat paddingY);
+GS_INLINE_OVERLOAD CGRect CGRectAlign(CGRect rect, CGRect other, CGRectAnchor anchor) {
+    return CGRectAlign(rect, other, anchor, 0.0f, 0.0f);
+}
+
+GS_INLINE_OVERLOAD CGRect CGRectAlign(CGRect rect, CGRect other, CGRectAnchor anchor, CGFloat padding) {
+    return CGRectAlign(rect, other, anchor, padding, padding);
+}
 
 
-NS_INLINE CGRect CGRectInsetAll(CGRect rect, CGFloat top, CGFloat left, CGFloat bottom, CGFloat right) {
+GS_INLINE_OVERLOAD CGRect CGRectInsetAll(CGRect rect, CGFloat top, CGFloat left, CGFloat bottom, CGFloat right) {
     rect.origin.x += left;
     rect.origin.y += top;
     rect.size.width -= left + right;
@@ -59,33 +95,38 @@ NS_INLINE CGRect CGRectInsetAll(CGRect rect, CGFloat top, CGFloat left, CGFloat 
     return rect;
 }
 
-NS_INLINE CGRect CGRectInsetLeft(CGRect rect, CGFloat left) {
+GS_INLINE_OVERLOAD CGRect CGRectInsetAll(CGRect rect, CGFloat inset) {
+    return CGRectInsetAll(rect, inset, inset, inset, inset);
+}
+
+
+GS_INLINE CGRect CGRectInsetLeft(CGRect rect, CGFloat left) {
     rect.origin.x += left;
     rect.size.width -= left;
     return rect;
 }
 
-NS_INLINE CGRect CGRectInsetRight(CGRect rect, CGFloat right) {
+GS_INLINE CGRect CGRectInsetRight(CGRect rect, CGFloat right) {
     rect.size.width -= right;
     return rect;
 }
 
-NS_INLINE CGRect CGRectInsetTop(CGRect rect, CGFloat top) {
+GS_INLINE CGRect CGRectInsetTop(CGRect rect, CGFloat top) {
     rect.origin.y += top;
     rect.size.height -= top;
     return rect;
 }
 
-NS_INLINE CGRect CGRectInsetBottom(CGRect rect, CGFloat bottom) {
+GS_INLINE CGRect CGRectInsetBottom(CGRect rect, CGFloat bottom) {
     rect.size.height -= bottom;
     return rect;
 }
 
 
-NS_INLINE __attribute__((overloadable)) CGRect CGRectSized(CGSize size) {
+GS_INLINE_OVERLOAD CGRect CGRectSized(CGSize size) {
     return (CGRect) {CGPointZero, size};
 }
 
-NS_INLINE __attribute__((overloadable)) CGRect CGRectSized(CGFloat width, CGFloat height) {
+GS_INLINE_OVERLOAD CGRect CGRectSized(CGFloat width, CGFloat height) {
     return (CGRect) {CGPointZero, {width, height}};
 }
