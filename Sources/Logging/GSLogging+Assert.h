@@ -79,6 +79,18 @@
     GS_IGNORE_UNUSED_VALUE_POP                                      \
 })
 
+#define GSAssertCast(cls, obj)                                      \
+({                                                                  \
+    typeof(obj) __o = (obj);                                        \
+    Class __c = [cls class];                                        \
+    if (__o && ![__o isKindOfClass:__c]) {                          \
+        NSString *__actual = NSStringFromClass([__o class]);        \
+        NSString *__expected = NSStringFromClass(__c);                              \
+        _GSAssertNotify(@"'%s' is %@, expected %@", #obj, __actual, __expected);    \
+    }                                                               \
+    (cls *) __o;                                                    \
+})
+
 #else
 
 #define GSAssertKind(obj, cls)                                      \
@@ -86,12 +98,10 @@
     (obj)                                                           \
     GS_IGNORE_UNUSED_VALUE_POP
 
-#endif
-
 #define GSAssertCast(cls, obj)                                      \
-    GS_IGNORE_UNUSED_VALUE_PUSH                                     \
-    ((cls *) GSAssertKind(obj, cls))                                \
-    GS_IGNORE_UNUSED_VALUE_POP
+    ((cls *) (obj))                                                 \
+
+#endif
 
 
 //

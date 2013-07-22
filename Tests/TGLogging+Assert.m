@@ -121,16 +121,22 @@
 }
 
 - (void)testCast {
-    TGAssertNoThrow(GSAssertCast(TGLogging_Assert, self));
-    TGAssertNoThrow(GSAssertCast(SenTestCase, self));
-    TGAssertNoThrow(GSAssertCast(NSObject, self));
+    id object;
     
-    TGAssertDebugThrows(GSAssertCast(NSString, self));
-    TGAssertDebugThrows(GSAssertCast(NSNumber, self));
+    TGAssertNoThrow(object = GSAssertCast(TGLogging_Assert, self));
+    TGAssertNoThrow(object = GSAssertCast(SenTestCase, self));
+    
+    // This should cause a warning if the #if 0 directive is removed.
+#if 0
+    TGAssertNoThrow(GSAssertCast(NSObject, self));
+#endif
+    
+    TGAssertDebugThrows(object = GSAssertCast(NSString, self));
+    TGAssertDebugThrows(object = GSAssertCast(NSNumber, self));
 
     TGLogging_Assert *me;
     TGAssertNoThrow(me = GSAssertCast(TGLogging_Assert, self));
-    TGAssertDebugThrows(GSAssertCast(NSDictionary, me));
+    TGAssertDebugThrows(object = GSAssertCast(NSDictionary, me));
 
     NSDictionary *dict;
     TGAssertDebugThrows(dict = GSAssertCast(NSDictionary, @[]));
