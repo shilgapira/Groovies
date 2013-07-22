@@ -7,14 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B02B9031634C5C100C9565B /* UIView+Hierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B02B9011634C5C100C9565B /* UIView+Hierarchy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2B02B9041634C5C100C9565B /* UIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B02B9021634C5C100C9565B /* UIView+Hierarchy.m */; };
-		2B02B9071634C6D800C9565B /* UIView+Snapshots.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B02B9051634C6D800C9565B /* UIView+Snapshots.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2B02B9081634C6D800C9565B /* UIView+Snapshots.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B02B9061634C6D800C9565B /* UIView+Snapshots.m */; };
-		2B02B90F1634C88200C9565B /* UIImage+Crop.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B02B90D1634C88100C9565B /* UIImage+Crop.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2B02B9101634C88200C9565B /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B02B90E1634C88100C9565B /* UIImage+Crop.m */; };
-		2B02B9131634C8E800C9565B /* UIImage+Tint.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B02B9111634C8E700C9565B /* UIImage+Tint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2B02B9141634C8E800C9565B /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B02B9121634C8E700C9565B /* UIImage+Tint.m */; };
 		2B02B9231634D2B200C9565B /* NSString+Encoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B02B9211634D2AD00C9565B /* NSString+Encoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B02B9241634D2B200C9565B /* NSString+Encoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B02B9221634D2AF00C9565B /* NSString+Encoding.m */; };
 		2B0868A71656A212005992D6 /* NSDate+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B0868A51656A210005992D6 /* NSDate+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,8 +16,6 @@
 		2B08CB6A178F43D600BA7506 /* TGColor+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B08CB69178F43D600BA7506 /* TGColor+Create.m */; };
 		2B0B0A021610C8BB003C8586 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B10F14715E453AD00327C2E /* UIKit.framework */; };
 		2B0B0A051610C947003C8586 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0B0A041610C947003C8586 /* CoreGraphics.framework */; };
-		2B15F5D416600CF5004FE5F3 /* UILabel+Fit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B15F5D216600CF5004FE5F3 /* UILabel+Fit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2B15F5D516600CF5004FE5F3 /* UILabel+Fit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B15F5D316600CF5004FE5F3 /* UILabel+Fit.m */; };
 		2B267A41166DB47D006E758F /* NSObject+Associate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B267A3F166DB47C006E758F /* NSObject+Associate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B267A42166DB47D006E758F /* NSObject+Associate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B267A40166DB47D006E758F /* NSObject+Associate.m */; };
 		2B30A5321695BCF0000EAB78 /* UIView+Create.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B30A5301695BCF0000EAB78 /* UIView+Create.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -83,8 +73,8 @@
 		2BAC61FF1725590D0097F8DA /* Groovies+Macros.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BAC61F91725590D0097F8DA /* Groovies+Macros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BAC6201172559760097F8DA /* Groovies+Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BAC6200172559760097F8DA /* Groovies+Logging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BAC6204172560B90097F8DA /* libGroovies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B819B5F15DB13A8001AAB87 /* libGroovies.a */; };
-		2BBFF777176CF87500986ACC /* GSGlobals+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBFF775176CF87500986ACC /* GSGlobals+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2BBFF778176CF87500986ACC /* GSGlobals+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFF776176CF87500986ACC /* GSGlobals+Blocks.m */; };
+		2BBFF777176CF87500986ACC /* GSGlobals+Execute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBFF775176CF87500986ACC /* GSGlobals+Execute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BBFF778176CF87500986ACC /* GSGlobals+Execute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFF776176CF87500986ACC /* GSGlobals+Execute.m */; };
 		2BBFF77A176D0BBA00986ACC /* GSLogging+Benchmark.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBFF779176D0BB600986ACC /* GSLogging+Benchmark.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BC025D51634E2AB00EA3D02 /* UIColor+Create.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BC025D31634E2AB00EA3D02 /* UIColor+Create.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BC025D61634E2AB00EA3D02 /* UIColor+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC025D41634E2AB00EA3D02 /* UIColor+Create.m */; };
@@ -136,14 +126,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B02B9011634C5C100C9565B /* UIView+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Hierarchy.h"; sourceTree = "<group>"; };
-		2B02B9021634C5C100C9565B /* UIView+Hierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Hierarchy.m"; sourceTree = "<group>"; };
-		2B02B9051634C6D800C9565B /* UIView+Snapshots.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Snapshots.h"; sourceTree = "<group>"; };
-		2B02B9061634C6D800C9565B /* UIView+Snapshots.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Snapshots.m"; sourceTree = "<group>"; };
-		2B02B90D1634C88100C9565B /* UIImage+Crop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Crop.h"; sourceTree = "<group>"; };
-		2B02B90E1634C88100C9565B /* UIImage+Crop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Crop.m"; sourceTree = "<group>"; };
-		2B02B9111634C8E700C9565B /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
-		2B02B9121634C8E700C9565B /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
 		2B02B9211634D2AD00C9565B /* NSString+Encoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Encoding.h"; sourceTree = "<group>"; };
 		2B02B9221634D2AF00C9565B /* NSString+Encoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Encoding.m"; sourceTree = "<group>"; };
 		2B0868A51656A210005992D6 /* NSDate+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
@@ -155,8 +137,6 @@
 		2B08CB69178F43D600BA7506 /* TGColor+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGColor+Create.m"; sourceTree = "<group>"; };
 		2B0B0A041610C947003C8586 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2B10F14715E453AD00327C2E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2B15F5D216600CF5004FE5F3 /* UILabel+Fit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Fit.h"; sourceTree = "<group>"; };
-		2B15F5D316600CF5004FE5F3 /* UILabel+Fit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Fit.m"; sourceTree = "<group>"; };
 		2B267A3F166DB47C006E758F /* NSObject+Associate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Associate.h"; sourceTree = "<group>"; };
 		2B267A40166DB47D006E758F /* NSObject+Associate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Associate.m"; sourceTree = "<group>"; };
 		2B30A5301695BCF0000EAB78 /* UIView+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Create.h"; sourceTree = "<group>"; };
@@ -220,8 +200,8 @@
 		2BAC61F81725590D0097F8DA /* Groovies+Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Groovies+Globals.h"; sourceTree = "<group>"; };
 		2BAC61F91725590D0097F8DA /* Groovies+Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Groovies+Macros.h"; sourceTree = "<group>"; };
 		2BAC6200172559760097F8DA /* Groovies+Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Groovies+Logging.h"; sourceTree = "<group>"; };
-		2BBFF775176CF87500986ACC /* GSGlobals+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GSGlobals+Blocks.h"; sourceTree = "<group>"; };
-		2BBFF776176CF87500986ACC /* GSGlobals+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GSGlobals+Blocks.m"; sourceTree = "<group>"; };
+		2BBFF775176CF87500986ACC /* GSGlobals+Execute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GSGlobals+Execute.h"; sourceTree = "<group>"; };
+		2BBFF776176CF87500986ACC /* GSGlobals+Execute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GSGlobals+Execute.m"; sourceTree = "<group>"; };
 		2BBFF779176D0BB600986ACC /* GSLogging+Benchmark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSLogging+Benchmark.h"; sourceTree = "<group>"; };
 		2BC025D31634E2AB00EA3D02 /* UIColor+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Create.h"; sourceTree = "<group>"; };
 		2BC025D41634E2AB00EA3D02 /* UIColor+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Create.m"; sourceTree = "<group>"; };
@@ -342,18 +322,8 @@
 				2B02B9221634D2AF00C9565B /* NSString+Encoding.m */,
 				2BC025D31634E2AB00EA3D02 /* UIColor+Create.h */,
 				2BC025D41634E2AB00EA3D02 /* UIColor+Create.m */,
-				2B02B90D1634C88100C9565B /* UIImage+Crop.h */,
-				2B02B90E1634C88100C9565B /* UIImage+Crop.m */,
-				2B02B9111634C8E700C9565B /* UIImage+Tint.h */,
-				2B02B9121634C8E700C9565B /* UIImage+Tint.m */,
-				2B15F5D216600CF5004FE5F3 /* UILabel+Fit.h */,
-				2B15F5D316600CF5004FE5F3 /* UILabel+Fit.m */,
 				2B30A5301695BCF0000EAB78 /* UIView+Create.h */,
 				2B30A5311695BCF0000EAB78 /* UIView+Create.m */,
-				2B02B9011634C5C100C9565B /* UIView+Hierarchy.h */,
-				2B02B9021634C5C100C9565B /* UIView+Hierarchy.m */,
-				2B02B9051634C6D800C9565B /* UIView+Snapshots.h */,
-				2B02B9061634C6D800C9565B /* UIView+Snapshots.m */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -381,8 +351,8 @@
 			children = (
 				2B5B9A4A17246A09005754B3 /* GSGlobals+Application.h */,
 				2B5B9A4B17246A0A005754B3 /* GSGlobals+Application.m */,
-				2BBFF775176CF87500986ACC /* GSGlobals+Blocks.h */,
-				2BBFF776176CF87500986ACC /* GSGlobals+Blocks.m */,
+				2BBFF775176CF87500986ACC /* GSGlobals+Execute.h */,
+				2BBFF776176CF87500986ACC /* GSGlobals+Execute.m */,
 				2B5B9A4E17246A0C005754B3 /* GSGlobals+Device.h */,
 				2B5B9A4F17246A0E005754B3 /* GSGlobals+Device.m */,
 				2B5B9A4C17246A0A005754B3 /* GSGlobals+Geometry.h */,
@@ -601,8 +571,7 @@
 				2BF4488D16B1E6C9008CB969 /* GSTheme.h */,
 				2BF4488E16B1E6C9008CB969 /* GSTheme.m */,
 			);
-			name = Theme;
-			path = Style;
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -612,14 +581,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B02B9031634C5C100C9565B /* UIView+Hierarchy.h in Headers */,
-				2B02B9071634C6D800C9565B /* UIView+Snapshots.h in Headers */,
-				2B02B90F1634C88200C9565B /* UIImage+Crop.h in Headers */,
-				2B02B9131634C8E800C9565B /* UIImage+Tint.h in Headers */,
 				2B02B9231634D2B200C9565B /* NSString+Encoding.h in Headers */,
 				2BC025D51634E2AB00EA3D02 /* UIColor+Create.h in Headers */,
 				2B0868A71656A212005992D6 /* NSDate+Additions.h in Headers */,
-				2B15F5D416600CF5004FE5F3 /* UILabel+Fit.h in Headers */,
 				2B47B9511667E6BF0081AE81 /* NSDictionary+Values.h in Headers */,
 				2B47BB0F166A53A00081AE81 /* Prefix.pch in Headers */,
 				2BBFF77A176D0BBA00986ACC /* GSLogging+Benchmark.h in Headers */,
@@ -654,7 +618,7 @@
 				2B5B9A48172468E4005754B3 /* GSLogFormatter.h in Headers */,
 				2BA364BD17252116007C67DF /* GSTestFlightLogger.h in Headers */,
 				2B86F8E41726846300DFCF97 /* GSMacros+Math.h in Headers */,
-				2BBFF777176CF87500986ACC /* GSGlobals+Blocks.h in Headers */,
+				2BBFF777176CF87500986ACC /* GSGlobals+Execute.h in Headers */,
 				2BD8786A176CEB64002231E1 /* UIViewController+Analytics.h in Headers */,
 				2B86F8F81726978500DFCF97 /* GSMacros+Varargs.h in Headers */,
 				2B86F8F91726978900DFCF97 /* GSMacros+Language.h in Headers */,
@@ -771,15 +735,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B02B9041634C5C100C9565B /* UIView+Hierarchy.m in Sources */,
-				2B02B9081634C6D800C9565B /* UIView+Snapshots.m in Sources */,
-				2B02B9101634C88200C9565B /* UIImage+Crop.m in Sources */,
-				2B02B9141634C8E800C9565B /* UIImage+Tint.m in Sources */,
-				2BBFF778176CF87500986ACC /* GSGlobals+Blocks.m in Sources */,
+				2BBFF778176CF87500986ACC /* GSGlobals+Execute.m in Sources */,
 				2B02B9241634D2B200C9565B /* NSString+Encoding.m in Sources */,
 				2BC025D61634E2AB00EA3D02 /* UIColor+Create.m in Sources */,
 				2B0868A81656A212005992D6 /* NSDate+Additions.m in Sources */,
-				2B15F5D516600CF5004FE5F3 /* UILabel+Fit.m in Sources */,
 				2B47B9521667E6BF0081AE81 /* NSDictionary+Values.m in Sources */,
 				2BD4178D166A6F040099F9AD /* DDLog.m in Sources */,
 				2BD4178F166A6F040099F9AD /* DDTTYLogger.m in Sources */,
