@@ -1,5 +1,5 @@
 //
-// GSGlobals+Blocks.m
+// GSGlobals+Execute.m
 //
 // Copyright (c) 2012 Gil Shapira
 //
@@ -22,7 +22,7 @@
 // THE SOFTWARE.
 //
 
-#import "GSGlobals+Blocks.h"
+#import "GSGlobals+Execute.h"
 
 
 void GSExecuteMain(void(^block)(void)) {

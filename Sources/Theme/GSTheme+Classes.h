@@ -1,7 +1,7 @@
 //
-// Groovies+Theme.h
+// GSTheme+Classes.h
 //
-// Copyright (c) 2012 Gil Shapira
+// Copyright (c) 2013 Gil Shapira
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,5 +23,22 @@
 //
 
 #import "GSTheme.h"
-#import "GSTheme+Classes.h"
-#import "UIView+Theme.h"
+
+
+@interface GSTheme (Classes)
+
+- (void)addViewStyle:(id<NSCopying>)style block:(void(^)(UIView *o))block;
+
+- (void)addLabelStyle:(id<NSCopying>)style block:(void(^)(UILabel *o))block;
+
+- (void)addButtonStyle:(id<NSCopying>)style block:(void(^)(UIButton *o))block;
+
+- (void)addTextFieldStyle:(id<NSCopying>)style block:(void(^)(UITextField *o))block;
+
+- (void)addImageViewStyle:(id<NSCopying>)style block:(void(^)(UIImageView *o))block;
+
+- (void)addTableStyle:(id<NSCopying>)style block:(void(^)(UITableView *o))block;
+
+- (void)addCellStyle:(id<NSCopying>)style block:(void(^)(UITableViewCell *o))block;
+
+@end

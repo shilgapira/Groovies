@@ -37,11 +37,11 @@
 
 @property (nonatomic,copy,readonly) id style;
 
-@property (nonatomic,copy,readonly) GSStyleBlock block;
+@property (nonatomic,copy,readonly) void(^block)(id object);
 
 @property (nonatomic,strong) Class expectedClass;
 
-- (id)initWithStyle:(id)style block:(GSStyleBlock)block;
+- (id)initWithStyle:(id)style block:(void(^)(id object))block;
 
 - (void)applyToObject:(id)object;
 
@@ -72,7 +72,11 @@ static GSTheme *__currentTheme;
     [entry applyToObject:object];
 }
 
-- (void)addStyle:(id<NSCopying>)style forClass:(Class)expectedClass withBlock:(GSStyleBlock)block {
+- (void)addStyle:(id<NSCopying>)style block:(void(^)(id object))block {
+    [self addStyle:style forClass:Nil block:block];
+}
+
+- (void)addStyle:(id<NSCopying>)style forClass:(Class)expectedClass block:(void(^)(id object))block {
     GSThemeEntry *entry = [[GSThemeEntry alloc] initWithStyle:style block:block];
     entry.expectedClass = expectedClass;
     self.entries[style] = entry;
@@ -83,7 +87,7 @@ static GSTheme *__currentTheme;
 
 @implementation GSThemeEntry
 
-- (id)initWithStyle:(id)style block:(GSStyleBlock)block {
+- (id)initWithStyle:(id)style block:(void(^)(id object))block {
     if (self = [super init]) {
         _style = [style copy];
         _block = [block copy];

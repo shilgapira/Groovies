@@ -26,12 +26,6 @@
 
 
 /**
- * A block that performs styling actions on an object.
- */
-typedef void(^GSStyleBlock)(id object);
-
-
-/**
  * The @c GSTheme class enables apps to create themes that provide a central place
  * to encapsulate all styling logic. Styles are created by providing a block that
  * takes an object and performs actions on it, e.g., setting a view's background
@@ -43,7 +37,7 @@ typedef void(^GSStyleBlock)(id object);
  * The current theme used to style objects.
  * @return The current theme, or @c nil if none has been set.
  */
-+ (id)currentTheme;
++ (instancetype)currentTheme;
 
 /**
  * Sets the current theme used to style objects.
@@ -54,10 +48,17 @@ typedef void(^GSStyleBlock)(id object);
 /**
  * Adds a style to the theme.
  * @param style The style identifier, e.g., a boxed enum value.
+ * @param block A block that performs styling actions on an object.
+ */
+- (void)addStyle:(id<NSCopying>)style block:(void(^)(id obj))block;
+
+/**
+ * Adds a style to the theme.
+ * @param style The style identifier, e.g., a boxed enum value.
  * @param expectedClass The style will only be applied to instances of this class. Pass @c Nil to allow the style to be applied to any object.
  * @param block A block that performs styling actions on an object.
  */
-- (void)addStyle:(id<NSCopying>)style forClass:(Class)expectedClass withBlock:(GSStyleBlock)block;
+- (void)addStyle:(id<NSCopying>)style forClass:(Class)expectedClass block:(void(^)(id obj))block;
 
 /**
  * Applies a style to an object.

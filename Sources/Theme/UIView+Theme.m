@@ -1,5 +1,5 @@
 //
-// Groovies+Theme.h
+// UIView+Theme.m
 //
 // Copyright (c) 2012 Gil Shapira
 //
@@ -22,6 +22,29 @@
 // THE SOFTWARE.
 //
 
-#import "GSTheme.h"
-#import "GSTheme+Classes.h"
 #import "UIView+Theme.h"
+#import "GSTheme.h"
+
+
+@implementation UIView (Theme)
+
++ (instancetype)viewWithStyle:(id)style {
+    UIView *view = [self new];
+    [GSTheme.currentTheme applyStyle:style toObject:view];
+    return view;
+}
+
++ (instancetype)viewWithSuperview:(UIView *)superview {
+    UIView *view = [self new];
+    [superview addSubview:view];
+    return view;
+}
+
++ (instancetype)viewWithSuperview:(UIView *)superview style:(id)style {
+    UIView *view = [self new];
+    [GSTheme.currentTheme applyStyle:style toObject:view];
+    [superview addSubview:view];
+    return view;
+}
+
+@end

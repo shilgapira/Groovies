@@ -16,10 +16,10 @@
 		2B08CB6A178F43D600BA7506 /* TGColor+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B08CB69178F43D600BA7506 /* TGColor+Create.m */; };
 		2B0B0A021610C8BB003C8586 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B10F14715E453AD00327C2E /* UIKit.framework */; };
 		2B0B0A051610C947003C8586 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0B0A041610C947003C8586 /* CoreGraphics.framework */; };
+		2B133472179D82D4006CAC20 /* GSTheme+Classes.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B133470179D82D4006CAC20 /* GSTheme+Classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B133473179D82D4006CAC20 /* GSTheme+Classes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B133471179D82D4006CAC20 /* GSTheme+Classes.m */; };
 		2B267A41166DB47D006E758F /* NSObject+Associate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B267A3F166DB47C006E758F /* NSObject+Associate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B267A42166DB47D006E758F /* NSObject+Associate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B267A40166DB47D006E758F /* NSObject+Associate.m */; };
-		2B30A5321695BCF0000EAB78 /* UIView+Create.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B30A5301695BCF0000EAB78 /* UIView+Create.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2B30A5331695BCF1000EAB78 /* UIView+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B30A5311695BCF0000EAB78 /* UIView+Create.m */; };
 		2B47B9511667E6BF0081AE81 /* NSDictionary+Values.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B47B94F1667E6BF0081AE81 /* NSDictionary+Values.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B47B9521667E6BF0081AE81 /* NSDictionary+Values.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B47B9501667E6BF0081AE81 /* NSDictionary+Values.m */; };
 		2B47BB0F166A53A00081AE81 /* Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2B47BB0E166A53A00081AE81 /* Prefix.pch */; };
@@ -109,6 +109,8 @@
 		2BE31B301797163600E6C6CF /* TGGlobals+Strings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE31B2F1797163500E6C6CF /* TGGlobals+Strings.m */; };
 		2BE6883B16ECD19900ABCDB6 /* DDASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BE6883916ECD19900ABCDB6 /* DDASLLogger.h */; };
 		2BE6883C16ECD19900ABCDB6 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE6883A16ECD19900ABCDB6 /* DDASLLogger.m */; };
+		2BE73B76179D530200618F6C /* UIView+Theme.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BE73B74179D530200618F6C /* UIView+Theme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BE73B77179D530200618F6C /* UIView+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE73B75179D530200618F6C /* UIView+Theme.m */; };
 		2BEF03171741599700AAEE7E /* GSHistoryLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BEF03151741599700AAEE7E /* GSHistoryLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BEF03181741599700AAEE7E /* GSHistoryLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEF03161741599700AAEE7E /* GSHistoryLogger.m */; };
 		2BF4489216B1E6C9008CB969 /* GSTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF4488D16B1E6C9008CB969 /* GSTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -137,10 +139,10 @@
 		2B08CB69178F43D600BA7506 /* TGColor+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGColor+Create.m"; sourceTree = "<group>"; };
 		2B0B0A041610C947003C8586 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2B10F14715E453AD00327C2E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2B133470179D82D4006CAC20 /* GSTheme+Classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GSTheme+Classes.h"; sourceTree = "<group>"; };
+		2B133471179D82D4006CAC20 /* GSTheme+Classes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GSTheme+Classes.m"; sourceTree = "<group>"; };
 		2B267A3F166DB47C006E758F /* NSObject+Associate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Associate.h"; sourceTree = "<group>"; };
 		2B267A40166DB47D006E758F /* NSObject+Associate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Associate.m"; sourceTree = "<group>"; };
-		2B30A5301695BCF0000EAB78 /* UIView+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Create.h"; sourceTree = "<group>"; };
-		2B30A5311695BCF0000EAB78 /* UIView+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Create.m"; sourceTree = "<group>"; };
 		2B47B94F1667E6BF0081AE81 /* NSDictionary+Values.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Values.h"; sourceTree = "<group>"; };
 		2B47B9501667E6BF0081AE81 /* NSDictionary+Values.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Values.m"; sourceTree = "<group>"; };
 		2B47BB0E166A53A00081AE81 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
@@ -241,6 +243,8 @@
 		2BE31B2F1797163500E6C6CF /* TGGlobals+Strings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGGlobals+Strings.m"; sourceTree = "<group>"; };
 		2BE6883916ECD19900ABCDB6 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDASLLogger.h; path = Lumberjack/DDASLLogger.h; sourceTree = "<group>"; };
 		2BE6883A16ECD19900ABCDB6 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDASLLogger.m; path = Lumberjack/DDASLLogger.m; sourceTree = "<group>"; };
+		2BE73B74179D530200618F6C /* UIView+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Theme.h"; sourceTree = "<group>"; };
+		2BE73B75179D530200618F6C /* UIView+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Theme.m"; sourceTree = "<group>"; };
 		2BEF03151741599700AAEE7E /* GSHistoryLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHistoryLogger.h; sourceTree = "<group>"; };
 		2BEF03161741599700AAEE7E /* GSHistoryLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSHistoryLogger.m; sourceTree = "<group>"; };
 		2BF4488D16B1E6C9008CB969 /* GSTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSTheme.h; sourceTree = "<group>"; };
@@ -322,8 +326,6 @@
 				2B02B9221634D2AF00C9565B /* NSString+Encoding.m */,
 				2BC025D31634E2AB00EA3D02 /* UIColor+Create.h */,
 				2BC025D41634E2AB00EA3D02 /* UIColor+Create.m */,
-				2B30A5301695BCF0000EAB78 /* UIView+Create.h */,
-				2B30A5311695BCF0000EAB78 /* UIView+Create.m */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -570,6 +572,10 @@
 			children = (
 				2BF4488D16B1E6C9008CB969 /* GSTheme.h */,
 				2BF4488E16B1E6C9008CB969 /* GSTheme.m */,
+				2B133470179D82D4006CAC20 /* GSTheme+Classes.h */,
+				2B133471179D82D4006CAC20 /* GSTheme+Classes.m */,
+				2BE73B74179D530200618F6C /* UIView+Theme.h */,
+				2BE73B75179D530200618F6C /* UIView+Theme.m */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -611,7 +617,6 @@
 				2B6FD0B3173D8DCB0042A168 /* NSSet+Blocks.h in Headers */,
 				2B6FD0B1173D8DCB0042A168 /* NSDictionary+Blocks.h in Headers */,
 				2B6FD0AF173D8DCB0042A168 /* NSArray+Blocks.h in Headers */,
-				2B30A5321695BCF0000EAB78 /* UIView+Create.h in Headers */,
 				2BF4489216B1E6C9008CB969 /* GSTheme.h in Headers */,
 				2BE6883B16ECD19900ABCDB6 /* DDASLLogger.h in Headers */,
 				2B5B9A43172462BB005754B3 /* GSLogging+Internal.h in Headers */,
@@ -635,6 +640,8 @@
 				2BDA91B41793254C00C39436 /* TGLogging+Base.h in Headers */,
 				2BE31B201796A6FE00E6C6CF /* GSMacros+Defines.h in Headers */,
 				2BE31B2C17970FD700E6C6CF /* GSGlobals+Strings.h in Headers */,
+				2BE73B76179D530200618F6C /* UIView+Theme.h in Headers */,
+				2B133472179D82D4006CAC20 /* GSTheme+Classes.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,7 +756,6 @@
 				2BD417CF166A8CCB0099F9AD /* DCStatusBarOverlay.m in Sources */,
 				2BD417D6166A97780099F9AD /* MSVCLeakHunter.m in Sources */,
 				2B267A42166DB47D006E758F /* NSObject+Associate.m in Sources */,
-				2B30A5331695BCF1000EAB78 /* UIView+Create.m in Sources */,
 				2BF4489316B1E6C9008CB969 /* GSTheme.m in Sources */,
 				2BE6883C16ECD19900ABCDB6 /* DDASLLogger.m in Sources */,
 				2B5B9A45172462BB005754B3 /* GSLogging.m in Sources */,
@@ -768,6 +774,8 @@
 				2B76FD61175B2CA800F56E09 /* GSAnalyticsHelpers.m in Sources */,
 				2B76FD6C175B336300F56E09 /* GSTestFlightAnalytics.m in Sources */,
 				2BE31B2D17970FD700E6C6CF /* GSGlobals+Strings.m in Sources */,
+				2BE73B77179D530200618F6C /* UIView+Theme.m in Sources */,
+				2B133473179D82D4006CAC20 /* GSTheme+Classes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

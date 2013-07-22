@@ -1,5 +1,5 @@
 //
-// GSGlobals+Blocks.h
+// GSGlobals+Execute.h
 //
 // Copyright (c) 2012 Gil Shapira
 //
