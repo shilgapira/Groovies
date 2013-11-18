@@ -99,17 +99,29 @@ typedef struct { CLLocationDegrees latitude; CLLocationDegrees longitude; } CLLo
     TGAssertEqualObjects(GSStringify(NO), @"NO");
     
     BOOL b = 65;
-    TGAssertEqualObjects(GSStringify(b), @"65");
-    
+    if (__builtin_types_compatible_p(BOOL, bool)) {
+        TGAssertEqualObjects(GSStringify(b), @"YES");
+    } else {
+        TGAssertEqualObjects(GSStringify(b), @"65");
+    }
+
     signed char c = 65;
     TGAssertEqualObjects(GSStringify(c), @"65");
     
     c = 0;
-    TGAssertEqualObjects(GSStringify(c), @"NO");
+    if (__builtin_types_compatible_p(BOOL, signed char)) {
+        TGAssertEqualObjects(GSStringify(c), @"NO");
+    } else {
+        TGAssertEqualObjects(GSStringify(c), @"0");
+    }
     TGAssertEqualObjects(GSStringify((BOOL) c), @"NO");
     
     c = 1;
-    TGAssertEqualObjects(GSStringify(c), @"YES");
+    if (__builtin_types_compatible_p(BOOL, signed char)) {
+        TGAssertEqualObjects(GSStringify(c), @"YES");
+    } else {
+        TGAssertEqualObjects(GSStringify(c), @"1");
+    }
     TGAssertEqualObjects(GSStringify((BOOL) c), @"YES");
     
     c = -127;

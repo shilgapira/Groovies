@@ -66,7 +66,7 @@
     
     NSUInteger mask = 0;
     for (NSUInteger i = 0; i < nbits; i++) {
-        NSUInteger x = 1 << i;
+        NSUInteger x = (NSUInteger) 1 << i;
         
         TGAssertNot(GSHasBits(mask, x));
         
@@ -75,7 +75,7 @@
         TGAssert(GSHasBits(mask, x));
         
         if (i > 0) {
-            NSUInteger y = 1 << (i - 1);
+            NSUInteger y = (NSUInteger) 1 << (i - 1);
             TGAssertNot(GSHasBits(x, y));
         }
         

@@ -41,7 +41,7 @@
     
     TGAssertNoThrow(GSAssert(self.description.length));
     TGAssertDebugThrows(GSAssert(self.description.length > 1000));
-    TGAssertDebugThrows(GSAssert(self.description.length > 1000, @"Asserted length was equal to %d", self.description.length));
+    TGAssertDebugThrows(GSAssert(self.description.length > 1000, @"Asserted length was equal to %ld", (unsigned long) self.description.length));
     
     NSUInteger length = 0;
     TGAssertNoThrow(length = GSAssert(self.description.length));

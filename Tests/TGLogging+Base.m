@@ -32,7 +32,7 @@
     GSLogD();
     GSLogV(@"Foo");
     GSLogI(@"Foo: %@", self);
-    GSLogW(@"Foo: %@, Bar: %d", self.class, self.description.length);
+    GSLogW(@"Foo: %@, Bar: %ld", self.class, (unsigned long) self.description.length);
     GSLogE(@"Foo: %s", sel_getName(@selector(description)));
 }
 

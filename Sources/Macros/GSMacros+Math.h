@@ -42,5 +42,5 @@
 #define GSHasBits(value, bits)          \
 ({                                      \
     typeof(bits) __b = (bits);          \
-    (BOOL) (((value) & __b) == __b);    \
+    !!(((value) & __b) == __b);         \
 })
