@@ -153,6 +153,8 @@
 		2B60E244183A382400F1F429 /* GSTestFlightLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSTestFlightLogger.h; sourceTree = "<group>"; };
 		2B60E245183A382400F1F429 /* GSTestFlightLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSTestFlightLogger.m; sourceTree = "<group>"; };
 		2B60E246183A387500F1F429 /* GSTestFlight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSTestFlight.m; sourceTree = "<group>"; };
+		2B60E25F183A4CA700F1F429 /* GSGoogleAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSGoogleAnalytics.h; sourceTree = "<group>"; };
+		2B60E260183A4CA700F1F429 /* GSGoogleAnalytics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSGoogleAnalytics.m; sourceTree = "<group>"; };
 		2B6FD0A9173D8DC60042A168 /* NSArray+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Blocks.h"; sourceTree = "<group>"; };
 		2B6FD0AA173D8DC70042A168 /* NSArray+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Blocks.m"; sourceTree = "<group>"; };
 		2B6FD0AB173D8DC80042A168 /* NSDictionary+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Blocks.h"; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 		2B60E23F183A380600F1F429 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				2B60E25E183A4CA700F1F429 /* GoogleAnalytics */,
 				2B60E240183A382400F1F429 /* TestFlight */,
 			);
 			path = External;
@@ -372,6 +375,15 @@
 				2B60E245183A382400F1F429 /* GSTestFlightLogger.m */,
 			);
 			path = TestFlight;
+			sourceTree = "<group>";
+		};
+		2B60E25E183A4CA700F1F429 /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				2B60E25F183A4CA700F1F429 /* GSGoogleAnalytics.h */,
+				2B60E260183A4CA700F1F429 /* GSGoogleAnalytics.m */,
+			);
+			path = GoogleAnalytics;
 			sourceTree = "<group>";
 		};
 		2B76FD4F17578B2F00F56E09 /* Analytics */ = {
