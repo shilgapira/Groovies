@@ -92,8 +92,6 @@
 		2BD417CD166A8CCB0099F9AD /* DCIntrospectSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD417C4166A8CCB0099F9AD /* DCIntrospectSettings.h */; };
 		2BD417CE166A8CCB0099F9AD /* DCStatusBarOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD417C5166A8CCB0099F9AD /* DCStatusBarOverlay.h */; };
 		2BD417CF166A8CCB0099F9AD /* DCStatusBarOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD417C6166A8CCB0099F9AD /* DCStatusBarOverlay.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2BD417D5166A97780099F9AD /* MSVCLeakHunter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD417D3166A97780099F9AD /* MSVCLeakHunter.h */; };
-		2BD417D6166A97780099F9AD /* MSVCLeakHunter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD417D4166A97780099F9AD /* MSVCLeakHunter.m */; };
 		2BD417E0166AE5FF0099F9AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD417D0166A8E770099F9AD /* QuartzCore.framework */; };
 		2BD417E2166AE6270099F9AD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD417B9166A85A60099F9AD /* libz.dylib */; };
 		2BD8786A176CEB64002231E1 /* UIViewController+Analytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD87868176CEB64002231E1 /* UIViewController+Analytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -224,8 +222,6 @@
 		2BD417C5166A8CCB0099F9AD /* DCStatusBarOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCStatusBarOverlay.h; path = DCIntrospect/DCStatusBarOverlay.h; sourceTree = "<group>"; };
 		2BD417C6166A8CCB0099F9AD /* DCStatusBarOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCStatusBarOverlay.m; path = DCIntrospect/DCStatusBarOverlay.m; sourceTree = "<group>"; };
 		2BD417D0166A8E770099F9AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		2BD417D3166A97780099F9AD /* MSVCLeakHunter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSVCLeakHunter.h; sourceTree = "<group>"; };
-		2BD417D4166A97780099F9AD /* MSVCLeakHunter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSVCLeakHunter.m; sourceTree = "<group>"; };
 		2BD87868176CEB64002231E1 /* UIViewController+Analytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Analytics.h"; sourceTree = "<group>"; };
 		2BD87869176CEB64002231E1 /* UIViewController+Analytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Analytics.m"; sourceTree = "<group>"; };
 		2BDA91B21793254C00C39436 /* TGLogging+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGLogging+Base.h"; sourceTree = "<group>"; };
@@ -501,7 +497,6 @@
 			children = (
 				2BD41787166A6EEC0099F9AD /* CocoaLumberjack */,
 				2BD417BD166A8C8F0099F9AD /* DCIntrospect */,
-				2BD417D2166A96B90099F9AD /* MSVCLeakHunter */,
 				2BD417B4166A85160099F9AD /* TestFlight */,
 			);
 			path = Libraries;
@@ -543,15 +538,6 @@
 				2BD417C6166A8CCB0099F9AD /* DCStatusBarOverlay.m */,
 			);
 			path = DCIntrospect;
-			sourceTree = "<group>";
-		};
-		2BD417D2166A96B90099F9AD /* MSVCLeakHunter */ = {
-			isa = PBXGroup;
-			children = (
-				2BD417D3166A97780099F9AD /* MSVCLeakHunter.h */,
-				2BD417D4166A97780099F9AD /* MSVCLeakHunter.m */,
-			);
-			path = MSVCLeakHunter;
 			sourceTree = "<group>";
 		};
 		2BE31B161796776100E6C6CF /* Globals */ = {
@@ -612,7 +598,6 @@
 				2BD417CE166A8CCB0099F9AD /* DCStatusBarOverlay.h in Headers */,
 				2B5B9A5217246A0E005754B3 /* GSGlobals+Geometry.h in Headers */,
 				2B5B9A44172462BB005754B3 /* GSLogging+Base.h in Headers */,
-				2BD417D5166A97780099F9AD /* MSVCLeakHunter.h in Headers */,
 				2B267A41166DB47D006E758F /* NSObject+Associate.h in Headers */,
 				2B6FD0B3173D8DCB0042A168 /* NSSet+Blocks.h in Headers */,
 				2B6FD0B1173D8DCB0042A168 /* NSDictionary+Blocks.h in Headers */,
@@ -754,7 +739,6 @@
 				2BD8786B176CEB64002231E1 /* UIViewController+Analytics.m in Sources */,
 				2BD417CC166A8CCB0099F9AD /* DCIntrospect.m in Sources */,
 				2BD417CF166A8CCB0099F9AD /* DCStatusBarOverlay.m in Sources */,
-				2BD417D6166A97780099F9AD /* MSVCLeakHunter.m in Sources */,
 				2B267A42166DB47D006E758F /* NSObject+Associate.m in Sources */,
 				2BF4489316B1E6C9008CB969 /* GSTheme.m in Sources */,
 				2BE6883C16ECD19900ABCDB6 /* DDASLLogger.m in Sources */,

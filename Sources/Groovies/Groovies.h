@@ -50,7 +50,6 @@
 
 extern NSString * const GSGrooveOptionLoggingColorsEnabled;
 extern NSString * const GSGrooveOptionDCIntrospectEnabled;
-extern NSString * const GSGrooveOptionLeakHunterEnabled;
 
 
 @interface Groovies : NSObject

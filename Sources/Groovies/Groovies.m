@@ -25,12 +25,10 @@
 #import "Groovies.h"
 #import "GSLogging+Internal.h"
 #import "DCIntrospect.h"
-#import "MSVCLeakHunter.h"
 
 
 NSString * const GSGrooveOptionLoggingColorsEnabled = @"LoggingColorsEnabled";
 NSString * const GSGrooveOptionDCIntrospectEnabled = @"DCIntrospectEnabled";
-NSString * const GSGrooveOptionLeakHunterEnabled = @"LeakHunterEnabled";
 
 
 static const NSTimeInterval kDCIntrospectDelay = 0.5;
@@ -77,13 +75,6 @@ static BOOL __initialized = NO;
         GSExecuteDelayed(kDCIntrospectDelay, ^{
             [DCIntrospect.sharedIntrospector start];
         });
-    }
-    #endif
-
-    #if defined(DEBUG)
-    if ([options boolForKey:GSGrooveOptionLeakHunterEnabled withDefault:NO]) {
-        GSLogV(@"Starting leak hunter");
-        [MSVCLeakHunter install];
     }
     #endif
 }
