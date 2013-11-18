@@ -42,16 +42,12 @@
 		2B6FD0B4173D8DCB0042A168 /* NSSet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6FD0AE173D8DCA0042A168 /* NSSet+Blocks.m */; };
 		2B6FD0B6173D93140042A168 /* GSLogging+Expression.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B6FD0B5173D92D00042A168 /* GSLogging+Expression.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B6FD0BA1740357F0042A168 /* GSLogging+Assert.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B6FD0B7173D935A0042A168 /* GSLogging+Assert.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2B76FD4117564D0600F56E09 /* Groovies+TestFlight.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B76FD4017564D0400F56E09 /* Groovies+TestFlight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B76FD5217578C9000F56E09 /* GSAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B76FD5017578C9000F56E09 /* GSAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B76FD5317578C9000F56E09 /* GSAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B76FD5117578C9000F56E09 /* GSAnalytics.m */; };
 		2B76FD60175B2CA800F56E09 /* GSAnalyticsHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B76FD5E175B2CA600F56E09 /* GSAnalyticsHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B76FD61175B2CA800F56E09 /* GSAnalyticsHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B76FD5F175B2CA700F56E09 /* GSAnalyticsHelpers.m */; };
 		2B76FD62175B2DDC00F56E09 /* GSAnalyticsProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B76FD5417578CEA00F56E09 /* GSAnalyticsProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B76FD64175B2FFE00F56E09 /* Groovies+Analytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B76FD63175B2FFE00F56E09 /* Groovies+Analytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2B76FD6B175B336300F56E09 /* GSTestFlightAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B76FD69175B336200F56E09 /* GSTestFlightAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2B76FD6C175B336300F56E09 /* GSTestFlightAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B76FD6A175B336200F56E09 /* GSTestFlightAnalytics.m */; };
-		2B7F538816BEB3A20046E17C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD417B5166A852B0099F9AD /* libTestFlight.a */; };
 		2B819B7115DB13A8001AAB87 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B819B7015DB13A8001AAB87 /* SenTestingKit.framework */; };
 		2B819B7415DB13A8001AAB87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B819B6215DB13A8001AAB87 /* Foundation.framework */; };
 		2B819BAE15DB2599001AAB87 /* GrooviesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B819BAD15DB2599001AAB87 /* GrooviesTests.m */; };
@@ -61,8 +57,6 @@
 		2B86F8FE1726AAEE00DFCF97 /* TGMacros+Math.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B86F8FB1726AA2C00DFCF97 /* TGMacros+Math.m */; };
 		2BA364AD17241088007C67DF /* TGMacros+Varargs.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA364AC17241088007C67DF /* TGMacros+Varargs.m */; };
 		2BA364B317241B74007C67DF /* TGMacros+Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA364B217241B74007C67DF /* TGMacros+Language.m */; };
-		2BA364BD17252116007C67DF /* GSTestFlightLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BA364BB17252116007C67DF /* GSTestFlightLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2BA364BE17252116007C67DF /* GSTestFlightLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA364BC17252116007C67DF /* GSTestFlightLogger.m */; };
 		2BAC61E517252E520097F8DA /* GSGlobals+Objects.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BAC61E317252E520097F8DA /* GSGlobals+Objects.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BAC61E617252E520097F8DA /* GSGlobals+Objects.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC61E417252E520097F8DA /* GSGlobals+Objects.m */; };
 		2BAC61F11725582C0097F8DA /* Groovies.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BAC61EF1725582C0097F8DA /* Groovies.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -82,7 +76,6 @@
 		2BD4178D166A6F040099F9AD /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD41789166A6F040099F9AD /* DDLog.m */; settings = {COMPILER_FLAGS = "-Wno-sign-conversion -Wno-implicit-retain-self"; }; };
 		2BD4178E166A6F040099F9AD /* DDTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD4178A166A6F040099F9AD /* DDTTYLogger.h */; };
 		2BD4178F166A6F040099F9AD /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD4178B166A6F040099F9AD /* DDTTYLogger.m */; settings = {COMPILER_FLAGS = "-Wno-sign-conversion -Wno-enum-conversion -Wno-implicit-retain-self"; }; };
-		2BD417B8166A852B0099F9AD /* TestFlight.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD417B6166A852B0099F9AD /* TestFlight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BD417C7166A8CCB0099F9AD /* DCCrossHairView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD417BE166A8CCB0099F9AD /* DCCrossHairView.h */; };
 		2BD417C8166A8CCB0099F9AD /* DCCrossHairView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD417BF166A8CCB0099F9AD /* DCCrossHairView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2BD417C9166A8CCB0099F9AD /* DCFrameView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD417C0166A8CCB0099F9AD /* DCFrameView.h */; };
@@ -96,7 +89,6 @@
 		2BD417E2166AE6270099F9AD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD417B9166A85A60099F9AD /* libz.dylib */; };
 		2BD8786A176CEB64002231E1 /* UIViewController+Analytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD87868176CEB64002231E1 /* UIViewController+Analytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BD8786B176CEB64002231E1 /* UIViewController+Analytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD87869176CEB64002231E1 /* UIViewController+Analytics.m */; };
-		2BDA91B41793254C00C39436 /* TGLogging+Base.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BDA91B21793254C00C39436 /* TGLogging+Base.h */; };
 		2BDA91B61793270D00C39436 /* TGLogging+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA91B31793254C00C39436 /* TGLogging+Base.m */; };
 		2BDA91B917932F5D00C39436 /* TGLogging+Benchmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA91B817932F5D00C39436 /* TGLogging+Benchmark.m */; };
 		2BE31B1B17967AFE00E6C6CF /* TGGlobals+Execute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE31B181796795E00E6C6CF /* TGGlobals+Execute.m */; };
@@ -163,15 +155,12 @@
 		2B6FD0AE173D8DCA0042A168 /* NSSet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Blocks.m"; sourceTree = "<group>"; };
 		2B6FD0B5173D92D00042A168 /* GSLogging+Expression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSLogging+Expression.h"; sourceTree = "<group>"; };
 		2B6FD0B7173D935A0042A168 /* GSLogging+Assert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSLogging+Assert.h"; sourceTree = "<group>"; };
-		2B76FD4017564D0400F56E09 /* Groovies+TestFlight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Groovies+TestFlight.h"; sourceTree = "<group>"; };
 		2B76FD5017578C9000F56E09 /* GSAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAnalytics.h; sourceTree = "<group>"; };
 		2B76FD5117578C9000F56E09 /* GSAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAnalytics.m; sourceTree = "<group>"; };
 		2B76FD5417578CEA00F56E09 /* GSAnalyticsProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSAnalyticsProvider.h; sourceTree = "<group>"; };
 		2B76FD5E175B2CA600F56E09 /* GSAnalyticsHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAnalyticsHelpers.h; sourceTree = "<group>"; };
 		2B76FD5F175B2CA700F56E09 /* GSAnalyticsHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAnalyticsHelpers.m; sourceTree = "<group>"; };
 		2B76FD63175B2FFE00F56E09 /* Groovies+Analytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Groovies+Analytics.h"; sourceTree = "<group>"; };
-		2B76FD69175B336200F56E09 /* GSTestFlightAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSTestFlightAnalytics.h; sourceTree = "<group>"; };
-		2B76FD6A175B336200F56E09 /* GSTestFlightAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSTestFlightAnalytics.m; sourceTree = "<group>"; };
 		2B819B5F15DB13A8001AAB87 /* libGroovies.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGroovies.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B819B6215DB13A8001AAB87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2B819B6F15DB13A8001AAB87 /* GrooviesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrooviesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,8 +178,6 @@
 		2BA364AE172410AF007C67DF /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		2BA364B117241B74007C67DF /* TGMacros+Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGMacros+Language.h"; sourceTree = "<group>"; };
 		2BA364B217241B74007C67DF /* TGMacros+Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGMacros+Language.m"; sourceTree = "<group>"; };
-		2BA364BB17252116007C67DF /* GSTestFlightLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSTestFlightLogger.h; sourceTree = "<group>"; };
-		2BA364BC17252116007C67DF /* GSTestFlightLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSTestFlightLogger.m; sourceTree = "<group>"; };
 		2BAC61E317252E520097F8DA /* GSGlobals+Objects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GSGlobals+Objects.h"; sourceTree = "<group>"; };
 		2BAC61E417252E520097F8DA /* GSGlobals+Objects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GSGlobals+Objects.m"; sourceTree = "<group>"; };
 		2BAC61EF1725582C0097F8DA /* Groovies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Groovies.h; sourceTree = "<group>"; };
@@ -209,8 +196,6 @@
 		2BD41789166A6F040099F9AD /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDLog.m; path = Lumberjack/DDLog.m; sourceTree = "<group>"; };
 		2BD4178A166A6F040099F9AD /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDTTYLogger.h; path = Lumberjack/DDTTYLogger.h; sourceTree = "<group>"; };
 		2BD4178B166A6F040099F9AD /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDTTYLogger.m; path = Lumberjack/DDTTYLogger.m; sourceTree = "<group>"; };
-		2BD417B5166A852B0099F9AD /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
-		2BD417B6166A852B0099F9AD /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		2BD417B9166A85A60099F9AD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		2BD417BE166A8CCB0099F9AD /* DCCrossHairView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCCrossHairView.h; path = DCIntrospect/DCCrossHairView.h; sourceTree = "<group>"; };
 		2BD417BF166A8CCB0099F9AD /* DCCrossHairView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCCrossHairView.m; path = DCIntrospect/DCCrossHairView.m; sourceTree = "<group>"; };
@@ -252,7 +237,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B7F538816BEB3A20046E17C /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,7 +419,6 @@
 				2B47BB21166A56320081AE81 /* Additions */,
 				2BF4488916B1E65E008CB969 /* Theme */,
 				2B76FD4F17578B2F00F56E09 /* Analytics */,
-				2BA364B417251D91007C67DF /* TestFlight */,
 				2B47BB10166A53A70081AE81 /* Prefix */,
 			);
 			path = Sources;
@@ -465,17 +448,6 @@
 			name = Macros;
 			sourceTree = "<group>";
 		};
-		2BA364B417251D91007C67DF /* TestFlight */ = {
-			isa = PBXGroup;
-			children = (
-				2BA364BB17252116007C67DF /* GSTestFlightLogger.h */,
-				2BA364BC17252116007C67DF /* GSTestFlightLogger.m */,
-				2B76FD69175B336200F56E09 /* GSTestFlightAnalytics.h */,
-				2B76FD6A175B336200F56E09 /* GSTestFlightAnalytics.m */,
-			);
-			path = TestFlight;
-			sourceTree = "<group>";
-		};
 		2BAC61EE172557C30097F8DA /* Groovies */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,7 +459,6 @@
 				2BAC61F71725590D0097F8DA /* Groovies+Additions.h */,
 				2BAC61F61725590D0097F8DA /* Groovies+Theme.h */,
 				2B76FD63175B2FFE00F56E09 /* Groovies+Analytics.h */,
-				2B76FD4017564D0400F56E09 /* Groovies+TestFlight.h */,
 			);
 			path = Groovies;
 			sourceTree = "<group>";
@@ -497,7 +468,6 @@
 			children = (
 				2BD41787166A6EEC0099F9AD /* CocoaLumberjack */,
 				2BD417BD166A8C8F0099F9AD /* DCIntrospect */,
-				2BD417B4166A85160099F9AD /* TestFlight */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -513,15 +483,6 @@
 				2BD4178B166A6F040099F9AD /* DDTTYLogger.m */,
 			);
 			path = CocoaLumberjack;
-			sourceTree = "<group>";
-		};
-		2BD417B4166A85160099F9AD /* TestFlight */ = {
-			isa = PBXGroup;
-			children = (
-				2BD417B5166A852B0099F9AD /* libTestFlight.a */,
-				2BD417B6166A852B0099F9AD /* TestFlight.h */,
-			);
-			path = TestFlight;
 			sourceTree = "<group>";
 		};
 		2BD417BD166A8C8F0099F9AD /* DCIntrospect */ = {
@@ -581,7 +542,6 @@
 				2BBFF77A176D0BBA00986ACC /* GSLogging+Benchmark.h in Headers */,
 				2BD4178C166A6F040099F9AD /* DDLog.h in Headers */,
 				2BD4178E166A6F040099F9AD /* DDTTYLogger.h in Headers */,
-				2BD417B8166A852B0099F9AD /* TestFlight.h in Headers */,
 				2BD417C7166A8CCB0099F9AD /* DCCrossHairView.h in Headers */,
 				2BD417C9166A8CCB0099F9AD /* DCFrameView.h in Headers */,
 				2BD417CB166A8CCB0099F9AD /* DCIntrospect.h in Headers */,
@@ -606,7 +566,6 @@
 				2BE6883B16ECD19900ABCDB6 /* DDASLLogger.h in Headers */,
 				2B5B9A43172462BB005754B3 /* GSLogging+Internal.h in Headers */,
 				2B5B9A48172468E4005754B3 /* GSLogFormatter.h in Headers */,
-				2BA364BD17252116007C67DF /* GSTestFlightLogger.h in Headers */,
 				2B86F8E41726846300DFCF97 /* GSMacros+Math.h in Headers */,
 				2BBFF777176CF87500986ACC /* GSGlobals+Execute.h in Headers */,
 				2BD8786A176CEB64002231E1 /* UIViewController+Analytics.h in Headers */,
@@ -615,14 +574,11 @@
 				2B6FD0B6173D93140042A168 /* GSLogging+Expression.h in Headers */,
 				2B6FD0BA1740357F0042A168 /* GSLogging+Assert.h in Headers */,
 				2BEF03171741599700AAEE7E /* GSHistoryLogger.h in Headers */,
-				2B76FD4117564D0600F56E09 /* Groovies+TestFlight.h in Headers */,
 				2B76FD5217578C9000F56E09 /* GSAnalytics.h in Headers */,
 				2B76FD60175B2CA800F56E09 /* GSAnalyticsHelpers.h in Headers */,
 				2B76FD62175B2DDC00F56E09 /* GSAnalyticsProvider.h in Headers */,
 				2B76FD64175B2FFE00F56E09 /* Groovies+Analytics.h in Headers */,
-				2B76FD6B175B336300F56E09 /* GSTestFlightAnalytics.h in Headers */,
 				2B08CB66178F0DED00BA7506 /* GSLogging+Lumberjack.h in Headers */,
-				2BDA91B41793254C00C39436 /* TGLogging+Base.h in Headers */,
 				2BE31B201796A6FE00E6C6CF /* GSMacros+Defines.h in Headers */,
 				2BE31B2C17970FD700E6C6CF /* GSGlobals+Strings.h in Headers */,
 				2BE73B76179D530200618F6C /* UIView+Theme.h in Headers */,
@@ -747,7 +703,6 @@
 				2B5B9A5117246A0E005754B3 /* GSGlobals+Application.m in Sources */,
 				2B5B9A5317246A0E005754B3 /* GSGlobals+Geometry.m in Sources */,
 				2B5B9A5517246A0E005754B3 /* GSGlobals+Device.m in Sources */,
-				2BA364BE17252116007C67DF /* GSTestFlightLogger.m in Sources */,
 				2BAC61E617252E520097F8DA /* GSGlobals+Objects.m in Sources */,
 				2BAC61F21725582C0097F8DA /* Groovies.m in Sources */,
 				2B6FD0B0173D8DCB0042A168 /* NSArray+Blocks.m in Sources */,
@@ -756,7 +711,6 @@
 				2BEF03181741599700AAEE7E /* GSHistoryLogger.m in Sources */,
 				2B76FD5317578C9000F56E09 /* GSAnalytics.m in Sources */,
 				2B76FD61175B2CA800F56E09 /* GSAnalyticsHelpers.m in Sources */,
-				2B76FD6C175B336300F56E09 /* GSTestFlightAnalytics.m in Sources */,
 				2BE31B2D17970FD700E6C6CF /* GSGlobals+Strings.m in Sources */,
 				2BE73B77179D530200618F6C /* UIView+Theme.m in Sources */,
 				2B133473179D82D4006CAC20 /* GSTheme+Classes.m in Sources */,

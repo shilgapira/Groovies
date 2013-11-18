@@ -41,8 +41,6 @@
 
 #import "Groovies+Theme.h"
 
-#import "Groovies+TestFlight.h"
-
 
 //
 // Initialization
