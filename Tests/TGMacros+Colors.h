@@ -1,5 +1,5 @@
 //
-// TGColor+Create.h
+// TGMacros+Colors.h
 //
 // Copyright (c) 2013 Gil Shapira
 //
@@ -25,6 +25,6 @@
 #import <SenTestingKit/SenTestingKit.h>
 
 
-@interface TGColor_Create : SenTestCase
+@interface TGMacros_Colors : SenTestCase
 
 @end

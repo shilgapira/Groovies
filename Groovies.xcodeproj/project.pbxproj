@@ -13,7 +13,7 @@
 		2B0868A81656A212005992D6 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0868A61656A211005992D6 /* NSDate+Additions.m */; };
 		2B08CB62178DAF5500BA7506 /* TGLogging+Assert.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B08CB61178DAF5500BA7506 /* TGLogging+Assert.m */; };
 		2B08CB66178F0DED00BA7506 /* GSLogging+Lumberjack.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B08CB65178F0C4400BA7506 /* GSLogging+Lumberjack.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2B08CB6A178F43D600BA7506 /* TGColor+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B08CB69178F43D600BA7506 /* TGColor+Create.m */; };
+		2B08CB6A178F43D600BA7506 /* TGMacros+Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B08CB69178F43D600BA7506 /* TGMacros+Colors.m */; };
 		2B0B0A021610C8BB003C8586 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B10F14715E453AD00327C2E /* UIKit.framework */; };
 		2B0B0A051610C947003C8586 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0B0A041610C947003C8586 /* CoreGraphics.framework */; };
 		2B133472179D82D4006CAC20 /* GSTheme+Classes.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B133470179D82D4006CAC20 /* GSTheme+Classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,6 +34,7 @@
 		2B5B9A5317246A0E005754B3 /* GSGlobals+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5B9A4D17246A0B005754B3 /* GSGlobals+Geometry.m */; };
 		2B5B9A5417246A0E005754B3 /* GSGlobals+Device.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B5B9A4E17246A0C005754B3 /* GSGlobals+Device.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B5B9A5517246A0E005754B3 /* GSGlobals+Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5B9A4F17246A0E005754B3 /* GSGlobals+Device.m */; };
+		2B60E272183AAB5B00F1F429 /* GSMacros+Colors.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B60E271183AAB5B00F1F429 /* GSMacros+Colors.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B6FD0AF173D8DCB0042A168 /* NSArray+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B6FD0A9173D8DC60042A168 /* NSArray+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B6FD0B0173D8DCB0042A168 /* NSArray+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6FD0AA173D8DC70042A168 /* NSArray+Blocks.m */; };
 		2B6FD0B1173D8DCB0042A168 /* NSDictionary+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B6FD0AB173D8DC80042A168 /* NSDictionary+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -70,8 +71,6 @@
 		2BBFF777176CF87500986ACC /* GSGlobals+Execute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBFF775176CF87500986ACC /* GSGlobals+Execute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BBFF778176CF87500986ACC /* GSGlobals+Execute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFF776176CF87500986ACC /* GSGlobals+Execute.m */; };
 		2BBFF77A176D0BBA00986ACC /* GSLogging+Benchmark.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBFF779176D0BB600986ACC /* GSLogging+Benchmark.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2BC025D51634E2AB00EA3D02 /* UIColor+Create.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BC025D31634E2AB00EA3D02 /* UIColor+Create.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2BC025D61634E2AB00EA3D02 /* UIColor+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC025D41634E2AB00EA3D02 /* UIColor+Create.m */; };
 		2BD4178C166A6F040099F9AD /* DDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD41788166A6F040099F9AD /* DDLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BD4178D166A6F040099F9AD /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD41789166A6F040099F9AD /* DDLog.m */; settings = {COMPILER_FLAGS = "-Wno-sign-conversion -Wno-implicit-retain-self"; }; };
 		2BD4178E166A6F040099F9AD /* DDTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD4178A166A6F040099F9AD /* DDTTYLogger.h */; };
@@ -125,8 +124,8 @@
 		2B08CB60178DAF5500BA7506 /* TGLogging+Assert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGLogging+Assert.h"; sourceTree = "<group>"; };
 		2B08CB61178DAF5500BA7506 /* TGLogging+Assert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGLogging+Assert.m"; sourceTree = "<group>"; };
 		2B08CB65178F0C4400BA7506 /* GSLogging+Lumberjack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSLogging+Lumberjack.h"; sourceTree = "<group>"; };
-		2B08CB68178F43D600BA7506 /* TGColor+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGColor+Create.h"; sourceTree = "<group>"; };
-		2B08CB69178F43D600BA7506 /* TGColor+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGColor+Create.m"; sourceTree = "<group>"; };
+		2B08CB68178F43D600BA7506 /* TGMacros+Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGMacros+Colors.h"; sourceTree = "<group>"; };
+		2B08CB69178F43D600BA7506 /* TGMacros+Colors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGMacros+Colors.m"; sourceTree = "<group>"; };
 		2B0B0A041610C947003C8586 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2B10F14715E453AD00327C2E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2B133470179D82D4006CAC20 /* GSTheme+Classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GSTheme+Classes.h"; sourceTree = "<group>"; };
@@ -155,6 +154,7 @@
 		2B60E246183A387500F1F429 /* GSTestFlight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSTestFlight.m; sourceTree = "<group>"; };
 		2B60E25F183A4CA700F1F429 /* GSGoogleAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSGoogleAnalytics.h; sourceTree = "<group>"; };
 		2B60E260183A4CA700F1F429 /* GSGoogleAnalytics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSGoogleAnalytics.m; sourceTree = "<group>"; };
+		2B60E271183AAB5B00F1F429 /* GSMacros+Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GSMacros+Colors.h"; sourceTree = "<group>"; };
 		2B6FD0A9173D8DC60042A168 /* NSArray+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Blocks.h"; sourceTree = "<group>"; };
 		2B6FD0AA173D8DC70042A168 /* NSArray+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Blocks.m"; sourceTree = "<group>"; };
 		2B6FD0AB173D8DC80042A168 /* NSDictionary+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Blocks.h"; sourceTree = "<group>"; };
@@ -198,8 +198,6 @@
 		2BBFF775176CF87500986ACC /* GSGlobals+Execute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GSGlobals+Execute.h"; sourceTree = "<group>"; };
 		2BBFF776176CF87500986ACC /* GSGlobals+Execute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GSGlobals+Execute.m"; sourceTree = "<group>"; };
 		2BBFF779176D0BB600986ACC /* GSLogging+Benchmark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSLogging+Benchmark.h"; sourceTree = "<group>"; };
-		2BC025D31634E2AB00EA3D02 /* UIColor+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Create.h"; sourceTree = "<group>"; };
-		2BC025D41634E2AB00EA3D02 /* UIColor+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Create.m"; sourceTree = "<group>"; };
 		2BD41788166A6F040099F9AD /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDLog.h; path = Lumberjack/DDLog.h; sourceTree = "<group>"; };
 		2BD41789166A6F040099F9AD /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDLog.m; path = Lumberjack/DDLog.m; sourceTree = "<group>"; };
 		2BD4178A166A6F040099F9AD /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDTTYLogger.h; path = Lumberjack/DDTTYLogger.h; sourceTree = "<group>"; };
@@ -278,15 +276,6 @@
 			name = Logging;
 			sourceTree = "<group>";
 		};
-		2B08CB67178F43B200BA7506 /* Additions */ = {
-			isa = PBXGroup;
-			children = (
-				2B08CB68178F43D600BA7506 /* TGColor+Create.h */,
-				2B08CB69178F43D600BA7506 /* TGColor+Create.m */,
-			);
-			name = Additions;
-			sourceTree = "<group>";
-		};
 		2B47BB10166A53A70081AE81 /* Prefix */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,8 +301,6 @@
 				2B6FD0AE173D8DCA0042A168 /* NSSet+Blocks.m */,
 				2B02B9211634D2AD00C9565B /* NSString+Encoding.h */,
 				2B02B9221634D2AF00C9565B /* NSString+Encoding.m */,
-				2BC025D31634E2AB00EA3D02 /* UIColor+Create.h */,
-				2BC025D41634E2AB00EA3D02 /* UIColor+Create.m */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -440,7 +427,6 @@
 				2BA364AF172416C8007C67DF /* Macros */,
 				2B08CB5F178DAF1A00BA7506 /* Logging */,
 				2BE31B161796776100E6C6CF /* Globals */,
-				2B08CB67178F43B200BA7506 /* Additions */,
 				2B819BAC15DB2599001AAB87 /* GrooviesTests.h */,
 				2B819BAD15DB2599001AAB87 /* GrooviesTests.m */,
 				2B819B7A15DB13A8001AAB87 /* Info.plist */,
@@ -471,6 +457,7 @@
 				2BA364A91723D6B2007C67DF /* GSMacros+Varargs.h */,
 				2BA364AA17240462007C67DF /* GSMacros+Language.h */,
 				2B86F8E3172682FC00DFCF97 /* GSMacros+Math.h */,
+				2B60E271183AAB5B00F1F429 /* GSMacros+Colors.h */,
 			);
 			path = Macros;
 			sourceTree = "<group>";
@@ -484,6 +471,8 @@
 				2BA364B217241B74007C67DF /* TGMacros+Language.m */,
 				2B86F8FA1726AA2C00DFCF97 /* TGMacros+Math.h */,
 				2B86F8FB1726AA2C00DFCF97 /* TGMacros+Math.m */,
+				2B08CB68178F43D600BA7506 /* TGMacros+Colors.h */,
+				2B08CB69178F43D600BA7506 /* TGMacros+Colors.m */,
 			);
 			name = Macros;
 			sourceTree = "<group>";
@@ -575,7 +564,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B02B9231634D2B200C9565B /* NSString+Encoding.h in Headers */,
-				2BC025D51634E2AB00EA3D02 /* UIColor+Create.h in Headers */,
 				2B0868A71656A212005992D6 /* NSDate+Additions.h in Headers */,
 				2B47B9511667E6BF0081AE81 /* NSDictionary+Values.h in Headers */,
 				2B47BB0F166A53A00081AE81 /* Prefix.pch in Headers */,
@@ -613,6 +601,7 @@
 				2B86F8F91726978900DFCF97 /* GSMacros+Language.h in Headers */,
 				2B6FD0B6173D93140042A168 /* GSLogging+Expression.h in Headers */,
 				2B6FD0BA1740357F0042A168 /* GSLogging+Assert.h in Headers */,
+				2B60E272183AAB5B00F1F429 /* GSMacros+Colors.h in Headers */,
 				2BEF03171741599700AAEE7E /* GSHistoryLogger.h in Headers */,
 				2B76FD5217578C9000F56E09 /* GSAnalytics.h in Headers */,
 				2B76FD60175B2CA800F56E09 /* GSAnalyticsHelpers.h in Headers */,
@@ -725,7 +714,6 @@
 			files = (
 				2BBFF778176CF87500986ACC /* GSGlobals+Execute.m in Sources */,
 				2B02B9241634D2B200C9565B /* NSString+Encoding.m in Sources */,
-				2BC025D61634E2AB00EA3D02 /* UIColor+Create.m in Sources */,
 				2B0868A81656A212005992D6 /* NSDate+Additions.m in Sources */,
 				2B47B9521667E6BF0081AE81 /* NSDictionary+Values.m in Sources */,
 				2BD4178D166A6F040099F9AD /* DDLog.m in Sources */,
@@ -766,7 +754,7 @@
 				2BA364B317241B74007C67DF /* TGMacros+Language.m in Sources */,
 				2B86F8FE1726AAEE00DFCF97 /* TGMacros+Math.m in Sources */,
 				2B08CB62178DAF5500BA7506 /* TGLogging+Assert.m in Sources */,
-				2B08CB6A178F43D600BA7506 /* TGColor+Create.m in Sources */,
+				2B08CB6A178F43D600BA7506 /* TGMacros+Colors.m in Sources */,
 				2BDA91B61793270D00C39436 /* TGLogging+Base.m in Sources */,
 				2BDA91B917932F5D00C39436 /* TGLogging+Benchmark.m in Sources */,
 				2BE31B1B17967AFE00E6C6CF /* TGGlobals+Execute.m in Sources */,

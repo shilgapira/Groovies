@@ -1,7 +1,7 @@
 //
-// UIColor+Create.h
+// GSMacros+Colors.h
 //
-// Copyright (c) 2012 Gil Shapira
+// Copyright (c) 2013 Gil Shapira
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,12 @@
 // THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
 #import "GSMacros+Varargs.h"
 
 
 
 /**
- * Creates a UIColor instance using various color representations.
+ * Creates a UIColor/NSColor instance using various color representations.
  *
  * Colors can be created with hex codes using one of the following formats:
  *
@@ -60,8 +59,8 @@
  *     // Optional alpha argument
  *     UIColor *glow = GSColor(1.0f, 0.5f, 0, 0.5f);
  *
- * For convenience, the macro returns [UIColor clearColor] when called
- * without any arguments:
+ * For convenience, the macro returns clearColor when called without
+ * any arguments:
  *
  *     // Equivalent to [UIColor clearColor]
  *     UIColor *transparent = GSColor();
@@ -73,24 +72,7 @@
  * color one should use GSColor(1.0f) rather than GSColor(1), since the 
  * latter returns the grayscale color 0x010101.
  */
-#define GSColor(...)                GS_VA_OVERLOAD(_GSColor, ##__VA_ARGS__)
-
-
-
-/**
- * UIColor extension that adds the colorWithHex class method.
- */
-@interface UIColor (Create)
-
-/**
- * Creates a UIColor object with a hex color number and an alpha value.
- * @param hex The color number, e.g., 0xff8844.
- * @param alpha The alpha value specified as a value in the 0..1 range.
- * @return The color object.
- */
-+ (UIColor *)colorWithHex:(unsigned long)hex alpha:(float)alpha;
-
-@end
+#define GSColor(...)                    GS_VA_OVERLOAD(_GSColor, ##__VA_ARGS__)
 
 
 
@@ -98,24 +80,36 @@
 // Implementation details, do not use directly
 //
 
-#define _GSColor0()                 [UIColor clearColor]
+#if TARGET_OS_IPHONE
+    #define _GSColorClear()             [UIColor clearColor]
+    #define _GSColorRGB(r, g, b, a)     [UIColor colorWithRed:(r) green:(g) blue:(b) alpha:(a)]
+    #define _GSColorWhite(w, a)         [UIColor colorWithWhite:(w) alpha:(a)]
+#else
+    #define _GSColorClear()             [NSColor clearColor]
+    #define _GSColorRGB(r, g, b, a)     [NSColor colorWithCalibratedRed:(r) green:(g) blue:(b) alpha:(a)]
+    #define _GSColorWhite(w, a)         [NSColor colorWithCalibratedWhite:(w) alpha:(a)]
+#endif
 
-#define _GSColor1(c)                _GSColor2(c, 1.0f)
+#define _GSColorHex(h, a)               _GSColorRGB(((CGFloat) (((h) & 0xFF0000) >> 16)) / 255, ((CGFloat) (((h) & 0xFF00) >> 8)) / 255, ((CGFloat) ((h) & 0xFF)) / 255, (a))
 
-#define _GSColor2(c, a)                                                                     \
-({                                                                                          \
-    __builtin_choose_expr(__builtin_types_compatible_p(typeof(c), typeof(0xFFFFFF)),        \
-        __builtin_choose_expr(sizeof(#c) == sizeof("0xFFFFFF"),                             \
-            [UIColor colorWithHex:((unsigned long) c) alpha:(a)],                           \
-            [UIColor colorWithWhite:((float) c)/255.0f alpha:(a)]),                         \
-        [UIColor colorWithWhite:(c) alpha:(a)]);                                            \
+#define _GSColor0()                     _GSColorClear()
+
+#define _GSColor1(c)                    _GSColor2(c, (CGFloat) 1)
+
+#define _GSColor2(c, a)                                                                         \
+({                                                                                              \
+    __builtin_choose_expr(__builtin_types_compatible_p(typeof(c), typeof(0xFFFFFF)),            \
+        __builtin_choose_expr(sizeof(#c) == sizeof("0xFFFFFF"),                                 \
+            _GSColorHex((unsigned long) (c), (a)),                                              \
+            _GSColorWhite(((CGFloat) (c)) / 255, (a))),                                         \
+        _GSColorWhite((c), (a)));                                                               \
 })
 
-#define _GSColor3(r, g, b)          _GSColor4(r, g, b, 1.0f)
+#define _GSColor3(r, g, b)              _GSColor4(r, g, b, (CGFloat) 1)
 
-#define _GSColor4(r, g, b, a)                                                               \
-({                                                                                          \
-    __builtin_choose_expr(__builtin_types_compatible_p(typeof((r)+(g)+(b)), typeof(255)),   \
-        [UIColor colorWithRed:((float) r)/255.0f green:((float) g)/255.0f blue:((float) b)/255.0f alpha:(a)],   \
-        [UIColor colorWithRed:(r) green:(g) blue:(b) alpha:(a)]);                           \
+#define _GSColor4(r, g, b, a)                                                                   \
+({                                                                                              \
+    __builtin_choose_expr(__builtin_types_compatible_p(typeof((r)+(g)+(b)), typeof(255)),       \
+        _GSColorRGB(((CGFloat) (r)) / 255, ((CGFloat) (g)) / 255, ((CGFloat) (b)) / 255, (a)),  \
+        _GSColorRGB((r), (g), (b), (a)));                                                       \
 })

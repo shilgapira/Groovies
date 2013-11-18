@@ -26,3 +26,4 @@
 #import "GSMacros+Varargs.h"
 #import "GSMacros+Language.h"
 #import "GSMacros+Math.h"
+#import "GSMacros+Colors.h"

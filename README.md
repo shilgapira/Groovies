@@ -3,11 +3,6 @@
 A collection of patterns and additions that simplify iOS app development.
 
 
-## Examples
-
-... TODO ...
-
-
 ## Goals
 
 - Provide solid abstractions for common patterns (e.g., assertions, styling, analytics, etc)
@@ -30,8 +25,7 @@ Groovies is very much a work in progress, though most existing functionality has
 
 Some open issues are:
 
+- Add OS X support where possible
+- Plenty of things are missing unit tests
 - A few categories are quite redundant and should probably be removed
 - Add or update documentation to work with Clang/Xcode 5's comment parsing
-- Remove TestFlight related files from the library itself. Keep them as example/default implementations for TestFlight logging/analytics that users can drop in to their project.
-- Plenty of things are missing unit tests
-- Remove or rewrite leak hunter

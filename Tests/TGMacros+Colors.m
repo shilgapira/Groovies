@@ -1,5 +1,5 @@
 //
-// TGColor+Create.m
+// TGMacros+Colors.m
 //
 // Copyright (c) 2013 Gil Shapira
 //
@@ -22,11 +22,11 @@
 // THE SOFTWARE.
 //
 
-#import "TGColor+Create.h"
-#import "UIColor+Create.h"
+#import "TGMacros+Colors.h"
+#import "GSMacros+Colors.h"
 
 
-@implementation TGColor_Create
+@implementation TGMacros_Colors
 
 - (void)testColor0 {
     UIColor *clear = GSColor();
