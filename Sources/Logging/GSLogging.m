@@ -23,6 +23,7 @@
 //
 
 #import "GSLogging+Internal.h"
+#import "GSMacros+Colors.h"
 #import "GSLogFormatter.h"
 #import "DDTTYLogger.h"
 #import "DDASLLogger.h"
@@ -43,11 +44,11 @@ void GSLoggingSetup(BOOL colors) {
     if (colors) {
         ttyLogger.colorsEnabled = YES;
         
-        [ttyLogger setForegroundColor:[UIColor colorWithRed:0.90f green:0.15f blue:0.10f alpha:1.0f] backgroundColor:nil forFlag:LOG_FLAG_ERROR];
-        [ttyLogger setForegroundColor:[UIColor colorWithRed:0.70f green:0.30f blue:0.10f alpha:1.0f] backgroundColor:nil forFlag:LOG_FLAG_WARN];
-        [ttyLogger setForegroundColor:[UIColor colorWithRed:0.00f green:0.00f blue:0.00f alpha:1.0f] backgroundColor:nil forFlag:LOG_FLAG_INFO];
-        [ttyLogger setForegroundColor:[UIColor colorWithRed:0.20f green:0.40f blue:0.60f alpha:1.0f] backgroundColor:nil forFlag:LOG_FLAG_VERBOSE];
-        [ttyLogger setForegroundColor:[UIColor colorWithRed:0.20f green:0.50f blue:0.30f alpha:1.0f] backgroundColor:nil forFlag:LOG_FLAG_DEBUG];
+        [ttyLogger setForegroundColor:GSColor(0.90f, 0.15f, 0.10f) backgroundColor:nil forFlag:LOG_FLAG_ERROR];
+        [ttyLogger setForegroundColor:GSColor(0.70f, 0.30f, 0.10f) backgroundColor:nil forFlag:LOG_FLAG_WARN];
+        [ttyLogger setForegroundColor:GSColor(0.00f, 0.00f, 0.00f) backgroundColor:nil forFlag:LOG_FLAG_INFO];
+        [ttyLogger setForegroundColor:GSColor(0.20f, 0.40f, 0.60f) backgroundColor:nil forFlag:LOG_FLAG_VERBOSE];
+        [ttyLogger setForegroundColor:GSColor(0.20f, 0.50f, 0.30f) backgroundColor:nil forFlag:LOG_FLAG_DEBUG];
     }
     #endif
 
