@@ -101,7 +101,7 @@
 		2BDA91B41793254C00C39436 /* TGLogging+Base.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BDA91B21793254C00C39436 /* TGLogging+Base.h */; };
 		2BDA91B61793270D00C39436 /* TGLogging+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA91B31793254C00C39436 /* TGLogging+Base.m */; };
 		2BDA91B917932F5D00C39436 /* TGLogging+Benchmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA91B817932F5D00C39436 /* TGLogging+Benchmark.m */; };
-		2BE31B1B17967AFE00E6C6CF /* TGGlobals+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE31B181796795E00E6C6CF /* TGGlobals+Blocks.m */; };
+		2BE31B1B17967AFE00E6C6CF /* TGGlobals+Execute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE31B181796795E00E6C6CF /* TGGlobals+Execute.m */; };
 		2BE31B1E179697D000E6C6CF /* TGGlobals+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE31B1D179697D000E6C6CF /* TGGlobals+Geometry.m */; };
 		2BE31B201796A6FE00E6C6CF /* GSMacros+Defines.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BE31B1F1796A6FE00E6C6CF /* GSMacros+Defines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BE31B2C17970FD700E6C6CF /* GSGlobals+Strings.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BE31B2A17970FD400E6C6CF /* GSGlobals+Strings.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -232,8 +232,8 @@
 		2BDA91B31793254C00C39436 /* TGLogging+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGLogging+Base.m"; sourceTree = "<group>"; };
 		2BDA91B717932F5D00C39436 /* TGLogging+Benchmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGLogging+Benchmark.h"; sourceTree = "<group>"; };
 		2BDA91B817932F5D00C39436 /* TGLogging+Benchmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGLogging+Benchmark.m"; sourceTree = "<group>"; };
-		2BE31B171796795E00E6C6CF /* TGGlobals+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGGlobals+Blocks.h"; sourceTree = "<group>"; };
-		2BE31B181796795E00E6C6CF /* TGGlobals+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGGlobals+Blocks.m"; sourceTree = "<group>"; };
+		2BE31B171796795E00E6C6CF /* TGGlobals+Execute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGGlobals+Execute.h"; sourceTree = "<group>"; };
+		2BE31B181796795E00E6C6CF /* TGGlobals+Execute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGGlobals+Execute.m"; sourceTree = "<group>"; };
 		2BE31B1C179697D000E6C6CF /* TGGlobals+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGGlobals+Geometry.h"; sourceTree = "<group>"; };
 		2BE31B1D179697D000E6C6CF /* TGGlobals+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGGlobals+Geometry.m"; sourceTree = "<group>"; };
 		2BE31B1F1796A6FE00E6C6CF /* GSMacros+Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GSMacros+Defines.h"; sourceTree = "<group>"; };
@@ -557,8 +557,8 @@
 		2BE31B161796776100E6C6CF /* Globals */ = {
 			isa = PBXGroup;
 			children = (
-				2BE31B171796795E00E6C6CF /* TGGlobals+Blocks.h */,
-				2BE31B181796795E00E6C6CF /* TGGlobals+Blocks.m */,
+				2BE31B171796795E00E6C6CF /* TGGlobals+Execute.h */,
+				2BE31B181796795E00E6C6CF /* TGGlobals+Execute.m */,
 				2BE31B1C179697D000E6C6CF /* TGGlobals+Geometry.h */,
 				2BE31B1D179697D000E6C6CF /* TGGlobals+Geometry.m */,
 				2BE31B2E1797163500E6C6CF /* TGGlobals+Strings.h */,
@@ -791,7 +791,7 @@
 				2B08CB6A178F43D600BA7506 /* TGColor+Create.m in Sources */,
 				2BDA91B61793270D00C39436 /* TGLogging+Base.m in Sources */,
 				2BDA91B917932F5D00C39436 /* TGLogging+Benchmark.m in Sources */,
-				2BE31B1B17967AFE00E6C6CF /* TGGlobals+Blocks.m in Sources */,
+				2BE31B1B17967AFE00E6C6CF /* TGGlobals+Execute.m in Sources */,
 				2BE31B1E179697D000E6C6CF /* TGGlobals+Geometry.m in Sources */,
 				2BE31B301797163600E6C6CF /* TGGlobals+Strings.m in Sources */,
 			);

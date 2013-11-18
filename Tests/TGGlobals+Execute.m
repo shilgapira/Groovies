@@ -1,5 +1,5 @@
 //
-// TGGlobals+Blocks.h
+// TGGlobals+Execute.m
 //
 // Copyright (c) 2013 Gil Shapira
 //
@@ -22,9 +22,54 @@
 // THE SOFTWARE.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import "TGGlobals+Execute.h"
+#import "GSGlobals+Execute.h"
 
 
-@interface TGGlobals_Blocks : SenTestCase
+@implementation TGGlobals_Execute
+
+- (void)testMain {
+    __block BOOL executed = NO;
+    GSExecuteMain(^{
+        executed = YES;
+    });
+    TGAssertNot(executed);
+}
+
+- (void)testDelayed {
+    __block BOOL executed = NO;
+    GSExecuteDelayed(0, ^{
+        executed = YES;
+    });
+    TGAssertNot(executed);
+}
+
+- (void)testBackground {
+    __block BOOL executed = NO;
+    __block BOOL background = NO;
+    
+    GSExecuteBackground(^{
+        executed = YES;
+        background = ![NSThread isMainThread];
+    });
+    
+    [NSThread sleepForTimeInterval:0.01];
+    
+    TGAssert(executed);
+    TGAssert(background);
+}
+
+- (void)testTiming {
+    NSTimeInterval epsilon = 0.01;
+    
+    for (NSTimeInterval time = 0.01; time < 0.2; time *= 1.5) {
+        NSTimeInterval measured = GSExecuteTimed(^{
+            [NSThread sleepForTimeInterval:time];
+        });
+        NSLog(@"Interval: %g, Measured: %g", time, measured);
+        TGAssert(measured > time - epsilon);
+        TGAssert(measured < time + epsilon);
+    }
+}
 
 @end
