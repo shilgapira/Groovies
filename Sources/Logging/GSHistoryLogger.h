@@ -25,14 +25,79 @@
 #import "DDLog.h"
 
 
+typedef NS_ENUM(NSUInteger, GSHistoryMessageFormat) {
+    
+    /** Formatted messages in plain text */
+    GSHistoryMessageFormatText,
+    
+    /** Formatted messages with HTML markup colored by level */
+    GSHistoryMessageFormatHTML,
+};
+
+
+/**
+ * A custom logger that aggregates messages for debugging on a device at
+ * runtime or letting testers send bug reports.
+ *
+ * For example, the following code in a UIViewController subclass can be
+ * used to email a bug report with the logging history:
+ *
+ * @code
+ 
+- (void)presentBugReportComposer {
+    if ([MFMailComposeViewController canSendMail]) {
+        NSString *body = [GSHistoryLogger.sharedLogger messagesAsDocumentWithFormat:GSHistoryMessageFormatHTML];
+        
+        MFMailComposeViewController *composer = [MFMailComposeViewController new];
+        composer.mailComposeDelegate = self;
+        composer.subject = @"Bug Report";
+        [composer setMessageBody:body isHTML:YES];
+        
+        [self presentViewController:composer animated:YES completion:nil];
+    }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+ 
+ * @endcode
+ */
 @interface GSHistoryLogger : DDAbstractLogger
 
+/**
+ * Whether the logger is enabled. Disabling the logger clears its history.
+ */
 @property (nonatomic,assign,getter=isEnabled) BOOL enabled;
 
-@property (nonatomic,assign) NSUInteger size;
+/**
+ * The number of messages to keep, after which the logger will periodically 
+ * prune older ones. Defaults to 150.
+ */
+@property (nonatomic,assign) NSUInteger capacity;
 
-@property (nonatomic,copy,readonly) NSArray *messages;
-
+/**
+ * The singleton instance of this logger.
+ */
 + (instancetype)sharedLogger;
+
+/**
+ * The messages as @c DDLogMessage objects, sorted from oldest to newest.
+ */
+- (NSArray *)messageObjects;
+
+/**
+ * Creates an @c NSString representation for each log message.
+ * @param format The message format.
+ * @return An array of messages, sorted from oldest to newest.
+ */
+- (NSArray *)messagesAsStringsWithFormat:(GSHistoryMessageFormat)format;
+
+/**
+ * Joins all log messages into a single human-readable document.
+ * @param format The document and message format.
+ * @return The formatted messages separated with new lines and/or markup.
+ */
+- (NSString *)messagesAsDocumentWithFormat:(GSHistoryMessageFormat)format;
 
 @end

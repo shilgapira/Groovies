@@ -24,8 +24,7 @@
 
 #import "GSLogFormatter.h"
 #import "GSMacros+Language.h"
-#import <pthread.h>
-#import <libkern/OSAtomic.h>
+#import "GSLogging+Base.h"
 
 
 #define kDateFormatString   @"yyyy-MM-dd HH:mm:ss:SSS"
@@ -48,24 +47,23 @@ SINGLETON(sharedFormatter);
 - (NSString *)formatLogMessage:(DDLogMessage *)message {
     NSString *date = [self dateForMessage:message];
     
-    NSString *level = [self levelForMessage:message];
+    NSString *flag = [self flagForMessage:message];
 
     NSString *context = [self contextForMessage:message];
     
     NSString *file = DDExtractFileNameWithoutExtension(message->file, NO);
 
-    return [NSString stringWithFormat:@"%@ %@ <%@> [%@:%d > %s]  %@", date, level, context, file, message->lineNumber, message->function, message->logMsg];
+    return [NSString stringWithFormat:@"%@ %@ <%@> [%@:%d > %s]  %@", date, flag, context, file, message->lineNumber, message->function, message->logMsg];
 }
 
-- (NSString *)levelForMessage:(DDLogMessage *)message {
-    NSString *level = @"D";
+- (NSString *)flagForMessage:(DDLogMessage *)message {
     switch (message->logFlag) {
-        case LOG_FLAG_ERROR   : level = @"E"; break;
-        case LOG_FLAG_WARN    : level = @"W"; break;
-        case LOG_FLAG_INFO    : level = @"I"; break;
-        case LOG_FLAG_VERBOSE : level = @"V"; break;
+        case LOG_FLAG_ERROR: return @"E";
+        case LOG_FLAG_WARN: return @"W";
+        case LOG_FLAG_INFO: return @"I";
+        case LOG_FLAG_VERBOSE: return @"V";
+        default: return @"D";
     }
-    return level;
 }
 
 - (NSString *)contextForMessage:(DDLogMessage *)message {
