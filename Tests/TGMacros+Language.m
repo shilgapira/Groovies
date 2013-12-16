@@ -27,9 +27,25 @@
 #import "GSLogging+Assert.h"
 
 
+@protocol TGFoobar <NSObject>
+
+- (NSString *)foobar;
+
+@end
+
+
+@interface TGMacros_Language () <TGFoobar>
+
+@end
+
+
 @implementation TGMacros_Language
 
 SINGLETON(testSingleton);
+
+- (NSString *)foobar {
+    return @"FOOBAR!";
+}
 
 - (void)testSingleton {
     id foo = [TGMacros_Language testSingleton];
@@ -40,28 +56,60 @@ SINGLETON(testSingleton);
     TGAssertEqualObjects(foo, bar);
 }
 
-
-#define kName @"james"
-
-- (NSString *)james {
-    return kName;
-}
-
-- (void)testKeypath {
-    NSString *k1 = @"james";
-    NSString *k2 = KEYPATH(self, james);
+- (void)testObjectKeypath {
+    NSString *k1 = @"foobar";
+    NSString *k2 = KEYPATH(self, foobar);
     TGAssertEqualObjects(k1, k2);
     TGAssertEquals(k1, k2);
     TGAssertEqualObjects([self valueForKey:k1], [self valueForKey:k2]);
 }
 
-- (void)testClspath {
-    NSString *k1 = @"james";
-    NSString *k2 = CLSPATH(TGMacros_Language, james);
+- (void)testClassKeypath {
+    NSString *k1 = @"foobar";
+    NSString *k2 = KEYPATH(TGMacros_Language, foobar);
     TGAssertEqualObjects(k1, k2);
     TGAssertEquals(k1, k2);
     TGAssertEqualObjects([self valueForKey:k1], [self valueForKey:k2]);
 }
+
+- (void)testProtocolKeypath {
+    NSString *k1 = @"foobar";
+    NSString *k2 = KEYPATH(id<TGFoobar>, foobar);
+    TGAssertEqualObjects(k1, k2);
+    TGAssertEquals(k1, k2);
+    TGAssertEqualObjects([self valueForKey:k1], [self valueForKey:k2]);
+}
+
+- (void)testArrayKeypath {
+    NSObject *x = @1;
+    NSObject *y = @"Hello";
+    NSObject *z = @YES;
+    NSArray *objects = @[ x, y, z ];
+    
+    NSArray *d1 = [objects valueForKey:@"description"];
+    NSArray *d2 = [objects valueForKey:KEYPATH(x, description)];
+    NSArray *d3 = [objects valueForKey:KEYPATH(NSObject, description)];
+    NSArray *d4 = [objects valueForKey:KEYPATH(id<NSObject>, description)];
+    
+    TGAssertEqualObjects(d1, d2);
+    TGAssertEqualObjects(d2, d3);
+    TGAssertEqualObjects(d3, d4);
+}
+
+// Should fail compilation on a2, a3, and a4
+#if 0
+- (void)testInvalidKeypath {
+    NSObject *x = @1;
+    NSObject *y = @"Hello";
+    NSObject *z = @YES;
+    NSArray *objects = @[ x, y, z ];
+    
+    NSArray *a1 = [objects valueForKey:@"description"];
+    NSArray *a2 = [objects valueForKey:KEYPATH(x, desc)];
+    NSArray *a3 = [objects valueForKey:KEYPATH(NSObject, desc)];
+    NSArray *a4 = [objects valueForKey:KEYPATH(id<NSObject>, desc)];
+}
+#endif
 
 - (void)testSelector {
     SEL s1 = @selector(description);

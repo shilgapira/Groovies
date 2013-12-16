@@ -82,25 +82,27 @@
  * In both cases the compiler will generate the exact same code, but the KEYPATH
  * call will cause a compilation error if there's a typo or if at some point the
  * 'email' property is renamed or removed from the AppUser class.
+ *
+ * You can also pass class and protocol types as the target argument. This is useful
+ * when there's no concrete instance of the relevant class to validate the keypath
+ * against.
+ *
+ * For example, in the example below we create an array of objects and then use
+ * valueForKey: to get an array of their descriptions. All four array creation
+ * calls are identical at runtime, but the ones using KEYPATH will validate the 
+ * keypath at compile time.
+ *
+ *     NSObject *o1 = @1;
+ *     NSObject *o2 = @"Hello";
+ *     NSObject *o3 = @YES;
+ *     NSArray *objects = @[ o1, o2, o3 ];
+ *
+ *     NSArray *descriptions1 = [objects valueForKey:@"description"];
+ *     NSArray *descriptions2 = [objects valueForKey:KEYPATH(o1, description)];
+ *     NSArray *descriptions3 = [objects valueForKey:KEYPATH(NSObject, description)];
+ *     NSArray *descriptions4 = [objects valueForKey:KEYPATH(id<NSObject>, description)];
  */
-#define KEYPATH(object, path)           ((void)(NO && ((void)object.path, NO)), @#path)
-
-
-/**
- * Variant of KEYPATH that can be used when there's no concrete instance of the
- * relevant class to verify the keypath against.
- *
- * For example, to get all the emails from the AppUser objects in an array we can 
- * use the valueForKey method:
- *
- *     NSArray *users = self.users;
- *     NSArray *emails = [users valueForKey:@"email"];
- *
- * We'll replace the second line with a safer version using CLSPATH:
- *
- *     NSArray *emails = [users valueForKey:CLSPATH(AppUser, email)];
- */
-#define CLSPATH(class, path)            KEYPATH(((class *) nil), path)
+#define KEYPATH(target, path)           _KEYPATH(target, path)
 
 
 /**
@@ -225,6 +227,20 @@ do {                                    \
     });                                 \
     return instance;                    \
 }
+
+// Performs compile time validation on the keypath using a dummy pointer. The validation is
+// stripped at compile time.
+#define _KEYPATH(TARGET, PATH)          ((void)(NO && ((void)_KEYPATH_OBJECT(TARGET).PATH, NO)), @#PATH)
+// Returns a dummy pointer to an object matching TARGET's type, where TARGET can itself be an
+// object, class or protocol. For example, _KEYPATH_OBJECT(@"Hello") returns an 'NSString *' pointer,
+// _KEYPATH_OBJECT(UIView) returns a 'UIView *' pointer, and _KEYPATH_OBJECT(id<NSCopying>) returns
+// an 'id<NSCopying>' pointer.
+#define _KEYPATH_OBJECT(TARGET)         \
+    __builtin_choose_expr(              \
+        __builtin_types_compatible_p(typeof(TARGET),typeof(id)),    \
+        (*((const typeof(TARGET) *) nil)),                          \
+        ((const typeof(TARGET) *) nil))
+
 
 // Placeholder _cmd symbol so FUNCTIONNAME() won't cause a syntax error during compilation.
 extern void *_cmd;
