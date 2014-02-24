@@ -64,13 +64,6 @@
  *
  *     // Equivalent to [UIColor clearColor]
  *     UIColor *transparent = GSColor();
- *
- * Note: The macro relies on compile time type checking to handle each
- * combination of arguments as expected. Integers are expected to be in
- * the 0..255 range and floats are expected to be in the 0..1 range. In
- * some cases this might be confusing. For example, to create the white 
- * color one should use GSColor(1.0f) rather than GSColor(1), since the 
- * latter returns the grayscale color 0x010101.
  */
 #define GSColor(...)                    GS_VA_OVERLOAD(_GSColor, ##__VA_ARGS__)
 
@@ -80,36 +73,37 @@
 // Implementation details, do not use directly
 //
 
+// Platform specific variants
 #if TARGET_OS_IPHONE
     #define _GSColorClear()             [UIColor clearColor]
-    #define _GSColorRGB(r, g, b, a)     [UIColor colorWithRed:(r) green:(g) blue:(b) alpha:(a)]
-    #define _GSColorWhite(w, a)         [UIColor colorWithWhite:(w) alpha:(a)]
+    #define _GSColorRGB(r, g, b, a)     [UIColor colorWithRed:(CGFloat)(r) green:(CGFloat)(g) blue:(CGFloat)(b) alpha:(CGFloat)(a)]
+    #define _GSColorWhite(w, a)         [UIColor colorWithWhite:(CGFloat)(w) alpha:(CGFloat)(a)]
 #else
     #define _GSColorClear()             [NSColor clearColor]
-    #define _GSColorRGB(r, g, b, a)     [NSColor colorWithCalibratedRed:(r) green:(g) blue:(b) alpha:(a)]
-    #define _GSColorWhite(w, a)         [NSColor colorWithCalibratedWhite:(w) alpha:(a)]
+    #define _GSColorRGB(r, g, b, a)     [NSColor colorWithCalibratedRed:(CGFloat)(r) green:(CGFloat)(g) blue:(CGFloat)(b) alpha:(CGFloat)(a)]
+    #define _GSColorWhite(w, a)         [NSColor colorWithCalibratedWhite:(CGFloat)(w) alpha:(CGFloat)(a)]
 #endif
 
-#define _GSColorHex(h, a)               _GSColorRGB(((CGFloat) (((h) & 0xFF0000) >> 16)) / 255, ((CGFloat) (((h) & 0xFF00) >> 8)) / 255, ((CGFloat) ((h) & 0xFF)) / 255, (a))
+// Coverts hex colors to RGB float triplets
+#define _GSColorHex(h, a)               _GSColorRGB((CGFloat) (((h) & 0xFF0000) >> 16) / 255, (CGFloat) (((h) & 0xFF00) >> 8) / 255, (CGFloat) ((h) & 0xFF) / 255, a)
 
+// Overloaded macros
 #define _GSColor0()                     _GSColorClear()
 
-#define _GSColor1(c)                    _GSColor2(c, (CGFloat) 1)
+#define _GSColor1(c)                    _GSColor2(c, 1)
 
 #define _GSColor2(c, a)                                                                         \
-({                                                                                              \
     __builtin_choose_expr(__builtin_types_compatible_p(typeof(c), typeof(0xFFFFFF)),            \
         __builtin_choose_expr(sizeof(#c) == sizeof("0xFFFFFF"),                                 \
-            _GSColorHex((unsigned long) (c), (a)),                                              \
-            _GSColorWhite(((CGFloat) (c)) / 255, (a))),                                         \
-        _GSColorWhite((c), (a)));                                                               \
-})
+            _GSColorHex((unsigned long) (c), a),                                                \
+            __builtin_choose_expr(sizeof(#c) == sizeof("0xFF"),                                 \
+                _GSColorWhite((CGFloat) (c) / 255, a),                                          \
+                _GSColorWhite(c, a))),                                                          \
+        _GSColorWhite(c, a))
 
-#define _GSColor3(r, g, b)              _GSColor4(r, g, b, (CGFloat) 1)
+#define _GSColor3(r, g, b)              _GSColor4(r, g, b, 1)
 
 #define _GSColor4(r, g, b, a)                                                                   \
-({                                                                                              \
     __builtin_choose_expr(__builtin_types_compatible_p(typeof((r)+(g)+(b)), typeof(255)),       \
-        _GSColorRGB(((CGFloat) (r)) / 255, ((CGFloat) (g)) / 255, ((CGFloat) (b)) / 255, (a)),  \
-        _GSColorRGB((r), (g), (b), (a)));                                                       \
-})
+        _GSColorRGB((CGFloat) (r) / 255, (CGFloat) (g) / 255, (CGFloat) (b) / 255, a),          \
+        _GSColorRGB(r, g, b, a))

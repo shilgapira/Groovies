@@ -40,7 +40,10 @@
     white = GSColor(1.0);
     TGAssertEqualObjects(white, UIColor.whiteColor);
     
-    UIColor *notwhite = GSColor(1);
+    white = GSColor(1);
+    TGAssertEqualObjects(white, UIColor.whiteColor);
+    
+    UIColor *notwhite = GSColor(0x01);
     TGAssertNot([notwhite isEqual:UIColor.whiteColor]);
     
     UIColor *black = GSColor(0x00);
@@ -48,8 +51,6 @@
     
     black = GSColor(0);
     TGAssertEqualObjects(black, UIColor.blackColor);
-    
-    TGAssertEqualObjects(GSColor(1), GSColor(0x01));
     
     UIColor *gray = GSColor(0.5f);
     TGAssertEqualObjects(gray, UIColor.grayColor);
