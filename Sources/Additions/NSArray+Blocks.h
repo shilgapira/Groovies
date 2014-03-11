@@ -33,6 +33,4 @@
 
 - (NSArray *)select:(BOOL(^)(id object))predicate;
 
-- (NSArray *)filter:(BOOL(^)(id object))predicate;
-
 @end

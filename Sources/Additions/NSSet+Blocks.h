@@ -33,6 +33,4 @@
 
 - (NSSet *)select:(BOOL(^)(id object))predicate;
 
-- (NSSet *)filter:(BOOL(^)(id object))predicate;
-
 @end

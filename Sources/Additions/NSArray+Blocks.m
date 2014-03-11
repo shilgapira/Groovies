@@ -58,16 +58,4 @@
     return result;
 }
 
-- (NSArray *)filter:(BOOL(^)(id object))predicate {
-    NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.count];
-    
-    for (id object in self) {
-        if (!predicate(object)) {
-            [result addObject:object];
-        }
-    }
-    
-    return result;
-}
-
 @end

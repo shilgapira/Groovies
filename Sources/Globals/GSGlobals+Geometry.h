@@ -64,7 +64,7 @@ GS_INLINE_OVERLOAD CGRect CGRectAlign(CGRect rect, CGRect other, CGRectAnchor an
     } else if (anchor & CGRectAnchorBottom) {
         rect.origin.y = other.origin.y + other.size.height + (outsideY ? paddingY : -(rect.size.height + paddingY));
     } else if (anchor & CGRectAnchorCenterY) {
-        rect.origin.y = other.origin.y + (other.size.height - rect.size.height) / 2.0f;
+        rect.origin.y = other.origin.y + (other.size.height - rect.size.height) / 2;
     }
     
     if (anchor & CGRectAnchorLeft) {
@@ -72,14 +72,14 @@ GS_INLINE_OVERLOAD CGRect CGRectAlign(CGRect rect, CGRect other, CGRectAnchor an
     } else if (anchor & CGRectAnchorRight) {
         rect.origin.x = other.origin.x + other.size.width + (outsideX ? paddingX : -(rect.size.width + paddingX));
     } else if (anchor & CGRectAnchorCenterX) {
-        rect.origin.x = other.origin.x + (other.size.width - rect.size.width) / 2.0f;
+        rect.origin.x = other.origin.x + (other.size.width - rect.size.width) / 2;
     }
     
     return rect;
 }
 
 GS_INLINE_OVERLOAD CGRect CGRectAlign(CGRect rect, CGRect other, CGRectAnchor anchor) {
-    return CGRectAlign(rect, other, anchor, 0.0f, 0.0f);
+    return CGRectAlign(rect, other, anchor, 0, 0);
 }
 
 GS_INLINE_OVERLOAD CGRect CGRectAlign(CGRect rect, CGRect other, CGRectAnchor anchor, CGFloat padding) {

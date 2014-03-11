@@ -55,16 +55,4 @@
     return result;
 }
 
-- (NSSet *)filter:(BOOL(^)(id object))predicate {
-    NSMutableSet *result = [NSMutableSet setWithCapacity:self.count];
-    
-    for (id object in self) {
-        if (!predicate(object)) {
-            [result addObject:object];
-        }
-    }
-    
-    return result;
-}
-
 @end

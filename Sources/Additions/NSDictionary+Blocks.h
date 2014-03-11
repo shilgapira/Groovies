@@ -33,6 +33,4 @@
 
 - (NSDictionary *)select:(BOOL(^)(id key, id object))predicate;
 
-- (NSDictionary *)filter:(BOOL(^)(id key, id object))predicate;
-
 @end

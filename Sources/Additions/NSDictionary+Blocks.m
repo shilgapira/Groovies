@@ -55,16 +55,4 @@
     return result;
 }
 
-- (NSDictionary *)filter:(BOOL(^)(id key, id object))predicate {
-    NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity:self.count];
-    
-    [self enumerateKeysAndObjectsUsingBlock:^(id key, id object, BOOL *stop) {
-        if (!predicate(key, object)) {
-            [result setObject:object forKey:key];
-        }
-    }];
-    
-    return result;
-}
-
 @end
