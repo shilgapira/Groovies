@@ -14,8 +14,6 @@
 		2B08CB62178DAF5500BA7506 /* TGLogging+Assert.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B08CB61178DAF5500BA7506 /* TGLogging+Assert.m */; };
 		2B08CB66178F0DED00BA7506 /* GSLogging+Lumberjack.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B08CB65178F0C4400BA7506 /* GSLogging+Lumberjack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B08CB6A178F43D600BA7506 /* TGMacros+Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B08CB69178F43D600BA7506 /* TGMacros+Colors.m */; };
-		2B0B0A021610C8BB003C8586 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B10F14715E453AD00327C2E /* UIKit.framework */; };
-		2B0B0A051610C947003C8586 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0B0A041610C947003C8586 /* CoreGraphics.framework */; };
 		2B133472179D82D4006CAC20 /* GSTheme+Classes.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B133470179D82D4006CAC20 /* GSTheme+Classes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B133473179D82D4006CAC20 /* GSTheme+Classes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B133471179D82D4006CAC20 /* GSTheme+Classes.m */; };
 		2B267A41166DB47D006E758F /* NSObject+Associate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B267A3F166DB47C006E758F /* NSObject+Associate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -49,9 +47,6 @@
 		2B76FD61175B2CA800F56E09 /* GSAnalyticsHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B76FD5F175B2CA700F56E09 /* GSAnalyticsHelpers.m */; };
 		2B76FD62175B2DDC00F56E09 /* GSAnalyticsProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B76FD5417578CEA00F56E09 /* GSAnalyticsProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B76FD64175B2FFE00F56E09 /* Groovies+Analytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B76FD63175B2FFE00F56E09 /* Groovies+Analytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2B819B7115DB13A8001AAB87 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B819B7015DB13A8001AAB87 /* SenTestingKit.framework */; };
-		2B819B7415DB13A8001AAB87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B819B6215DB13A8001AAB87 /* Foundation.framework */; };
-		2B819BAE15DB2599001AAB87 /* GrooviesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B819BAD15DB2599001AAB87 /* GrooviesTests.m */; };
 		2B86F8E41726846300DFCF97 /* GSMacros+Math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B86F8E3172682FC00DFCF97 /* GSMacros+Math.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B86F8F81726978500DFCF97 /* GSMacros+Varargs.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BA364A91723D6B2007C67DF /* GSMacros+Varargs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B86F8F91726978900DFCF97 /* GSMacros+Language.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BA364AA17240462007C67DF /* GSMacros+Language.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -67,7 +62,6 @@
 		2BAC61FE1725590D0097F8DA /* Groovies+Globals.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BAC61F81725590D0097F8DA /* Groovies+Globals.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BAC61FF1725590D0097F8DA /* Groovies+Macros.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BAC61F91725590D0097F8DA /* Groovies+Macros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BAC6201172559760097F8DA /* Groovies+Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BAC6200172559760097F8DA /* Groovies+Logging.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2BAC6204172560B90097F8DA /* libGroovies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B819B5F15DB13A8001AAB87 /* libGroovies.a */; };
 		2BBFF777176CF87500986ACC /* GSGlobals+Execute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBFF775176CF87500986ACC /* GSGlobals+Execute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BBFF778176CF87500986ACC /* GSGlobals+Execute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFF776176CF87500986ACC /* GSGlobals+Execute.m */; };
 		2BBFF77A176D0BBA00986ACC /* GSLogging+Benchmark.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBFF779176D0BB600986ACC /* GSLogging+Benchmark.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -84,8 +78,6 @@
 		2BD417CD166A8CCB0099F9AD /* DCIntrospectSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD417C4166A8CCB0099F9AD /* DCIntrospectSettings.h */; };
 		2BD417CE166A8CCB0099F9AD /* DCStatusBarOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD417C5166A8CCB0099F9AD /* DCStatusBarOverlay.h */; };
 		2BD417CF166A8CCB0099F9AD /* DCStatusBarOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD417C6166A8CCB0099F9AD /* DCStatusBarOverlay.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2BD417E0166AE5FF0099F9AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD417D0166A8E770099F9AD /* QuartzCore.framework */; };
-		2BD417E2166AE6270099F9AD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD417B9166A85A60099F9AD /* libz.dylib */; };
 		2BD8786A176CEB64002231E1 /* UIViewController+Analytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD87868176CEB64002231E1 /* UIViewController+Analytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BD8786B176CEB64002231E1 /* UIViewController+Analytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD87869176CEB64002231E1 /* UIViewController+Analytics.m */; };
 		2BDA91B61793270D00C39436 /* TGLogging+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA91B31793254C00C39436 /* TGLogging+Base.m */; };
@@ -102,6 +94,7 @@
 		2BE73B77179D530200618F6C /* UIView+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE73B75179D530200618F6C /* UIView+Theme.m */; };
 		2BEF03171741599700AAEE7E /* GSHistoryLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BEF03151741599700AAEE7E /* GSHistoryLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BEF03181741599700AAEE7E /* GSHistoryLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEF03161741599700AAEE7E /* GSHistoryLogger.m */; };
+		2BF0911C18CEA874008C4E91 /* libGroovies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B819B5F15DB13A8001AAB87 /* libGroovies.a */; };
 		2BF4489216B1E6C9008CB969 /* GSTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF4488D16B1E6C9008CB969 /* GSTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BF4489316B1E6C9008CB969 /* GSTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF4488E16B1E6C9008CB969 /* GSTheme.m */; };
 /* End PBXBuildFile section */
@@ -126,8 +119,6 @@
 		2B08CB65178F0C4400BA7506 /* GSLogging+Lumberjack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSLogging+Lumberjack.h"; sourceTree = "<group>"; };
 		2B08CB68178F43D600BA7506 /* TGMacros+Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGMacros+Colors.h"; sourceTree = "<group>"; };
 		2B08CB69178F43D600BA7506 /* TGMacros+Colors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGMacros+Colors.m"; sourceTree = "<group>"; };
-		2B0B0A041610C947003C8586 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2B10F14715E453AD00327C2E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2B133470179D82D4006CAC20 /* GSTheme+Classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GSTheme+Classes.h"; sourceTree = "<group>"; };
 		2B133471179D82D4006CAC20 /* GSTheme+Classes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GSTheme+Classes.m"; sourceTree = "<group>"; };
 		2B267A3F166DB47C006E758F /* NSObject+Associate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Associate.h"; sourceTree = "<group>"; };
@@ -170,12 +161,8 @@
 		2B76FD5F175B2CA700F56E09 /* GSAnalyticsHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAnalyticsHelpers.m; sourceTree = "<group>"; };
 		2B76FD63175B2FFE00F56E09 /* Groovies+Analytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Groovies+Analytics.h"; sourceTree = "<group>"; };
 		2B819B5F15DB13A8001AAB87 /* libGroovies.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGroovies.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B819B6215DB13A8001AAB87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		2B819B6F15DB13A8001AAB87 /* GrooviesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrooviesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B819B7015DB13A8001AAB87 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		2B819B6F15DB13A8001AAB87 /* GrooviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrooviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B819B7A15DB13A8001AAB87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B819BAC15DB2599001AAB87 /* GrooviesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrooviesTests.h; sourceTree = "<group>"; };
-		2B819BAD15DB2599001AAB87 /* GrooviesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrooviesTests.m; sourceTree = "<group>"; };
 		2B86F8E3172682FC00DFCF97 /* GSMacros+Math.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSMacros+Math.h"; sourceTree = "<group>"; };
 		2B86F8FA1726AA2C00DFCF97 /* TGMacros+Math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGMacros+Math.h"; sourceTree = "<group>"; };
 		2B86F8FB1726AA2C00DFCF97 /* TGMacros+Math.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGMacros+Math.m"; sourceTree = "<group>"; };
@@ -202,7 +189,6 @@
 		2BD41789166A6F040099F9AD /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDLog.m; path = Lumberjack/DDLog.m; sourceTree = "<group>"; };
 		2BD4178A166A6F040099F9AD /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDTTYLogger.h; path = Lumberjack/DDTTYLogger.h; sourceTree = "<group>"; };
 		2BD4178B166A6F040099F9AD /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDTTYLogger.m; path = Lumberjack/DDTTYLogger.m; sourceTree = "<group>"; };
-		2BD417B9166A85A60099F9AD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		2BD417BE166A8CCB0099F9AD /* DCCrossHairView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCCrossHairView.h; path = DCIntrospect/DCCrossHairView.h; sourceTree = "<group>"; };
 		2BD417BF166A8CCB0099F9AD /* DCCrossHairView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCCrossHairView.m; path = DCIntrospect/DCCrossHairView.m; sourceTree = "<group>"; };
 		2BD417C0166A8CCB0099F9AD /* DCFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCFrameView.h; path = DCIntrospect/DCFrameView.h; sourceTree = "<group>"; };
@@ -212,7 +198,6 @@
 		2BD417C4166A8CCB0099F9AD /* DCIntrospectSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCIntrospectSettings.h; path = DCIntrospect/DCIntrospectSettings.h; sourceTree = "<group>"; };
 		2BD417C5166A8CCB0099F9AD /* DCStatusBarOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCStatusBarOverlay.h; path = DCIntrospect/DCStatusBarOverlay.h; sourceTree = "<group>"; };
 		2BD417C6166A8CCB0099F9AD /* DCStatusBarOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCStatusBarOverlay.m; path = DCIntrospect/DCStatusBarOverlay.m; sourceTree = "<group>"; };
-		2BD417D0166A8E770099F9AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2BD87868176CEB64002231E1 /* UIViewController+Analytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Analytics.h"; sourceTree = "<group>"; };
 		2BD87869176CEB64002231E1 /* UIViewController+Analytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Analytics.m"; sourceTree = "<group>"; };
 		2BDA91B21793254C00C39436 /* TGLogging+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGLogging+Base.h"; sourceTree = "<group>"; };
@@ -250,13 +235,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BAC6204172560B90097F8DA /* libGroovies.a in Frameworks */,
-				2BD417E2166AE6270099F9AD /* libz.dylib in Frameworks */,
-				2BD417E0166AE5FF0099F9AD /* QuartzCore.framework in Frameworks */,
-				2B0B0A051610C947003C8586 /* CoreGraphics.framework in Frameworks */,
-				2B0B0A021610C8BB003C8586 /* UIKit.framework in Frameworks */,
-				2B819B7115DB13A8001AAB87 /* SenTestingKit.framework in Frameworks */,
-				2B819B7415DB13A8001AAB87 /* Foundation.framework in Frameworks */,
+				2BF0911C18CEA874008C4E91 /* libGroovies.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +373,6 @@
 				2BD41785166A6EC40099F9AD /* Libraries */,
 				2B819B7815DB13A8001AAB87 /* Tests */,
 				2B60E23F183A380600F1F429 /* External */,
-				2B819B6115DB13A8001AAB87 /* Frameworks */,
 				2B819B6015DB13A8001AAB87 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -403,22 +381,9 @@
 			isa = PBXGroup;
 			children = (
 				2B819B5F15DB13A8001AAB87 /* libGroovies.a */,
-				2B819B6F15DB13A8001AAB87 /* GrooviesTests.octest */,
+				2B819B6F15DB13A8001AAB87 /* GrooviesTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		2B819B6115DB13A8001AAB87 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2B10F14715E453AD00327C2E /* UIKit.framework */,
-				2B819B6215DB13A8001AAB87 /* Foundation.framework */,
-				2B0B0A041610C947003C8586 /* CoreGraphics.framework */,
-				2BD417D0166A8E770099F9AD /* QuartzCore.framework */,
-				2B819B7015DB13A8001AAB87 /* SenTestingKit.framework */,
-				2BD417B9166A85A60099F9AD /* libz.dylib */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		2B819B7815DB13A8001AAB87 /* Tests */ = {
@@ -427,8 +392,6 @@
 				2BA364AF172416C8007C67DF /* Macros */,
 				2B08CB5F178DAF1A00BA7506 /* Logging */,
 				2BE31B161796776100E6C6CF /* Globals */,
-				2B819BAC15DB2599001AAB87 /* GrooviesTests.h */,
-				2B819BAD15DB2599001AAB87 /* GrooviesTests.m */,
 				2B819B7A15DB13A8001AAB87 /* Info.plist */,
 				2BA364AE172410AF007C67DF /* Prefix.pch */,
 			);
@@ -642,7 +605,6 @@
 				2B819B6A15DB13A8001AAB87 /* Sources */,
 				2B819B6B15DB13A8001AAB87 /* Frameworks */,
 				2B819B6C15DB13A8001AAB87 /* Resources */,
-				2B819B6D15DB13A8001AAB87 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -651,7 +613,7 @@
 			);
 			name = GrooviesTests;
 			productName = GrooviesTests;
-			productReference = 2B819B6F15DB13A8001AAB87 /* GrooviesTests.octest */;
+			productReference = 2B819B6F15DB13A8001AAB87 /* GrooviesTests.xctest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -690,22 +652,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2B819B6D15DB13A8001AAB87 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2B819B5B15DB13A8001AAB87 /* Sources */ = {
@@ -749,7 +695,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B819BAE15DB2599001AAB87 /* GrooviesTests.m in Sources */,
 				2BA364AD17241088007C67DF /* TGMacros+Varargs.m in Sources */,
 				2BA364B317241B74007C67DF /* TGMacros+Language.m in Sources */,
 				2B86F8FE1726AAEE00DFCF97 /* TGMacros+Math.m in Sources */,
@@ -781,6 +726,7 @@
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
@@ -838,6 +784,7 @@
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
@@ -925,6 +872,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Tests/Prefix.pch;
@@ -932,7 +880,7 @@
 				OBJROOT = "$(SRCROOT)/Build";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SYMROOT = "$(SRCROOT)/Build/Products";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
@@ -942,6 +890,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Tests/Prefix.pch;
@@ -949,7 +898,7 @@
 				OBJROOT = "$(SRCROOT)/Build";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SYMROOT = "$(SRCROOT)/Build/Products";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};

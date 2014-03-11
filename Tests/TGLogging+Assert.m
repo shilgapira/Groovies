@@ -95,7 +95,7 @@
 
 - (void)testKind {
     TGAssertNoThrow(GSAssertKind(self, TGLogging_Assert));
-    TGAssertNoThrow(GSAssertKind(self, SenTestCase));
+    TGAssertNoThrow(GSAssertKind(self, XCTestCase));
     TGAssertNoThrow(GSAssertKind(self, NSObject));
     
     TGAssertDebugThrows(GSAssertKind(self, NSString));
@@ -124,7 +124,7 @@
     id object;
     
     TGAssertNoThrow(object = GSAssertCast(TGLogging_Assert, self));
-    TGAssertNoThrow(object = GSAssertCast(SenTestCase, self));
+    TGAssertNoThrow(object = GSAssertCast(XCTestCase, self));
     
     // This should cause a warning if the #if 0 directive is removed.
 #if 0

@@ -1,20 +1,20 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
 
-#define TGAssert(x)                 STAssertTrue(x, nil)
-#define TGAssertNot(x)              STAssertFalse(x, nil)
+#define TGAssert(x)                 XCTAssert(x)
+#define TGAssertNot(x)              XCTAssertFalse(x)
 
-#define TGAssertNil(x)              STAssertNil(x, nil)
-#define TGAssertNotNil(x)           STAssertNotNil(x, nil)
+#define TGAssertNil(x)              XCTAssertNil(x)
+#define TGAssertNotNil(x)           XCTAssertNotNil(x)
 
-#define TGAssertEquals(x, y)        STAssertEquals(x, y, nil)
-#define TGAssertEqualObjects(x, y)  STAssertEqualObjects(x, y, nil)
+#define TGAssertEquals(x, y)        XCTAssertEqual(x, y)
+#define TGAssertEqualObjects(x, y)  XCTAssertEqualObjects(x, y)
 
-#define TGAssertThrows(x)           STAssertThrows(x, nil)
-#define TGAssertNoThrow(x)          STAssertNoThrow(x, nil)
+#define TGAssertThrows(x)           XCTAssertThrows(x)
+#define TGAssertNoThrow(x)          XCTAssertNoThrow(x)
 
 
 #ifdef DEBUG

@@ -22,9 +22,9 @@
 // THE SOFTWARE.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
 
-@interface TGGlobals_Execute : SenTestCase
+@interface TGGlobals_Execute : XCTestCase
 
 @end

@@ -22,9 +22,9 @@
 // THE SOFTWARE.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
 
-@interface TGMacros_Varargs : SenTestCase
+@interface TGMacros_Varargs : XCTestCase
 
 @end
