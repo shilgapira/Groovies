@@ -52,6 +52,11 @@ typedef NS_OPTIONS(NSUInteger, CGRectAnchor) {
     CGRectAnchorBottomOutside = CGRectAnchorBottom | CGRectAnchorOutsideY,
     CGRectAnchorLeftOutside = CGRectAnchorLeft | CGRectAnchorOutsideX,
     CGRectAnchorRightOutside = CGRectAnchorRight | CGRectAnchorOutsideX,
+
+    CGRectAnchorTopCenterOutside = CGRectAnchorTopOutside | CGRectAnchorCenterX,
+    CGRectAnchorBottomCenterOutside = CGRectAnchorBottomOutside | CGRectAnchorCenterX,
+    CGRectAnchorLeftCenterOutside = CGRectAnchorLeftOutside | CGRectAnchorCenterY,
+    CGRectAnchorRightCenterOutside = CGRectAnchorRightOutside | CGRectAnchorCenterY,
 };
 
 
