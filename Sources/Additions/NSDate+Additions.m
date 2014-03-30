@@ -11,7 +11,6 @@ static const NSTimeInterval kSecondsInMinute = 60;
 static const NSTimeInterval kSecondsInHour = 3600;
 static const NSTimeInterval kSecondsInDay = 86400;
 static const NSTimeInterval kSecondsInWeek = 604800;
-static const NSTimeInterval kSecondsInYear = 31556926;
 
 
 static const NSCalendarUnit kDateComponents = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSWeekdayCalendarUnit | NSWeekdayOrdinalCalendarUnit;

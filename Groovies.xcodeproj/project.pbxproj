@@ -70,11 +70,11 @@
 		2BD4178E166A6F040099F9AD /* DDTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD4178A166A6F040099F9AD /* DDTTYLogger.h */; };
 		2BD4178F166A6F040099F9AD /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD4178B166A6F040099F9AD /* DDTTYLogger.m */; settings = {COMPILER_FLAGS = "-Wno-sign-conversion -Wno-enum-conversion -Wno-implicit-retain-self"; }; };
 		2BD417C7166A8CCB0099F9AD /* DCCrossHairView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD417BE166A8CCB0099F9AD /* DCCrossHairView.h */; };
-		2BD417C8166A8CCB0099F9AD /* DCCrossHairView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD417BF166A8CCB0099F9AD /* DCCrossHairView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2BD417C8166A8CCB0099F9AD /* DCCrossHairView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD417BF166A8CCB0099F9AD /* DCCrossHairView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-conversion"; }; };
 		2BD417C9166A8CCB0099F9AD /* DCFrameView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD417C0166A8CCB0099F9AD /* DCFrameView.h */; };
-		2BD417CA166A8CCB0099F9AD /* DCFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD417C1166A8CCB0099F9AD /* DCFrameView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2BD417CA166A8CCB0099F9AD /* DCFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD417C1166A8CCB0099F9AD /* DCFrameView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-conversion"; }; };
 		2BD417CB166A8CCB0099F9AD /* DCIntrospect.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD417C2166A8CCB0099F9AD /* DCIntrospect.h */; };
-		2BD417CC166A8CCB0099F9AD /* DCIntrospect.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD417C3166A8CCB0099F9AD /* DCIntrospect.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-sign-conversion"; }; };
+		2BD417CC166A8CCB0099F9AD /* DCIntrospect.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD417C3166A8CCB0099F9AD /* DCIntrospect.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-sign-conversion -Wno-conversion"; }; };
 		2BD417CD166A8CCB0099F9AD /* DCIntrospectSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD417C4166A8CCB0099F9AD /* DCIntrospectSettings.h */; };
 		2BD417CE166A8CCB0099F9AD /* DCStatusBarOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD417C5166A8CCB0099F9AD /* DCStatusBarOverlay.h */; };
 		2BD417CF166A8CCB0099F9AD /* DCStatusBarOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD417C6166A8CCB0099F9AD /* DCStatusBarOverlay.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };

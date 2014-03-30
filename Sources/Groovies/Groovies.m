@@ -31,7 +31,7 @@ NSString * const GSGrooveOptionLoggingColorsEnabled = @"LoggingColorsEnabled";
 NSString * const GSGrooveOptionDCIntrospectEnabled = @"DCIntrospectEnabled";
 
 
-static const NSTimeInterval kDCIntrospectDelay = 0.5;
+__attribute__((used)) static const NSTimeInterval kDCIntrospectDelay = 0.5;
 
 
 @implementation Groovies
