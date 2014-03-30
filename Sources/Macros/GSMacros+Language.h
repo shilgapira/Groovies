@@ -238,7 +238,7 @@ do {                                    \
 #define _KEYPATH_OBJECT(TARGET)         \
     __builtin_choose_expr(              \
         __builtin_types_compatible_p(typeof(TARGET),typeof(id)),    \
-        (*((const typeof(TARGET) *) nil)),                          \
+        (*((const volatile typeof(TARGET) *) nil)),                 \
         ((const typeof(TARGET) *) nil))
 
 
