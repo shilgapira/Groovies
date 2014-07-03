@@ -24,14 +24,9 @@
 
 #import "Groovies.h"
 #import "GSLogging+Internal.h"
-#import "DCIntrospect.h"
 
 
 NSString * const GSGrooveOptionLoggingColorsEnabled = @"LoggingColorsEnabled";
-NSString * const GSGrooveOptionDCIntrospectEnabled = @"DCIntrospectEnabled";
-
-
-__attribute__((used)) static const NSTimeInterval kDCIntrospectDelay = 0.5;
 
 
 @implementation Groovies
@@ -64,18 +59,6 @@ static BOOL __initialized = NO;
 
     #if TARGET_IPHONE_SIMULATOR
     GSLogV(@"Simulator Path: %@", [GSAppDocuments() stringByDeletingLastPathComponent]);
-    #endif
-    
-    #if defined(DEBUG) && TARGET_IPHONE_SIMULATOR
-    if ([options boolForKey:GSGrooveOptionDCIntrospectEnabled withDefault:YES]) {
-        GSLogV(@"Starting DCIntrospect in %dms", (int) (kDCIntrospectDelay * 1000));
-        DCLogger = ^(NSString *msg) {
-            GSLogV(@"%@", msg);
-        };
-        GSExecuteDelayed(kDCIntrospectDelay, ^{
-            [DCIntrospect.sharedIntrospector start];
-        });
-    }
     #endif
 }
 

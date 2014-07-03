@@ -69,15 +69,6 @@
 		2BD4178D166A6F040099F9AD /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD41789166A6F040099F9AD /* DDLog.m */; settings = {COMPILER_FLAGS = "-Wno-sign-conversion -Wno-implicit-retain-self"; }; };
 		2BD4178E166A6F040099F9AD /* DDTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD4178A166A6F040099F9AD /* DDTTYLogger.h */; };
 		2BD4178F166A6F040099F9AD /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD4178B166A6F040099F9AD /* DDTTYLogger.m */; settings = {COMPILER_FLAGS = "-Wno-sign-conversion -Wno-enum-conversion -Wno-implicit-retain-self"; }; };
-		2BD417C7166A8CCB0099F9AD /* DCCrossHairView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD417BE166A8CCB0099F9AD /* DCCrossHairView.h */; };
-		2BD417C8166A8CCB0099F9AD /* DCCrossHairView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD417BF166A8CCB0099F9AD /* DCCrossHairView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-conversion"; }; };
-		2BD417C9166A8CCB0099F9AD /* DCFrameView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD417C0166A8CCB0099F9AD /* DCFrameView.h */; };
-		2BD417CA166A8CCB0099F9AD /* DCFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD417C1166A8CCB0099F9AD /* DCFrameView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-conversion"; }; };
-		2BD417CB166A8CCB0099F9AD /* DCIntrospect.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD417C2166A8CCB0099F9AD /* DCIntrospect.h */; };
-		2BD417CC166A8CCB0099F9AD /* DCIntrospect.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD417C3166A8CCB0099F9AD /* DCIntrospect.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-sign-conversion -Wno-conversion"; }; };
-		2BD417CD166A8CCB0099F9AD /* DCIntrospectSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD417C4166A8CCB0099F9AD /* DCIntrospectSettings.h */; };
-		2BD417CE166A8CCB0099F9AD /* DCStatusBarOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD417C5166A8CCB0099F9AD /* DCStatusBarOverlay.h */; };
-		2BD417CF166A8CCB0099F9AD /* DCStatusBarOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD417C6166A8CCB0099F9AD /* DCStatusBarOverlay.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2BD8786A176CEB64002231E1 /* UIViewController+Analytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD87868176CEB64002231E1 /* UIViewController+Analytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BD8786B176CEB64002231E1 /* UIViewController+Analytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD87869176CEB64002231E1 /* UIViewController+Analytics.m */; };
 		2BDA91B61793270D00C39436 /* TGLogging+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA91B31793254C00C39436 /* TGLogging+Base.m */; };
@@ -189,15 +180,6 @@
 		2BD41789166A6F040099F9AD /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDLog.m; path = Lumberjack/DDLog.m; sourceTree = "<group>"; };
 		2BD4178A166A6F040099F9AD /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDTTYLogger.h; path = Lumberjack/DDTTYLogger.h; sourceTree = "<group>"; };
 		2BD4178B166A6F040099F9AD /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDTTYLogger.m; path = Lumberjack/DDTTYLogger.m; sourceTree = "<group>"; };
-		2BD417BE166A8CCB0099F9AD /* DCCrossHairView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCCrossHairView.h; path = DCIntrospect/DCCrossHairView.h; sourceTree = "<group>"; };
-		2BD417BF166A8CCB0099F9AD /* DCCrossHairView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCCrossHairView.m; path = DCIntrospect/DCCrossHairView.m; sourceTree = "<group>"; };
-		2BD417C0166A8CCB0099F9AD /* DCFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCFrameView.h; path = DCIntrospect/DCFrameView.h; sourceTree = "<group>"; };
-		2BD417C1166A8CCB0099F9AD /* DCFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCFrameView.m; path = DCIntrospect/DCFrameView.m; sourceTree = "<group>"; };
-		2BD417C2166A8CCB0099F9AD /* DCIntrospect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCIntrospect.h; path = DCIntrospect/DCIntrospect.h; sourceTree = "<group>"; };
-		2BD417C3166A8CCB0099F9AD /* DCIntrospect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCIntrospect.m; path = DCIntrospect/DCIntrospect.m; sourceTree = "<group>"; };
-		2BD417C4166A8CCB0099F9AD /* DCIntrospectSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCIntrospectSettings.h; path = DCIntrospect/DCIntrospectSettings.h; sourceTree = "<group>"; };
-		2BD417C5166A8CCB0099F9AD /* DCStatusBarOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCStatusBarOverlay.h; path = DCIntrospect/DCStatusBarOverlay.h; sourceTree = "<group>"; };
-		2BD417C6166A8CCB0099F9AD /* DCStatusBarOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCStatusBarOverlay.m; path = DCIntrospect/DCStatusBarOverlay.m; sourceTree = "<group>"; };
 		2BD87868176CEB64002231E1 /* UIViewController+Analytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Analytics.h"; sourceTree = "<group>"; };
 		2BD87869176CEB64002231E1 /* UIViewController+Analytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Analytics.m"; sourceTree = "<group>"; };
 		2BDA91B21793254C00C39436 /* TGLogging+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGLogging+Base.h"; sourceTree = "<group>"; };
@@ -459,7 +441,6 @@
 			isa = PBXGroup;
 			children = (
 				2BD41787166A6EEC0099F9AD /* CocoaLumberjack */,
-				2BD417BD166A8C8F0099F9AD /* DCIntrospect */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -475,22 +456,6 @@
 				2BD4178B166A6F040099F9AD /* DDTTYLogger.m */,
 			);
 			path = CocoaLumberjack;
-			sourceTree = "<group>";
-		};
-		2BD417BD166A8C8F0099F9AD /* DCIntrospect */ = {
-			isa = PBXGroup;
-			children = (
-				2BD417BE166A8CCB0099F9AD /* DCCrossHairView.h */,
-				2BD417BF166A8CCB0099F9AD /* DCCrossHairView.m */,
-				2BD417C0166A8CCB0099F9AD /* DCFrameView.h */,
-				2BD417C1166A8CCB0099F9AD /* DCFrameView.m */,
-				2BD417C2166A8CCB0099F9AD /* DCIntrospect.h */,
-				2BD417C3166A8CCB0099F9AD /* DCIntrospect.m */,
-				2BD417C4166A8CCB0099F9AD /* DCIntrospectSettings.h */,
-				2BD417C5166A8CCB0099F9AD /* DCStatusBarOverlay.h */,
-				2BD417C6166A8CCB0099F9AD /* DCStatusBarOverlay.m */,
-			);
-			path = DCIntrospect;
 			sourceTree = "<group>";
 		};
 		2BE31B161796776100E6C6CF /* Globals */ = {
@@ -533,10 +498,6 @@
 				2BBFF77A176D0BBA00986ACC /* GSLogging+Benchmark.h in Headers */,
 				2BD4178C166A6F040099F9AD /* DDLog.h in Headers */,
 				2BD4178E166A6F040099F9AD /* DDTTYLogger.h in Headers */,
-				2BD417C7166A8CCB0099F9AD /* DCCrossHairView.h in Headers */,
-				2BD417C9166A8CCB0099F9AD /* DCFrameView.h in Headers */,
-				2BD417CB166A8CCB0099F9AD /* DCIntrospect.h in Headers */,
-				2BD417CD166A8CCB0099F9AD /* DCIntrospectSettings.h in Headers */,
 				2BAC61F11725582C0097F8DA /* Groovies.h in Headers */,
 				2BAC61E517252E520097F8DA /* GSGlobals+Objects.h in Headers */,
 				2BAC61FC1725590D0097F8DA /* Groovies+Theme.h in Headers */,
@@ -546,7 +507,6 @@
 				2BAC61FE1725590D0097F8DA /* Groovies+Globals.h in Headers */,
 				2BAC61FD1725590D0097F8DA /* Groovies+Additions.h in Headers */,
 				2B5B9A5017246A0E005754B3 /* GSGlobals+Application.h in Headers */,
-				2BD417CE166A8CCB0099F9AD /* DCStatusBarOverlay.h in Headers */,
 				2B5B9A5217246A0E005754B3 /* GSGlobals+Geometry.h in Headers */,
 				2B5B9A44172462BB005754B3 /* GSLogging+Base.h in Headers */,
 				2B267A41166DB47D006E758F /* NSObject+Associate.h in Headers */,
@@ -664,11 +624,7 @@
 				2B47B9521667E6BF0081AE81 /* NSDictionary+Values.m in Sources */,
 				2BD4178D166A6F040099F9AD /* DDLog.m in Sources */,
 				2BD4178F166A6F040099F9AD /* DDTTYLogger.m in Sources */,
-				2BD417C8166A8CCB0099F9AD /* DCCrossHairView.m in Sources */,
-				2BD417CA166A8CCB0099F9AD /* DCFrameView.m in Sources */,
 				2BD8786B176CEB64002231E1 /* UIViewController+Analytics.m in Sources */,
-				2BD417CC166A8CCB0099F9AD /* DCIntrospect.m in Sources */,
-				2BD417CF166A8CCB0099F9AD /* DCStatusBarOverlay.m in Sources */,
 				2B267A42166DB47D006E758F /* NSObject+Associate.m in Sources */,
 				2BF4489316B1E6C9008CB969 /* GSTheme.m in Sources */,
 				2BE6883C16ECD19900ABCDB6 /* DDASLLogger.m in Sources */,
